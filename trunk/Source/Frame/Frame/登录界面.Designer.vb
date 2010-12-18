@@ -38,6 +38,7 @@ Partial Class 登录界面
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button4 = New System.Windows.Forms.Button
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -57,6 +58,7 @@ Partial Class 登录界面
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Desktop
+        Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
@@ -69,7 +71,7 @@ Partial Class 登录界面
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 199)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(269, 151)
+        Me.GroupBox1.Size = New System.Drawing.Size(285, 151)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
@@ -187,7 +189,17 @@ Partial Class 登录界面
         'Timer1
         '
         '
-        '起始界面
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button4.Location = New System.Drawing.Point(209, 12)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(65, 30)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = "注册"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        '登录界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -196,7 +208,7 @@ Partial Class 登录界面
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Name = "起始界面"
+        Me.Name = "登录界面"
         Me.Text = "Form1"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -219,5 +231,6 @@ Partial Class 登录界面
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 
 End Class
