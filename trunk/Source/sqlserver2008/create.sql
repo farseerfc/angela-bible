@@ -3,6 +3,8 @@ create database angelabible;
 
 
 use angelabible;
+
+/* hahaha */
 if exists (select 1
             from  sysobjects
            where  id = object_id('"Key"')
