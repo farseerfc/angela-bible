@@ -2,7 +2,7 @@
 Imports System.IO
 
 
-Public Class 资源共享
+Public Class 圣经章节概览
     Inherits System.Windows.Forms.Form
     Dim myconn As New SqlClient.SqlConnection("initial catalog=UBPA;data source=.;integrated security=SSPI;")
     Dim myadapter As SqlClient.SqlDataAdapter = New SqlClient.SqlDataAdapter("select * from casepavilion", myconn)
