@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.WindowsApplication1.资源共享
+            Me.MainForm = Global.WindowsApplication1.圣经章节概览
         End Sub
     End Class
 End Namespace
