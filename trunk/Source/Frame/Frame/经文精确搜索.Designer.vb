@@ -30,6 +30,9 @@ Partial Class 经文精确搜索
         Me.Combo1 = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.Button2 = New System.Windows.Forms.Button
+        Me.Button3 = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,6 +41,7 @@ Partial Class 经文精确搜索
         Me.GroupBox1.BackgroundImage = CType(resources.GetObject("GroupBox1.BackgroundImage"), System.Drawing.Image)
         Me.GroupBox1.Controls.Add(Me.Combo2)
         Me.GroupBox1.Controls.Add(Me.Combo3)
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Combo1)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -117,14 +121,58 @@ Partial Class 经文精确搜索
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "您想查阅的书卷"
         '
-        '经文搜索
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DarkOrange
+        Me.Button1.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.OldLace
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(342, 177)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(88, 41)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "查询"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.DarkOrange
+        Me.Button2.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.OldLace
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(263, 319)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(101, 41)
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "返回"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.DarkOrange
+        Me.Button3.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.OldLace
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.Location = New System.Drawing.Point(370, 319)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(89, 41)
+        Me.Button3.TabIndex = 11
+        Me.Button3.Text = "帮助"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        '经文精确搜索
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(462, 364)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "经文搜索"
+        Me.Name = "经文精确搜索"
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -138,4 +186,7 @@ Partial Class 经文精确搜索
     Friend WithEvents Combo1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

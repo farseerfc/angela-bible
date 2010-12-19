@@ -22,8 +22,35 @@ Partial Class 经文对比显示
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(经文对比显示))
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.PerformanceCounter1 = New System.Diagnostics.PerformanceCounter
+        CType(Me.PerformanceCounter1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(12, 131)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(342, 363)
+        Me.RichTextBox1.TabIndex = 0
+        Me.RichTextBox1.Text = ""
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(12, 23)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(390, 86)
+        Me.Panel1.TabIndex = 1
         '
         '经文对比显示
         '
@@ -31,9 +58,16 @@ Partial Class 经文对比显示
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(694, 506)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Name = "经文对比显示"
         Me.Text = "Form1"
+        CType(Me.PerformanceCounter1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents PerformanceCounter1 As System.Diagnostics.PerformanceCounter
 End Class
