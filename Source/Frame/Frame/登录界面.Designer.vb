@@ -26,6 +26,7 @@ Partial Class 登录界面
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(登录界面))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.Button4 = New System.Windows.Forms.Button
         Me.Label5 = New System.Windows.Forms.Label
         Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.TextBox1 = New System.Windows.Forms.TextBox
@@ -38,7 +39,6 @@ Partial Class 登录界面
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Button4 = New System.Windows.Forms.Button
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -71,9 +71,21 @@ Partial Class 登录界面
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 199)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(285, 151)
+        Me.GroupBox1.Size = New System.Drawing.Size(315, 151)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
+        Me.Button4.Location = New System.Drawing.Point(209, 11)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(100, 30)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = "注册"
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -115,31 +127,37 @@ Partial Class 登录界面
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button3.Location = New System.Drawing.Point(168, 115)
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.Location = New System.Drawing.Point(200, 115)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(86, 30)
+        Me.Button3.Size = New System.Drawing.Size(109, 30)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "随便看看"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.Location = New System.Drawing.Point(84, 115)
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(97, 112)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(65, 30)
+        Me.Button2.Size = New System.Drawing.Size(86, 30)
         Me.Button2.TabIndex = 3
-        Me.Button2.Text = "取消"
+        Me.Button2.Text = "离开"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.Location = New System.Drawing.Point(6, 115)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(72, 30)
+        Me.Button1.Size = New System.Drawing.Size(85, 30)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "登录"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label4
@@ -188,16 +206,6 @@ Partial Class 登录界面
         '
         'Timer1
         '
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button4.Location = New System.Drawing.Point(209, 12)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(65, 30)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "注册"
-        Me.Button4.UseVisualStyleBackColor = True
         '
         '登录界面
         '

@@ -82,6 +82,18 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="用户注册界面.Designer.vb">
+      <DependentUpon>用户注册界面.vb</DependentUpon>
+    </Compile>
+    <Compile Include="用户注册界面.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="赞美诗.Designer.vb">
+      <DependentUpon>赞美诗.vb</DependentUpon>
+    </Compile>
+    <Compile Include="赞美诗.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="经文对比显示.Designer.vb">
       <DependentUpon>经文对比显示.vb</DependentUpon>
     </Compile>
@@ -131,6 +143,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="用户注册界面.resx">
+      <DependentUpon>用户注册界面.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
