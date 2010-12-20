@@ -5,4 +5,12 @@
     Public fsearch As New 经文精确搜索
     Public fcompare As New 经文对比显示
     Public fcarols As New 赞美诗
+    Public fwelcome As New 欢迎界面
+
+
+    Public Sub Main()
+        Application.EnableVisualStyles()
+        Application.Run(fwelcome)
+    End Sub
+
 End Module
