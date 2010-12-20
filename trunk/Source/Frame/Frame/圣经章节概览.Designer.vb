@@ -635,7 +635,7 @@ Partial Class 圣经章节概览
         Me.ListView8.UseCompatibleStateImageBehavior = False
         Me.ListView8.View = System.Windows.Forms.View.SmallIcon
         '
-        '圣经阅读
+        '圣经章节概览
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -645,7 +645,7 @@ Partial Class 圣经章节概览
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.TabControl1)
-        Me.Name = "圣经阅读"
+        Me.Name = "圣经章节概览"
         Me.Text = "Form1"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

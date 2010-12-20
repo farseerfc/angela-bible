@@ -26,14 +26,14 @@ Partial Class 登录界面
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(登录界面))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Button4 = New System.Windows.Forms.Button
+        Me.register = New System.Windows.Forms.Button
         Me.Label5 = New System.Windows.Forms.Label
         Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
-        Me.Button3 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
+        Me.browse = New System.Windows.Forms.Button
+        Me.Cancel = New System.Windows.Forms.Button
+        Me.log = New System.Windows.Forms.Button
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
@@ -58,14 +58,14 @@ Partial Class 登录界面
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Desktop
-        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.register)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.browse)
+        Me.GroupBox1.Controls.Add(Me.Cancel)
+        Me.GroupBox1.Controls.Add(Me.log)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -75,17 +75,17 @@ Partial Class 登录界面
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
-        'Button4
+        'register
         '
-        Me.Button4.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(209, 11)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(100, 30)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "注册"
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.register.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.register.Image = CType(resources.GetObject("register.Image"), System.Drawing.Image)
+        Me.register.Location = New System.Drawing.Point(209, 11)
+        Me.register.Name = "register"
+        Me.register.Size = New System.Drawing.Size(100, 30)
+        Me.register.TabIndex = 9
+        Me.register.Text = "注册"
+        Me.register.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.register.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -124,41 +124,41 @@ Partial Class 登录界面
         Me.ComboBox1.Size = New System.Drawing.Size(116, 24)
         Me.ComboBox1.TabIndex = 5
         '
-        'Button3
+        'browse
         '
-        Me.Button3.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(200, 115)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(109, 30)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "随便看看"
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.browse.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.browse.Image = CType(resources.GetObject("browse.Image"), System.Drawing.Image)
+        Me.browse.Location = New System.Drawing.Point(200, 115)
+        Me.browse.Name = "browse"
+        Me.browse.Size = New System.Drawing.Size(109, 30)
+        Me.browse.TabIndex = 4
+        Me.browse.Text = "随便看看"
+        Me.browse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.browse.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Cancel
         '
-        Me.Button2.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(97, 112)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(86, 30)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "离开"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Cancel.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Cancel.Image = CType(resources.GetObject("Cancel.Image"), System.Drawing.Image)
+        Me.Cancel.Location = New System.Drawing.Point(97, 115)
+        Me.Cancel.Name = "Cancel"
+        Me.Cancel.Size = New System.Drawing.Size(86, 30)
+        Me.Cancel.TabIndex = 3
+        Me.Cancel.Text = "离开"
+        Me.Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancel.UseVisualStyleBackColor = True
         '
-        'Button1
+        'log
         '
-        Me.Button1.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(6, 115)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(85, 30)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "登录"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.log.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.log.Image = CType(resources.GetObject("log.Image"), System.Drawing.Image)
+        Me.log.Location = New System.Drawing.Point(6, 115)
+        Me.log.Name = "log"
+        Me.log.Size = New System.Drawing.Size(85, 30)
+        Me.log.TabIndex = 2
+        Me.log.Text = "登录"
+        Me.log.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.log.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -231,14 +231,14 @@ Partial Class 登录界面
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents browse As System.Windows.Forms.Button
+    Friend WithEvents Cancel As System.Windows.Forms.Button
+    Friend WithEvents log As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents register As System.Windows.Forms.Button
 
 End Class
