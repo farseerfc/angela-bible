@@ -1,6 +1,8 @@
 drop database angelabible;
 create database angelabible;
 
+go
+
 
 use angelabible;
 
