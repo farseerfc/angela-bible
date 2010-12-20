@@ -1,5 +1,9 @@
 ﻿Public Class 用户注册界面
 
+    Private Function Load_UserGroup() As List(Of String)
+
+    End Function
+
     Private Sub 用户注册界面_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
@@ -30,7 +34,7 @@
         End If
 
     End Sub
-    
+
 
     Private Sub TextBox4_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox4.LostFocus
         If TextBox4.Text.Trim = TextBox3.Text.Trim And TextBox4.Text <> "" Then

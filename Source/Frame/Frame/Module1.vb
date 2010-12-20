@@ -10,7 +10,11 @@
 
     Public Sub Main()
         Application.EnableVisualStyles()
-        Application.Run(fwelcome)
+        Application.Run(fregister)
     End Sub
 
+
+    Public Function GetDataSet() As DataSet
+
+    End Function
 End Module
