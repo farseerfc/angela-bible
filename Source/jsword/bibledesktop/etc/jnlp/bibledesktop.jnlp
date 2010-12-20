@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="@jnlp.codebase@" href="bibledesktop.jnlp">
+
+  <information>
+    <title>Bible Desktop</title>
+    <vendor>CrossWire Bible Society</vendor>
+    <homepage href="@jnlp.homepage@"/>
+    <description>Bible Desktop v@release.version@ - Bible Study Software based on the Sword project</description>
+    <description kind="short">Bible Desktop is a Bible study package available over the internet</description>
+    <description kind="tooltip">Bible Desktop Application</description>
+    <icon href="BibleDesktop128.gif"/>
+    <icon kind="splash" href="BibleDesktop128.gif"/>    
+    <offline-allowed/>
+    <shortcut online="false"> 
+      <desktop/> 
+      <menu submenu="Bible Desktop"/> 
+    </shortcut> 
+  </information>
+
+  <security>
+    <!--
+    We need disk io to read installed Sword Bibles,
+    network access to install new ones, and the ability to read system vars
+    I'm not sure there is much point in asking for less that everything
+    -->
+    <all-permissions/>
+  </security>
+
+  <resources>
+    <j2se version="1.4+"/>
+    <jar href="bibledesktop-@release.version@.jar"/>
+    <jar href="jsword-@release.version@.jar"/>
+    <jar href="jsword-common-swing-@release.version@.jar"/>
+    <jar href="jsword-common-aqua-1.0.6.jar"/>
+    <jar href="javatar-2.5.jar"/>
+    <jar href="jdom-1.1.1.jar"/>
+    <jar href="commons-codec-1.4.jar"/>
+    <jar href="httpcore-4.1.jar"/>
+    <jar href="httpclient-4.1-beta1.jar"/>
+    <jar href="commons-logging-1.1.1.jar"/>
+    <jar href="commons-net-2.2.jar"/>
+    <jar href="lucene-core-3.0.3.jar"/>
+    <jar href="lucene-snowball-3.0.3.jar"/>
+    <jar href="lucene-analyzers-3.0.3.jar"/>
+    <jar href="lucene-smartcn-3.0.3.jar"/>
+    <jar href="jlfgr-1_0.jar"/>
+    <property name="apple.laf.useScreenMenuBar" value="true"/>
+    <property name="com.apple.mrj.application.apple.menu.about.name" value="Bible Desktop"/>
+  </resources>
+
+  <application-desc main-class="org.crosswire.bibledesktop.desktop.Desktop"/>
+
+</jnlp>

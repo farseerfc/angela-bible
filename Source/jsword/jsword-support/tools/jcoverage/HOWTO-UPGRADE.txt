@@ -1,0 +1,13 @@
+Instructions on how to upgrade jcoverage.
+This was the last public/free release of jcoverage
+so the rest does not matter.
+
+Obtain the most recent version of jcoverage from
+   http://www.jcoverage.com/downloads.html
+
+Unzip the file into this directory.
+
+In the new directory, remove the following:
+   examples
+
+In SVN remove the old jcoverage directory.

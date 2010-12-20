@@ -1,0 +1,29 @@
+<project name="java2html" default="java2html">
+
+  <property name="support.j2h" value="${support.tools}/java2html"/>
+  <property name="version.j2h" value="1.5"/>
+
+  <!-- this should be overridden by the parent file -->
+  <property name="support.tools" value=".."/>
+
+  <taskdef name="java2html" classname="com.java2html.Java2HTMLTask">
+    <classpath>
+      <fileset dir="${support.j2h}/java2html-${version.j2h}" includes="**/*.jar"/>
+    </classpath>
+  </taskdef>
+
+  <target name="java2html" description="HTML versions of the java code">
+    <mkdir dir="${target.web}/java2html"/>
+    <java2html title="J-Sword Source" 
+        simple="no"
+        tabsize="4"
+        marginsize="4"
+        header="true"
+        footer="false"
+        destination="${target.web}/java2html">
+      <fileset refid="fileset.alljava"/>
+      <javadoc localRef="${source.etc}/javadoc" httpRef="http://download.oracle.com/javase/1.5.0/docs/api/"/>
+    </java2html>    
+  </target>
+
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="jar/jlfgr-1.0/jlfgr-1_0.jar"/>
+	<classpathentry exported="true" kind="src" path="/jsword"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/common-swing"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="lib" path="jar/jsword-common-aqua-1.0.6/jsword-common-aqua-1.0.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

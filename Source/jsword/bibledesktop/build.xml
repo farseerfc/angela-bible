@@ -1,0 +1,178 @@
+<project name="bibledesktop" default="all">
+
+  <!-- This build uses the core build targets -->
+  <import file="../jsword/core.xml"/>
+  <property name="dependency"       value="common-swing"/>
+  <property name="dependency.jar"   value="../${dependency}/${target.jar}"/>
+
+  <!--=======================================================================-->
+  <property name="jnlp.homepage"     value="file:///${basedir}/${target.installed}"/> <!-- override -->
+  <property name="jnlp.codebase"     value="file:///${basedir}/${target.installed}"/> <!-- override -->
+
+  <property name="gener.root"        value="${target.root}/gener"/>
+
+  <property name="support.tools" value="../jsword-support/tools"/>
+  <!--<import file="${support.tools}/nsis/build.xml"/>-->
+
+  <!--=======================================================================-->
+  <target name="testcompile.extra">
+    <mkdir dir="${gener.root}/config"/>
+    <xslt
+        in="${source.res}/config.xml"
+        out="${gener.root}/config/ConfigTest.java"
+        style="../jsword/etc/config-test.xsl">
+      <xmlcatalog refid="commonDTDs"/>
+    </xslt>
+    <javac debug="on" includes="**/*.java" destdir="${test.classes}">
+      <src path="${gener.root}/config"/>
+      <classpath refid="test.jarpath"/>
+    </javac>
+    <xmlcatalog refid="commonDTDs"/>
+  </target>
+
+  <!--=======================================================================-->
+  <target name="install"
+          depends="build, keygen, install.check"
+          unless="install.uptodate"
+          description="Prepares for web based jnlp deploy">
+
+  	<echo message="Building distribution: installed files in: ${target.installed}"/>
+
+  	<!-- Create the installation directory -->
+    <mkdir dir="${target.installed}"/>
+
+    <!--
+      == Prepare the Mac distribution as a zip file.
+	  -->
+  	<copy file="${source.etc}/installer/macosx/BibleDesktop.app/Contents/Info.plist"
+          toFile="${target.installed}/Info.plist"
+          preservelastmodified="true">
+  	  <filterset>
+        <filter token="release.version" value="${release.version}"/>
+  	  </filterset>
+  	</copy>
+
+  	<zip destfile="${target.installed}/BibleDesktop.app.zip" update="true">
+      <!-- Copy everything but the executable (zip will not preserve permissions)
+        == And Info.plist, which needs to be filtered.
+        -->
+      <zipfileset prefix="BibleDesktop.app"
+      	          dir="${source.etc}/installer/macosx/BibleDesktop.app">
+      	<exclude name="**/*JavaApplicationStub*"/>
+      	<exclude name="**/*Info.plist"/>
+      </zipfileset>
+      <!-- Copy the executable and set the right permissions -->
+      <zipfileset prefix="BibleDesktop.app/Contents/MacOS"
+      	          filemode="755"
+                  file="${source.etc}/installer/macosx/BibleDesktop.app/Contents/MacOS/JavaApplicationStub"/>
+      <!-- Copy the filtered Info.plist file -->
+      <zipfileset prefix="BibleDesktop.app/Contents"
+                  file="${target.installed}/Info.plist"/>
+      <!-- Add in all the unsigned jars -->
+      <zipfileset prefix="BibleDesktop.app/Contents/Resources/Java"
+		          dir="${target.jar}">
+        <patternset refid="internal.built.jars"/>
+        <patternset refid="external.runtime.jars"/>
+	  </zipfileset>
+	</zip>
+    <delete file="${target.installed}/Info.plist"/>
+
+    <!-- sign the jars to a temporary location so they can be reused -->
+  	<copy todir="${target.installed}" preservelastmodified="true">
+      <fileset dir="${target.jar}">
+        <patternset refid="external.runtime.jars"/>
+        <patternset refid="internal.built.jars"/>
+      </fileset>
+    </copy>
+    <signjar
+          storepass="${keystore.pswd}"
+          alias="${keystore.alias}"
+          keystore="${keystore.file}"
+    	  preservelastmodified="true"
+          lazy="true">
+      <path>
+      	<fileset dir="${target.installed}">
+          <patternset refid="external.runtime.jars"/>
+          <patternset refid="internal.built.jars"/>
+        </fileset>
+      </path>
+    </signjar>
+
+    <!-- Create a flag file used to determine whether the set of jars needs to be signed -->
+    <touch file="${target.root}/.flagfile"/>
+
+  	<!-- Copy the files needed for the distribution -->
+    <copy todir="${target.installed}"
+          preservelastmodified="true">
+      <fileset dir="${source.etc}/jnlp">
+        <include name="*.gif"/>
+	  </fileset>
+      <fileset dir="${source.etc}/bin"/>
+      <fileset dir="${source.etc}/installer">
+        <include name="bibledesktop.exe"/>
+      </fileset>
+    </copy>
+
+  	<!-- Copy and filter to make it work -->
+  	<copy file="${source.etc}/jnlp/bibledesktop.jnlp"
+          tofile="${target.installed}/bibledesktop.jnlp"
+          filtering="true"
+          preservelastmodified="true">
+      <filterset>
+        <filter token="jnlp.homepage"   value="${jnlp.homepage}"/>
+        <filter token="jnlp.codebase"   value="${jnlp.codebase}"/>
+        <filter token="release.version" value="${release.version}"/>
+      </filterset>
+    </copy>
+
+  	<!-- copy does not preserve file permissions, so we reset them -->
+    <chmod perm="a+x">
+      <fileset dir="${target.installed}">
+        <include name="**/*.sh"/>
+      </fileset>
+    </chmod>
+  	<!-- Ensure that line endings are consistent with their target platform -->
+    <fixcrlf srcdir="${target.installed}" eol="lf">
+      <include name="**/*.sh"/>
+    </fixcrlf>
+    <fixcrlf srcdir="${target.installed}" eol="crlf">
+      <include name="**/*.bat"/>
+    </fixcrlf>
+
+  	<!-- Build the Windows installers from the installed/signed jars -->
+  	<copy todir="${target.installed}"
+          filtering="true"
+          preservelastmodified="true">
+      <fileset dir="${source.etc}/installer/win32">
+        <include name="*.nsi"/>
+      </fileset>
+      <filterset>
+        <filter token="release.version" value="${release.version}"/>
+      </filterset>
+    </copy>
+  	<copy todir="${target.installed}"
+          preservelastmodified="true">
+      <fileset dir="${source.etc}/installer/win32">
+        <include name="*.ico"/>
+        <include name="gpl.txt"/>
+      </fileset>
+    </copy>
+    <!--
+  	<nsis verbosity="1" script="${target.installed}/BibleDesktop.nsi"/>
+  	<nsis verbosity="1" script="${target.installed}/PortableBibleDesktop.nsi"/>
+  	<nsis verbosity="1" script="${target.installed}/BibleDesktopSetup.nsi"/>
+    <delete file="${target.installed}/BibleDesktop.nsi"/>
+    <delete file="${target.installed}/PortableBibleDesktop.nsi"/>
+    <delete file="${target.installed}/BibleDesktopSetup.nsi"/>
+    -->
+  </target>
+
+  <target name="install.check">
+    <uptodate property="install.uptodate"
+        targetfile="${target.root}/.flagfile">
+      <srcfiles dir="${target.jar}"/>
+    </uptodate>
+    <echo message="install.uptodate result: ${install.uptodate}"/>
+  </target>
+
+</project>

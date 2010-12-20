@@ -1,0 +1,90 @@
+Release process:
+
+Step 1: Update the application's release number
+
+On a Major release update the second number, on a minor change the third.
+The first gets changed if there is a super major change.
+Pretend that 1.0.9 is the next release number (because the current release is 1.0.8).
+Change org.crosswire.bibledesktop.desktop.Msg.properties Desktop.Version=1.0.9
+Ensure that the i18n variants of this file do not define Desktop.Version.
+In the ant file common/core.xml change to <property name="release.version" value="1.0.9"/>
+Update bibledesktop/etc/installer/win32/BibleDesktop.nsi PROCUCT_VERSION "1.0.9"
+Update bibledesktop-web/src/web/download.html.
+
+Step 2: Update the release files for the current jar names.
+Update bibledesktop/etc/installer/macosx/info.plist
+Update bibledesktop/etc/jnlp/bibledesktop.jnlp
+Check in the changes for these 2 steps.
+
+Step 3: Perform a clean build
+Execute an ant build all in jsword-web. (jsword-web-ant-all in Eclipse)
+Clean up all findbugs, pmd and checkstyle issues that make sense to do.
+Fix any javadoc issues.
+Check in any files that changed.
+Re-execute the ant if any files changed.
+
+Step 4: Build the Windows installer
+Right click on bibledesktop/etc/installer/win32/BibleDesktop.nsis and compile the NSIS script.
+Right click on bibledesktop/etc/installer/win32/BibleDesktopSetup.nsi and compile the NSIS script.
+You need to be in Windows with NSIS installed.
+This installer also requires the InetLoad plugin available here:
+	http://nsis.sourceforge.net/InetLoad
+	Out of that zip file, copy inetload.dll to the NSIS/plugins directory.
+Verify that the installer works.
+You can perform part of step 7 now.
+
+Step 5: Build the MacOS X installer
+Get bibledesktop-web/src/web/stable/BibleDesktop-v1.0.8.dmg
+The BibleDesktop*.dmg will be reused, but renamed, as it laid out parts of the installer.
+All we will be doing is replacing BibleDesktop.app in it.
+Convert the dmg to read/write, mount and open it.
+Copy the modified BibleDesktop.app into the opened, r/w disk image.
+Eject the disk image.
+Convert it to a compressed image and take the opportunity to rename it.
+Save it into the bibledesktop/etc/installers/macosx directory, temporarily.
+Don't check in the disk image.
+Verify that the installer works.
+You can perform part of step 7 now.
+
+Step 6: Build the Linux installers
+(None at this time)
+
+Step 7: Copy the release files to stable
+Delete all the jar, dmg, exe files in bibledesktop-web/src/web/stable
+Run a nightly build, download it and copy it's files into bibledesktop-web/src/web/stable
+Move the following to bibledesktop-web/src/web/stable
+	From bibledesktop/etc/installer/macosx move BibleDesktop-v1.0.9.dmg
+	From bibledesktop/etc/installer/win32 copy BibleDesktop.exe and move BibleDesktopSetup.exe
+	From bibldesktop/etc/installers/rpm copy ??? (rpm and deb files)
+Update bibledesktop-web/src/web/stable/bibledesktop-1.0.9.jnlp with the following
+	codebase="http://www.crosswire.org/bibledesktop/stable"
+	href="http://www.crosswire.org/bibledesktop"
+
+Step 8: Clean checkout on the crosswire server
+Log in to the crosswire server
+Check ~jsword/bibledesktop/html/stable for the *1.0.9* files.
+They should match the files listed in BibleDesktop.jnlp.
+Remove any old or unused jars. This is important as they will otherwise be packaged via ant.
+Put ~jsword/bin in your path.
+Run ~jsword/bin/cleanCheckout.sh.
+Run ~jsword/bin/build.sh all release.final
+Check ~ftp/pub/jsword/release for the *1.0.9* files.
+They should match the *1.0.8* files. Fix as needed.
+
+Step 9: Verify the install.
+Go to www.crosswire.org/bibledesktop/download.html
+Check that the Mac installer works on a Mac.
+Check that the Windows installer works on Windows, without Java and also with Java.
+Check that Java WebStart works on a Mac, on Windows *or* on linux, with Java installed.
+
+Step 10: Tag the release in svn
+Wait a few days to see if there are any problems that need to be fixed.
+If so, fix the problems and re-release with the same version number.
+svn tag http://www.crosswire.org/svn/jsword/trunk http://www.crosswire.org/svn/jsword/tags/R1.0.9
+
+Public Relations:
+	Create the announcements:
+		http://www.crosswire.org/sword/admin/news (userid and password required)
+		jsword-web/src/web/change.html with a detailed list of changes
+		jsword-web/src/web/news.html with a short announcement
+	Send an announcement to jsword-devel, bibledesktop-announce and bibldesktop-users
