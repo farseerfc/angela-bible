@@ -1,0 +1,53 @@
+<project name="pmd" default="pmd">
+
+  <property name="pmd" value="${support.tools}/pmd"/>
+  <property name="version.pmd" value="4.2.5"/>
+
+  <!-- this should be overridden by the parent file -->
+  <property name="support.tools" value=".."/>
+
+  <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask">
+	<classpath>
+	  <fileset dir="${pmd}/pmd-${version.pmd}" includes="*/*.jar"/>
+	</classpath>
+  </taskdef>
+
+  <target name="pmd">
+    <mkdir dir="${target.web}/pmd"/>
+
+    <pmd rulesetfiles="${basedir}/${pmd}/ruleset.xml" shortFilenames="true">
+      <formatter type="xml" toFile="${target.web}/pmd/report_pmd.xml"/>
+      <fileset dir="..">
+        <patternset refid="pattern.alljava"/>
+      </fileset>
+    </pmd>
+    <xslt in="${target.web}/pmd/report_pmd.xml"
+          style="${pmd}/pmd-report-per-class.xslt"
+          out="${target.web}/pmd/index.html">
+      <xmlcatalog refid="commonDTDs"/>
+    </xslt>
+    <copy file="${pmd}/sorttable.js" overwrite="true"
+          tofile="${target.web}/pmd/sorttable.js"/>
+  </target>
+
+  <taskdef name="cpd" classname="net.sourceforge.pmd.cpd.CPDTask">
+	<classpath>
+	  <fileset dir="${support.tools}/pmd" includes="**/*.jar"/>
+	</classpath>
+  </taskdef>
+
+  <target name="cpd">
+    <mkdir dir="${target.web}/cpd"/>
+    <cpd minimumTokenCount="100" format="xml" outputFile="${target.web}/cpd/report_cpd.xml">
+      <fileset dir="..">
+        <patternset refid="pattern.alljava"/>
+      </fileset>
+    </cpd>
+  	<xslt in="${target.web}/cpd/report_cpd.xml"
+  		  style="${pmd}/cpdhtml.xslt"
+  		  out="${target.web}/cpd/index.html">
+  	  <xmlcatalog refid="commonDTDs"/>
+  	</xslt>
+  </target>
+
+</project>

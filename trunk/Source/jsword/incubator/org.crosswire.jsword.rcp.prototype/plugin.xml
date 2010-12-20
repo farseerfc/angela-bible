@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.crosswire.jsword.rcp.prototype.workbench.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.crosswire.jsword.rcp.prototype.workbench.ClassicPerspective"
+            icon="icons/bd-icon16.gif"
+            id="org.crosswire.jsword.rcp.prototype.classicperspective"
+            name="Classic Perspective">
+      </perspective>
+      <perspective
+            name="Test Perspective"
+            class="org.crosswire.jsword.rcp.prototype.workbench.TestPerspective"
+            id="org.crosswire.jsword.rcp.prototype.testperspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.crosswire.jsword.rcp.prototype.basiccategory"
+            class="org.crosswire.jsword.rcp.prototype.views.BooksView"
+            id="org.crosswire.jsword.rcp.prototype.booksview"
+            name="Books"/>
+      <view
+            category="org.crosswire.jsword.rcp.prototype.basiccategory"
+            class="org.crosswire.jsword.rcp.prototype.views.KeysView"
+            id="org.crosswire.jsword.rcp.prototype.keysview"
+            name="Keys"/>
+      <view
+            category="org.crosswire.jsword.rcp.prototype.basiccategory"
+            class="org.crosswire.jsword.rcp.prototype.views.ContentView"
+            id="org.crosswire.jsword.rcp.prototype.contentview"
+            name="Content"/>
+      <view
+            category="org.crosswire.jsword.rcp.prototype.classiccategory"
+            class="org.crosswire.jsword.rcp.prototype.views.ClassicSearchView"
+            id="org.crosswire.jsword.rcp.prototype.classicsearchview"
+            name="Search"/>
+      <category
+            id="org.crosswire.jsword.rcp.prototype.basiccategory"
+            name="Basic"/>
+      <category
+            id="org.crosswire.jsword.rcp.prototype.classiccategory"
+            name="Classic"/>
+      <view
+            class="org.crosswire.jsword.rcp.prototype.views.PassageNotesView"
+            id="org.crosswire.jsword.rcp.prototype.passagenotesview"
+            name="Passage Notes"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="org.crosswire.jsword.rcp.prototype.classicperspective">
+         <viewShortcut id="org.crosswire.jsword.rcp.prototype.booksview"/>
+         <viewShortcut id="org.crosswire.jsword.rcp.prototype.keysview"/>
+         <viewShortcut id="org.crosswire.jsword.rcp.prototype.contentview"/>
+         <viewShortcut id="org.crosswire.jsword.rcp.prototype.classicsearchview"/>
+         <perspectiveShortcut id="org.crosswire.jsword.rcp.prototype.testperspective"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.crosswire.jsword.rcp.prototype.testperspective">
+         <viewShortcut id="org.crosswire.jsword.rcp.prototype.booksview"/>
+         <viewShortcut id="org.crosswire.jsword.rcp.prototype.keysview"/>
+         <viewShortcut id="org.crosswire.jsword.rcp.prototype.contentview"/>
+         <perspectiveShortcut id="org.crosswire.jsword.rcp.prototype.classicperspective"/>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.crosswire.jsword.rcp.prototype.editors.ClassicHtmlPassageEditor"
+            default="false"
+            icon="icons/book-b16.gif"
+            id="org.crosswire.jsword.rcp.prototype.classichtmlpassageeditor"
+            name="Classic Html Passage Editor"/>
+      <editor
+            class="org.crosswire.jsword.rcp.prototype.editors.HtmlPassageEditor"
+            default="false"
+            icon="icons/book-b16.gif"
+            id="org.crosswire.jsword.rcp.prototype.htmlpassageeditor"
+            name="Html Passage Editor"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="org.crosswire.jsword.rcp.prototype.factories.InputElementFactory"
+            id="org.crosswire.jsword.rcp.prototype.inputelementfactory"/>
+   </extension>
+
+</plugin>
