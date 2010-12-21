@@ -22,7 +22,7 @@ Public Class 登录界面
         Application.Exit()
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -34,4 +34,18 @@ Public Class 登录界面
         Me.Close()
         fhome.Show()
     End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim psd As String
+        psd = InputBox("请输入管理员查询口令", "管理员登录审核")
+        If psd = "13482777307" Then
+            MsgBox("果然是最聪明的主人哦!欢迎回来哇！")
+            Me.Close()
+            fadmin.Show()
+            End
+        Else
+            MsgBox("口令错误,切勿私自闯入！", MsgBoxStyle.OkOnly, "严重警告你啊！！")
+        End If
+    End Sub
+
 End Class
