@@ -211,7 +211,7 @@ Partial Class 登录界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(477, 382)
+        Me.ClientSize = New System.Drawing.Size(479, 374)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)

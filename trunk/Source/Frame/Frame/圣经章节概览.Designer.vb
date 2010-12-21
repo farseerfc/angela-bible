@@ -29,67 +29,67 @@ Partial Class 圣经章节概览
         Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("利未记")
         Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("创世纪")
         Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("出埃及记")
-        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约书亚记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"士师记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"路得记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"撒母耳记上"}, "(无)", System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"撒母耳记下"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem11 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"列王纪上"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem12 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"列王纪下"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"历代志上"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"历代志下"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以斯拉记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"尼希米记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以斯贴记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约伯记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem19 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"诗篇"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem20 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"箴言"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem21 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"传道书"}, "(无)", System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem22 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"雅歌"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem23 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以赛亚书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem24 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"耶利米书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem25 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"耶利米哀歌"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem26 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以西结书"}, "(无)", System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem27 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"但以理书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem28 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"何西阿书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem29 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约珥书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem30 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"阿摩司书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem31 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"俄巴底亚书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem32 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约拿书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem33 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"弥迦书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem34 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"那鸿书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem35 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哈巴谷书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem36 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"西番雅书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem37 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哈该书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem38 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"撒迦利亚书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem39 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"玛拉基书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
+        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约书亚记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
+        Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"士师记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"路得记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"撒母耳记上"}, "(无)", System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"撒母耳记下"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem11 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"列王纪上"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem12 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"列王纪下"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"历代志上"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"历代志下"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以斯拉记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"尼希米记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以斯贴记"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约伯记"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem19 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"诗篇"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem20 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"箴言"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem21 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"传道书"}, "(无)", System.Drawing.Color.MidnightBlue, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem22 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"雅歌"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem23 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以赛亚书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem24 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"耶利米书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem25 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"耶利米哀歌"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem26 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以西结书"}, "(无)", System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem27 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"但以理书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem28 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"何西阿书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem29 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约珥书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem30 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"阿摩司书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem31 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"俄巴底亚书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem32 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约拿书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem33 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"弥迦书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem34 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"那鸿书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem35 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哈巴谷书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem36 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"西番雅书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem37 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哈该书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem38 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"撒迦利亚书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem39 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"玛拉基书"}, -1, System.Drawing.Color.MidnightBlue, System.Drawing.Color.Lavender, New System.Drawing.Font("幼圆", 12.0!))
         Dim ListViewItem40 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("马太福音")
         Dim ListViewItem41 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("马可福音", "(无)")
         Dim ListViewItem42 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("路加福音")
         Dim ListViewItem43 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("约翰福音")
-        Dim ListViewItem44 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"使徒行传"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem45 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"罗马书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem46 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哥林多前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem47 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哥林多后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem48 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"加拉太书"}, "(无)", System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem49 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以弗所书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte)))
-        Dim ListViewItem50 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"腓立比书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem51 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"歌罗西书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem52 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"帖撒罗尼迦前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem53 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"帖撒罗尼迦后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem54 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"提摩太前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem55 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"提摩太后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem56 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"提多书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem57 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"腓利门书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem58 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"希伯来书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem59 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"雅各书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem60 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"彼得前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem61 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"彼得后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem62 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约翰一书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem63 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约翰二书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem64 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约翰三书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem65 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"犹大书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
-        Dim ListViewItem66 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"启示录"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("隶书", 12.0!))
+        Dim ListViewItem44 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"使徒行传"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem45 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"罗马书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem46 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哥林多前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem47 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"哥林多后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem48 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"加拉太书"}, "(无)", System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem49 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"以弗所书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem50 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"腓立比书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem51 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"歌罗西书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem52 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"帖撒罗尼迦前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem53 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"帖撒罗尼迦后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem54 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"提摩太前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem55 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"提摩太后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem56 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"提多书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem57 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"腓利门书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem58 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"希伯来书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem59 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"雅各书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem60 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"彼得前书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem61 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"彼得后书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem62 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约翰一书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem63 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约翰二书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem64 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"约翰三书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem65 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"犹大书"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
+        Dim ListViewItem66 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"启示录"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, New System.Drawing.Font("幼圆", 12.0!))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
@@ -115,6 +115,11 @@ Partial Class 圣经章节概览
         Me.ListView7 = New System.Windows.Forms.ListView
         Me.TabPage12 = New System.Windows.Forms.TabPage
         Me.ListView8 = New System.Windows.Forms.ListView
+        Me.Button2 = New System.Windows.Forms.Button
+        Me.Cancel = New System.Windows.Forms.Button
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox
+        Me.Button1 = New System.Windows.Forms.Button
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -160,8 +165,8 @@ Partial Class 圣经章节概览
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Font = New System.Drawing.Font("隶书", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(12, 94)
+        Me.TabControl1.Font = New System.Drawing.Font("华文细黑", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.TabControl1.Location = New System.Drawing.Point(7, 134)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -172,10 +177,10 @@ Partial Class 圣经章节概览
         '
         Me.TabPage1.Controls.Add(Me.ListView1)
         Me.TabPage1.Font = New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(29, 4)
+        Me.TabPage1.Location = New System.Drawing.Point(32, 4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(123, 367)
+        Me.TabPage1.Size = New System.Drawing.Size(120, 367)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "律法书"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -184,7 +189,9 @@ Partial Class 圣经章节概览
         '
         Me.ListView1.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView1.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView1.BackColor = System.Drawing.Color.MistyRose
+        Me.ListView1.BackColor = System.Drawing.Color.Lavender
+        Me.ListView1.Font = New System.Drawing.Font("幼圆", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.ListView1.ForeColor = System.Drawing.Color.DarkBlue
         Me.ListView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem1.Checked = True
         ListViewItem1.IndentCount = 2
@@ -202,7 +209,7 @@ Partial Class 圣经章节概览
         ListViewItem5.StateImageIndex = 4
         Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5})
         Me.ListView1.LargeImageList = Me.ImageList1
-        Me.ListView1.Location = New System.Drawing.Point(6, 6)
+        Me.ListView1.Location = New System.Drawing.Point(3, 3)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.ListView1.ShowItemToolTips = True
@@ -215,10 +222,10 @@ Partial Class 圣经章节概览
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.ListView2)
-        Me.TabPage2.Location = New System.Drawing.Point(29, 4)
+        Me.TabPage2.Location = New System.Drawing.Point(32, 4)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(123, 367)
+        Me.TabPage2.Size = New System.Drawing.Size(120, 367)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "历史书"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -227,7 +234,9 @@ Partial Class 圣经章节概览
         '
         Me.ListView2.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView2.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView2.BackColor = System.Drawing.Color.MistyRose
+        Me.ListView2.BackColor = System.Drawing.Color.Lavender
+        Me.ListView2.Font = New System.Drawing.Font("幼圆", 12.0!)
+        Me.ListView2.ForeColor = System.Drawing.Color.MidnightBlue
         Me.ListView2.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem6.Checked = True
         ListViewItem6.IndentCount = 5
@@ -270,9 +279,9 @@ Partial Class 圣经章节概览
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.ListView3)
-        Me.TabPage3.Location = New System.Drawing.Point(29, 4)
+        Me.TabPage3.Location = New System.Drawing.Point(32, 4)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(123, 367)
+        Me.TabPage3.Size = New System.Drawing.Size(120, 367)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "诗歌-智慧书"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -281,7 +290,8 @@ Partial Class 圣经章节概览
         '
         Me.ListView3.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView3.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView3.BackColor = System.Drawing.Color.MistyRose
+        Me.ListView3.BackColor = System.Drawing.Color.Lavender
+        Me.ListView3.Font = New System.Drawing.Font("幼圆", 12.0!)
         Me.ListView3.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem18.IndentCount = 5
         ListViewItem18.StateImageIndex = 0
@@ -313,9 +323,9 @@ Partial Class 圣经章节概览
         '
         Me.TabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.TabPage4.Controls.Add(Me.ListView4)
-        Me.TabPage4.Location = New System.Drawing.Point(29, 4)
+        Me.TabPage4.Location = New System.Drawing.Point(32, 4)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(123, 367)
+        Me.TabPage4.Size = New System.Drawing.Size(120, 367)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "先知书"
         Me.TabPage4.ToolTipText = "777"
@@ -325,7 +335,7 @@ Partial Class 圣经章节概览
         '
         Me.ListView4.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView4.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView4.BackColor = System.Drawing.Color.MistyRose
+        Me.ListView4.BackColor = System.Drawing.Color.Lavender
         Me.ListView4.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem23.Checked = True
         ListViewItem23.IndentCount = 5
@@ -420,9 +430,9 @@ Partial Class 圣经章节概览
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, -4)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 68)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(152, 98)
+        Me.PictureBox1.Size = New System.Drawing.Size(152, 66)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -430,35 +440,35 @@ Partial Class 圣经章节概览
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(182, 0)
+        Me.PictureBox2.Location = New System.Drawing.Point(147, 2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(154, 98)
+        Me.PictureBox2.Size = New System.Drawing.Size(152, 66)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
         '
         'TabControl2
         '
-        Me.TabControl2.Alignment = System.Windows.Forms.TabAlignment.Right
         Me.TabControl2.Controls.Add(Me.TabPage9)
         Me.TabControl2.Controls.Add(Me.TabPage10)
         Me.TabControl2.Controls.Add(Me.TabPage11)
         Me.TabControl2.Controls.Add(Me.TabPage12)
-        Me.TabControl2.Font = New System.Drawing.Font("隶书", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TabControl2.Location = New System.Drawing.Point(182, 96)
+        Me.TabControl2.Font = New System.Drawing.Font("华文细黑", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.TabControl2.Location = New System.Drawing.Point(298, 2)
         Me.TabControl2.Multiline = True
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(156, 373)
+        Me.TabControl2.Size = New System.Drawing.Size(393, 220)
         Me.TabControl2.TabIndex = 4
         '
         'TabPage9
         '
         Me.TabPage9.Controls.Add(Me.ListView5)
         Me.TabPage9.Font = New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TabPage9.Location = New System.Drawing.Point(4, 4)
+        Me.TabPage9.Location = New System.Drawing.Point(4, 30)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(123, 365)
+        Me.TabPage9.Size = New System.Drawing.Size(385, 186)
         Me.TabPage9.TabIndex = 0
         Me.TabPage9.Text = "四福音"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -467,8 +477,9 @@ Partial Class 圣经章节概览
         '
         Me.ListView5.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView5.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView5.BackColor = System.Drawing.Color.Gold
-        Me.ListView5.ForeColor = System.Drawing.Color.Ivory
+        Me.ListView5.BackColor = System.Drawing.Color.Lavender
+        Me.ListView5.Font = New System.Drawing.Font("幼圆", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.ListView5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ListView5.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem40.Checked = True
         ListViewItem40.IndentCount = 2
@@ -484,11 +495,11 @@ Partial Class 圣经章节概览
         ListViewItem43.StateImageIndex = 14
         Me.ListView5.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem40, ListViewItem41, ListViewItem42, ListViewItem43})
         Me.ListView5.LargeImageList = Me.ImageList1
-        Me.ListView5.Location = New System.Drawing.Point(6, 6)
+        Me.ListView5.Location = New System.Drawing.Point(-3, 2)
         Me.ListView5.Name = "ListView5"
         Me.ListView5.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.ListView5.ShowItemToolTips = True
-        Me.ListView5.Size = New System.Drawing.Size(117, 356)
+        Me.ListView5.Size = New System.Drawing.Size(386, 188)
         Me.ListView5.StateImageList = Me.ImageList1
         Me.ListView5.TabIndex = 0
         Me.ListView5.UseCompatibleStateImageBehavior = False
@@ -497,10 +508,10 @@ Partial Class 圣经章节概览
         'TabPage10
         '
         Me.TabPage10.Controls.Add(Me.ListView6)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 4)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 30)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(123, 365)
+        Me.TabPage10.Size = New System.Drawing.Size(385, 186)
         Me.TabPage10.TabIndex = 1
         Me.TabPage10.Text = "教会历史"
         Me.TabPage10.UseVisualStyleBackColor = True
@@ -509,8 +520,9 @@ Partial Class 圣经章节概览
         '
         Me.ListView6.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView6.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView6.BackColor = System.Drawing.Color.Gold
-        Me.ListView6.ForeColor = System.Drawing.Color.White
+        Me.ListView6.BackColor = System.Drawing.Color.Lavender
+        Me.ListView6.Font = New System.Drawing.Font("幼圆", 12.0!)
+        Me.ListView6.ForeColor = System.Drawing.Color.MidnightBlue
         Me.ListView6.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem44.Checked = True
         ListViewItem44.StateImageIndex = 13
@@ -520,7 +532,7 @@ Partial Class 圣经章节概览
         Me.ListView6.Name = "ListView6"
         Me.ListView6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.ListView6.ShowItemToolTips = True
-        Me.ListView6.Size = New System.Drawing.Size(138, 357)
+        Me.ListView6.Size = New System.Drawing.Size(378, 184)
         Me.ListView6.StateImageList = Me.ImageList1
         Me.ListView6.TabIndex = 1
         Me.ListView6.UseCompatibleStateImageBehavior = False
@@ -529,9 +541,9 @@ Partial Class 圣经章节概览
         'TabPage11
         '
         Me.TabPage11.Controls.Add(Me.ListView7)
-        Me.TabPage11.Location = New System.Drawing.Point(4, 4)
+        Me.TabPage11.Location = New System.Drawing.Point(4, 30)
         Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Size = New System.Drawing.Size(123, 365)
+        Me.TabPage11.Size = New System.Drawing.Size(385, 186)
         Me.TabPage11.TabIndex = 2
         Me.TabPage11.Text = "书信"
         Me.TabPage11.UseVisualStyleBackColor = True
@@ -540,8 +552,9 @@ Partial Class 圣经章节概览
         '
         Me.ListView7.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView7.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView7.BackColor = System.Drawing.Color.Gold
-        Me.ListView7.ForeColor = System.Drawing.Color.White
+        Me.ListView7.BackColor = System.Drawing.Color.Lavender
+        Me.ListView7.Font = New System.Drawing.Font("幼圆", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.ListView7.ForeColor = System.Drawing.Color.MidnightBlue
         Me.ListView7.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem45.Checked = True
         ListViewItem45.IndentCount = 5
@@ -596,7 +609,7 @@ Partial Class 圣经章节概览
         Me.ListView7.Name = "ListView7"
         Me.ListView7.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.ListView7.ShowItemToolTips = True
-        Me.ListView7.Size = New System.Drawing.Size(138, 356)
+        Me.ListView7.Size = New System.Drawing.Size(376, 184)
         Me.ListView7.StateImageList = Me.ImageList1
         Me.ListView7.TabIndex = 1
         Me.ListView7.UseCompatibleStateImageBehavior = False
@@ -606,9 +619,9 @@ Partial Class 圣经章节概览
         '
         Me.TabPage12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.TabPage12.Controls.Add(Me.ListView8)
-        Me.TabPage12.Location = New System.Drawing.Point(4, 4)
+        Me.TabPage12.Location = New System.Drawing.Point(4, 30)
         Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Size = New System.Drawing.Size(123, 365)
+        Me.TabPage12.Size = New System.Drawing.Size(385, 186)
         Me.TabPage12.TabIndex = 3
         Me.TabPage12.Text = "约翰的启示"
         Me.TabPage12.ToolTipText = "777"
@@ -618,8 +631,9 @@ Partial Class 圣经章节概览
         '
         Me.ListView8.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView8.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.ListView8.BackColor = System.Drawing.Color.Gold
-        Me.ListView8.ForeColor = System.Drawing.Color.White
+        Me.ListView8.BackColor = System.Drawing.Color.Lavender
+        Me.ListView8.Font = New System.Drawing.Font("幼圆", 12.0!)
+        Me.ListView8.ForeColor = System.Drawing.Color.Navy
         Me.ListView8.ImeMode = System.Windows.Forms.ImeMode.NoControl
         ListViewItem66.Checked = True
         ListViewItem66.StateImageIndex = 10
@@ -629,18 +643,91 @@ Partial Class 圣经章节概览
         Me.ListView8.Name = "ListView8"
         Me.ListView8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.ListView8.ShowItemToolTips = True
-        Me.ListView8.Size = New System.Drawing.Size(120, 356)
+        Me.ListView8.Size = New System.Drawing.Size(376, 180)
         Me.ListView8.StateImageList = Me.ImageList1
         Me.ListView8.TabIndex = 1
         Me.ListView8.UseCompatibleStateImageBehavior = False
         Me.ListView8.View = System.Windows.Forms.View.SmallIcon
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Black
+        Me.Button2.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.OldLace
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(1, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(140, 41)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "返回主页"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Cancel
+        '
+        Me.Cancel.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Cancel.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Cancel.ForeColor = System.Drawing.Color.LightSkyBlue
+        Me.Cancel.Image = CType(resources.GetObject("Cancel.Image"), System.Drawing.Image)
+        Me.Cancel.Location = New System.Drawing.Point(582, 469)
+        Me.Cancel.Name = "Cancel"
+        Me.Cancel.Size = New System.Drawing.Size(109, 40)
+        Me.Cancel.TabIndex = 14
+        Me.Cancel.Text = "退出系统"
+        Me.Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancel.UseVisualStyleBackColor = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ComboBox1.Font = New System.Drawing.Font("华文楷体", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"中文和合本", "德语版", "希伯来原文", "ESV", "KJV", "ISV", "BWE", "WEB", "JST"})
+        Me.ComboBox1.Location = New System.Drawing.Point(298, 265)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(309, 31)
+        Me.ComboBox1.TabIndex = 18
+        Me.ComboBox1.Text = "请选择需要比照的圣经版本2"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ComboBox2.Font = New System.Drawing.Font("华文楷体", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.ComboBox2.ForeColor = System.Drawing.Color.White
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"中文和合本", "德语版", "希伯来原文", "ESV", "KJV", "ISV", "BWE", "WEB", "JST"})
+        Me.ComboBox2.Location = New System.Drawing.Point(298, 228)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(309, 31)
+        Me.ComboBox2.TabIndex = 19
+        Me.ComboBox2.Text = "请选择需要比照的圣经版本1"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Black
+        Me.Button1.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.OldLace
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(622, 232)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(65, 64)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "查看"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.Button1.UseVisualStyleBackColor = False
         '
         '圣经章节概览
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(694, 506)
+        Me.ClientSize = New System.Drawing.Size(694, 513)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Cancel)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
@@ -687,4 +774,9 @@ Partial Class 圣经章节概览
     Friend WithEvents ListView7 As System.Windows.Forms.ListView
     Friend WithEvents TabPage12 As System.Windows.Forms.TabPage
     Friend WithEvents ListView8 As System.Windows.Forms.ListView
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Cancel As System.Windows.Forms.Button
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

@@ -51,4 +51,8 @@
         Me.Hide()
         fstart.Show()
     End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        Application.Exit()
+    End Sub
 End Class
