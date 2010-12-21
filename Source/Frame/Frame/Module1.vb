@@ -9,15 +9,41 @@
     Public fhome As New 主页
     Public fwelcome As New 欢迎界面
 
-
+    Public strConnect As String = "server=localhost;user id=angela;password=angela;initial catalog=angelabible;"
 
     Public Sub Main()
         Application.EnableVisualStyles()
+        'GetDataSet()
         Application.Run(fregister)
     End Sub
 
+    '测试用
+    '
+    Public Function GetDataSet() As SqlClient.SqlDataReader
 
-    Public Function GetDataSet() As DataSet
+        Dim strConnect As String = "server=localhost;user id=angela;password=angela;initial catalog=angelabible;"
+        Dim sqlCommand As SqlClient.SqlCommand
+
+        Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+            sqlConnection.Open()
+            sqlConnection.CreateCommand()
+            sqlCommand = sqlConnection.CreateCommand
+            sqlCommand.CommandText = "use angelabible;select * from [dbo].[Version];"
+
+            Dim sqlReader As SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+            While sqlReader.Read()
+
+                Dim initial As String = sqlReader.GetString(0)
+                Dim title As String = sqlReader.GetString(1)
+
+                MsgBox(title, MsgBoxStyle.OkOnly, initial)
+            End While
+
+
+
+
+            Return sqlReader
+        End Using
 
     End Function
 End Module
