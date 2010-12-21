@@ -23,18 +23,33 @@ Partial Class 欢迎界面
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(欢迎界面))
+        Me.AxShockwaveFlash1 = New AxShockwaveFlashObjects.AxShockwaveFlash
+        CType(Me.AxShockwaveFlash1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'AxShockwaveFlash1
+        '
+        Me.AxShockwaveFlash1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AxShockwaveFlash1.Enabled = True
+        Me.AxShockwaveFlash1.Location = New System.Drawing.Point(0, 0)
+        Me.AxShockwaveFlash1.Name = "AxShockwaveFlash1"
+        Me.AxShockwaveFlash1.OcxState = CType(resources.GetObject("AxShockwaveFlash1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxShockwaveFlash1.Size = New System.Drawing.Size(545, 322)
+        Me.AxShockwaveFlash1.TabIndex = 0
         '
         '欢迎界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(598, 323)
+        Me.ClientSize = New System.Drawing.Size(545, 322)
+        Me.Controls.Add(Me.AxShockwaveFlash1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "欢迎界面"
         Me.Text = "Form1"
+        CType(Me.AxShockwaveFlash1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents AxShockwaveFlash1 As AxShockwaveFlashObjects.AxShockwaveFlash
 End Class
