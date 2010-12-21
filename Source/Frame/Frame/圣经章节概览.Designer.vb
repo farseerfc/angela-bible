@@ -709,7 +709,7 @@ Partial Class 圣经章节概览
         Me.Button1.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.OldLace
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(622, 232)
+        Me.Button1.Location = New System.Drawing.Point(613, 228)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(65, 64)
         Me.Button1.TabIndex = 20

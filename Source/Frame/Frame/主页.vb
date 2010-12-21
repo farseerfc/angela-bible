@@ -20,7 +20,7 @@
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Label1.Left = Label1.Left + 1
-        If Label1.Left > Me.Width Then Label1.Left = -Label1.Width
+        If Label1.Left < Me.Width Then Label1.Left = -Label1.Width
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
@@ -30,6 +30,10 @@
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Application.Exit()
+
+    End Sub
+
+    Private Sub 主页_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

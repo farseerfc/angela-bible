@@ -8,8 +8,10 @@
     Public fcarols As New 赞美诗
     Public fhome As New 主页
     Public fwelcome As New 欢迎界面
+    Public fadmin As New 管理员查询界面
 
     Public strConnect As String = "server=localhost;user id=angela;password=angela;initial catalog=angelabible;"
+
 
     Public Sub Main()
         Application.EnableVisualStyles()
