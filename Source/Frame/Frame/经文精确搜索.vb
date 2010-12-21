@@ -304,4 +304,9 @@ Public Class 经文精确搜索
         End If
 
     End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Me.Hide()
+        fhome.Show()
+    End Sub
 End Class

@@ -41,6 +41,7 @@ Partial Class 用户注册界面
         Me.Label8 = New System.Windows.Forms.Label
         Me.Label9 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
+        Me.Button4 = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'TextBox1
@@ -87,13 +88,13 @@ Partial Class 用户注册界面
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.OliveDrab
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
         Me.Button1.Font = New System.Drawing.Font("隶书", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Yellow
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(16, 345)
+        Me.Button1.Location = New System.Drawing.Point(12, 354)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(215, 33)
+        Me.Button1.Size = New System.Drawing.Size(202, 33)
         Me.Button1.TabIndex = 10
         Me.Button1.Text = "提交我的注册信息"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -103,16 +104,16 @@ Partial Class 用户注册界面
         '
         Me.Button2.AllowDrop = True
         Me.Button2.AutoEllipsis = True
-        Me.Button2.BackColor = System.Drawing.Color.OliveDrab
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
         Me.Button2.Font = New System.Drawing.Font("隶书", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Yellow
+        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(114, 444)
+        Me.Button2.Location = New System.Drawing.Point(12, 432)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(245, 33)
+        Me.Button2.Size = New System.Drawing.Size(202, 33)
         Me.Button2.TabIndex = 11
-        Me.Button2.Text = "放弃，返回登录界面"
+        Me.Button2.Text = "返回登录界面"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -178,13 +179,13 @@ Partial Class 用户注册界面
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.OliveDrab
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
         Me.Button3.Font = New System.Drawing.Font("隶书", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Yellow
+        Me.Button3.ForeColor = System.Drawing.Color.Teal
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(74, 393)
+        Me.Button3.Location = New System.Drawing.Point(12, 393)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(215, 33)
+        Me.Button3.Size = New System.Drawing.Size(202, 33)
         Me.Button3.TabIndex = 17
         Me.Button3.Text = "重置注册信息"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -247,12 +248,27 @@ Partial Class 用户注册界面
         Me.Label10.Size = New System.Drawing.Size(0, 17)
         Me.Label10.TabIndex = 22
         '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Button4.Font = New System.Drawing.Font("隶书", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
+        Me.Button4.Location = New System.Drawing.Point(12, 471)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(202, 35)
+        Me.Button4.TabIndex = 23
+        Me.Button4.Text = "退出系统"
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         '用户注册界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(500, 628)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -295,4 +311,5 @@ Partial Class 用户注册界面
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

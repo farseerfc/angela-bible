@@ -25,4 +25,13 @@ Public Class 登录界面
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
 
     End Sub
+
+    Private Sub log_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles log.Click
+
+    End Sub
+
+    Private Sub browse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles browse.Click
+        Me.Hide()
+        fhome.Show()
+    End Sub
 End Class

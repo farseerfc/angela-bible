@@ -26,11 +26,11 @@ Partial Class 经文精确搜索
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.Combo2 = New System.Windows.Forms.ComboBox
         Me.Combo3 = New System.Windows.Forms.ComboBox
+        Me.Button1 = New System.Windows.Forms.Button
         Me.Label4 = New System.Windows.Forms.Label
         Me.Combo1 = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.Button1 = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
@@ -73,6 +73,20 @@ Partial Class 经文精确搜索
         Me.Combo3.Name = "Combo3"
         Me.Combo3.Size = New System.Drawing.Size(178, 24)
         Me.Combo3.TabIndex = 7
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DarkOrange
+        Me.Button1.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.OldLace
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(342, 177)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(88, 41)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "查询"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -121,31 +135,17 @@ Partial Class 经文精确搜索
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "您想查阅的书卷"
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DarkOrange
-        Me.Button1.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.OldLace
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(342, 177)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(88, 41)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "查询"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.DarkOrange
         Me.Button2.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.OldLace
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(263, 319)
+        Me.Button2.Location = New System.Drawing.Point(224, 319)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(101, 41)
+        Me.Button2.Size = New System.Drawing.Size(140, 41)
         Me.Button2.TabIndex = 10
-        Me.Button2.Text = "返回"
+        Me.Button2.Text = "返回主页"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
