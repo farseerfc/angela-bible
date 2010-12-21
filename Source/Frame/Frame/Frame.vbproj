@@ -87,6 +87,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>angelabibleDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="经文查询显示.Designer.vb">
+      <DependentUpon>经文查询显示.vb</DependentUpon>
+    </Compile>
+    <Compile Include="经文查询显示.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="主页.Designer.vb">
       <DependentUpon>主页.vb</DependentUpon>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="经文对比显示.resx">
       <DependentUpon>经文对比显示.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="经文查询显示.resx">
+      <DependentUpon>经文查询显示.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="经文精确搜索.resx">
       <DependentUpon>经文精确搜索.vb</DependentUpon>
