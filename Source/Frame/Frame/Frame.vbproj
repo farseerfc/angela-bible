@@ -87,6 +87,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>angelabibleDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="angelabibleDataSet.vb">
+      <DependentUpon>angelabibleDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="经文查询显示.Designer.vb">
       <DependentUpon>经文查询显示.vb</DependentUpon>
     </Compile>
