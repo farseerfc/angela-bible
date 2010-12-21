@@ -31,7 +31,7 @@ Public Class 登录界面
     End Sub
 
     Private Sub browse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles browse.Click
-        Me.Hide()
+        Me.Close()
         fhome.Show()
     End Sub
 End Class

@@ -10,4 +10,9 @@ Public Class 欢迎界面
     Private Sub AxShockwaveFlash1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AxShockwaveFlash1.Enter
 
     End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Me.Hide()
+        fstart.Show()
+    End Sub
 End Class
