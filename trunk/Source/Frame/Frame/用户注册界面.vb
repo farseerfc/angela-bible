@@ -18,7 +18,7 @@
 
     Private Sub TextBox3_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox3.LostFocus
         If TextBox3.Text.Trim.Length > 5 Then
-            Label8.Text = "恭喜您，您输入的密码合理有效！"
+            Label8.Text = "您输入的密码合理有效！"
         Else
             TextBox3.Text = ""
             TextBox3.Focus()
@@ -38,10 +38,10 @@
 
     Private Sub TextBox4_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox4.LostFocus
         If TextBox4.Text.Trim = TextBox3.Text.Trim And TextBox4.Text <> "" Then
-            Label9.Text = "确认密码成功！"
-            Label9.ForeColor = Color.Orange
+            Label9.Text = "您的密码已经确认成功！"
+            Label9.ForeColor = Color.Red
         Else
-            Label9.Text = "您输入的确认密码有错误，请重新输入确认密码或重新输入密码！"
+            Label9.Text = "两次输入的密码不一致，请重新输入！"
             Label9.ForeColor = Color.Red
         End If
 
