@@ -47,9 +47,9 @@ Partial Class 经文对比显示
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(12, 114)
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 114)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(300, 391)
+        Me.RichTextBox1.Size = New System.Drawing.Size(319, 391)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
@@ -67,7 +67,7 @@ Partial Class 经文对比显示
         'B_ChapterUp
         '
         Me.B_ChapterUp.Image = CType(resources.GetObject("B_ChapterUp.Image"), System.Drawing.Image)
-        Me.B_ChapterUp.Location = New System.Drawing.Point(131, 40)
+        Me.B_ChapterUp.Location = New System.Drawing.Point(391, 42)
         Me.B_ChapterUp.Name = "B_ChapterUp"
         Me.B_ChapterUp.Size = New System.Drawing.Size(33, 33)
         Me.B_ChapterUp.TabIndex = 1
@@ -77,7 +77,7 @@ Partial Class 经文对比显示
         'B_ChapterDown
         '
         Me.B_ChapterDown.Image = CType(resources.GetObject("B_ChapterDown.Image"), System.Drawing.Image)
-        Me.B_ChapterDown.Location = New System.Drawing.Point(200, 42)
+        Me.B_ChapterDown.Location = New System.Drawing.Point(458, 41)
         Me.B_ChapterDown.Name = "B_ChapterDown"
         Me.B_ChapterDown.Size = New System.Drawing.Size(33, 33)
         Me.B_ChapterDown.TabIndex = 8
@@ -87,7 +87,7 @@ Partial Class 经文对比显示
         'B_VerseUp
         '
         Me.B_VerseUp.Image = CType(resources.GetObject("B_VerseUp.Image"), System.Drawing.Image)
-        Me.B_VerseUp.Location = New System.Drawing.Point(424, 40)
+        Me.B_VerseUp.Location = New System.Drawing.Point(391, 78)
         Me.B_VerseUp.Name = "B_VerseUp"
         Me.B_VerseUp.Size = New System.Drawing.Size(33, 33)
         Me.B_VerseUp.TabIndex = 9
@@ -97,7 +97,7 @@ Partial Class 经文对比显示
         'B_VerseDown
         '
         Me.B_VerseDown.Image = CType(resources.GetObject("B_VerseDown.Image"), System.Drawing.Image)
-        Me.B_VerseDown.Location = New System.Drawing.Point(498, 40)
+        Me.B_VerseDown.Location = New System.Drawing.Point(458, 80)
         Me.B_VerseDown.Name = "B_VerseDown"
         Me.B_VerseDown.Size = New System.Drawing.Size(33, 33)
         Me.B_VerseDown.TabIndex = 10
@@ -107,7 +107,7 @@ Partial Class 经文对比显示
         'B_Mark
         '
         Me.B_Mark.Image = CType(resources.GetObject("B_Mark.Image"), System.Drawing.Image)
-        Me.B_Mark.Location = New System.Drawing.Point(321, 113)
+        Me.B_Mark.Location = New System.Drawing.Point(334, 226)
         Me.B_Mark.Name = "B_Mark"
         Me.B_Mark.Size = New System.Drawing.Size(33, 33)
         Me.B_Mark.TabIndex = 11
@@ -117,7 +117,7 @@ Partial Class 经文对比显示
         'Button6
         '
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.Location = New System.Drawing.Point(321, 190)
+        Me.Button6.Location = New System.Drawing.Point(333, 304)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(33, 33)
         Me.Button6.TabIndex = 12
@@ -130,7 +130,7 @@ Partial Class 经文对比显示
         Me.Cancel.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.LightSkyBlue
         Me.Cancel.Image = CType(resources.GetObject("Cancel.Image"), System.Drawing.Image)
-        Me.Cancel.Location = New System.Drawing.Point(666, 475)
+        Me.Cancel.Location = New System.Drawing.Point(334, 464)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(39, 40)
         Me.Cancel.TabIndex = 13
@@ -140,7 +140,7 @@ Partial Class 经文对比显示
         'B_Backbrowse
         '
         Me.B_Backbrowse.Image = CType(resources.GetObject("B_Backbrowse.Image"), System.Drawing.Image)
-        Me.B_Backbrowse.Location = New System.Drawing.Point(321, 152)
+        Me.B_Backbrowse.Location = New System.Drawing.Point(334, 265)
         Me.B_Backbrowse.Name = "B_Backbrowse"
         Me.B_Backbrowse.Size = New System.Drawing.Size(33, 33)
         Me.B_Backbrowse.TabIndex = 14
@@ -153,7 +153,7 @@ Partial Class 经文对比显示
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("华文行楷", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Yellow
-        Me.Label1.Location = New System.Drawing.Point(8, 9)
+        Me.Label1.Location = New System.Drawing.Point(8, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(877, 22)
         Me.Label1.TabIndex = 15
@@ -164,9 +164,9 @@ Partial Class 经文对比显示
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(360, 115)
+        Me.RichTextBox2.Location = New System.Drawing.Point(379, 115)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(300, 391)
+        Me.RichTextBox2.Size = New System.Drawing.Size(319, 391)
         Me.RichTextBox2.TabIndex = 16
         Me.RichTextBox2.Text = ""
         '
@@ -177,7 +177,7 @@ Partial Class 经文对比显示
         Me.ComboBox1.ForeColor = System.Drawing.Color.White
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"中文和合本", "德语版", "希伯来原文", "ESV", "KJV", "ISV", "BWE", "WEB", "JST"})
-        Me.ComboBox1.Location = New System.Drawing.Point(12, 79)
+        Me.ComboBox1.Location = New System.Drawing.Point(4, 79)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(172, 29)
         Me.ComboBox1.TabIndex = 17
@@ -190,7 +190,7 @@ Partial Class 经文对比显示
         Me.Combo1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Combo1.FormattingEnabled = True
         Me.Combo1.Items.AddRange(New Object() {"创世纪 (Genesis)", "出埃及记 (Exodus)", "利未记 (Leviticus)", "民数记 (Numbers)", "申命记 (Deuteronomy)", "约书亚记 (Joshua)", "士师记 (Judges)", "路得记 (Ruth)", "撒母耳记上(1 Samuel)", "撒母耳记下(2 Samuel)", "列王纪上(1 Kings)", "列王纪下(2 Kings)", "历代志上(1 Chronicles)", "历代志下(2 Chronicles)", "以斯拉记(Ezra)", "尼希米记(Nehemiah)", "以斯帖记 (Esther)", "约伯记 (Job)", "诗篇 (Psalms)", "箴言 (Proverbs)", "传道书 (Ecclesiastes)", "雅歌 (Song of Songs)", "以赛亚书 (Isaiah)", "耶利米书 (Jeremiahr)", "耶利米哀歌(Lamentations)", "以西结书 (Ezekielk)", "何西阿书 (Hosea)", "约珥书 (Joel)", "阿摩司书 (Amoss)", "俄巴底亚书 (Obadiah)", "约拿书 (Jonah)", "弥迦书 (Micah)", "那鸿书 (Nahum)", "哈巴谷书 (Habakkuk)", "西番雅书 (Zephaniah)", "哈该书 (Haggai)", "撒迦利亚书 (Zechariah)", "玛拉基书 (Malachi)", "马太福音 (Matthew)", "马可福音 (Mark)", "路加福音 (Luke)", "约翰福音 (John)", "使徒行传 (Acts)", "罗马书 (Romans, Rom)", "哥林多前书 (1 Corinthians)", "哥林多后书 (2 Corinthians)", "加拉太书 (Galatians)", "以弗所书 (Ephesus)", "腓立比书 (Philippians)", "歌罗西书 (Colossians)", "帖撒罗尼迦前书 (1 Thessalonians)", "帖撒罗尼迦后书 (2 Thessalonians)", "提摩太前书 (1 Timothy)", "提摩太后书 (2 Timothy)", "提多书 (Titus)", "腓利门书 (Philemon)", "希伯来书 (Hebrews) ", "雅各书 (James)", "彼得前书(1 Peter)", "彼得后书(2 Peter)", "约翰一书(1 John)", "约翰二书(2 John)", "约翰三书(3 John)", "犹大书 (Jude)", "启示录 (Revelation)"})
-        Me.Combo1.Location = New System.Drawing.Point(239, 44)
+        Me.Combo1.Location = New System.Drawing.Point(207, 63)
         Me.Combo1.Name = "Combo1"
         Me.Combo1.Size = New System.Drawing.Size(180, 29)
         Me.Combo1.TabIndex = 19
@@ -199,7 +199,7 @@ Partial Class 经文对比显示
         'Button1
         '
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(537, 41)
+        Me.Button1.Location = New System.Drawing.Point(334, 187)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(33, 33)
         Me.Button1.TabIndex = 20
@@ -213,7 +213,7 @@ Partial Class 经文对比显示
         Me.ComboBox2.ForeColor = System.Drawing.Color.White
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"中文和合本", "德语版", "希伯来原文", "ESV", "KJV", "ISV", "BWE", "WEB", "JST"})
-        Me.ComboBox2.Location = New System.Drawing.Point(488, 80)
+        Me.ComboBox2.Location = New System.Drawing.Point(519, 79)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(172, 29)
         Me.ComboBox2.TabIndex = 21
@@ -222,24 +222,24 @@ Partial Class 经文对比显示
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Black
-        Me.Label2.Font = New System.Drawing.Font("华文隶书", 18.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.PowderBlue
-        Me.Label2.Location = New System.Drawing.Point(164, 45)
+        Me.Label2.BackColor = System.Drawing.Color.SkyBlue
+        Me.Label2.Font = New System.Drawing.Font("幼圆", 16.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(425, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(34, 24)
+        Me.Label2.Size = New System.Drawing.Size(32, 22)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "章"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Black
-        Me.Label3.Font = New System.Drawing.Font("华文隶书", 18.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.PowderBlue
-        Me.Label3.Location = New System.Drawing.Point(459, 44)
+        Me.Label3.BackColor = System.Drawing.Color.SkyBlue
+        Me.Label3.Font = New System.Drawing.Font("幼圆", 16.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(425, 80)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(34, 24)
+        Me.Label3.Size = New System.Drawing.Size(32, 22)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "节"
         '
