@@ -22,8 +22,10 @@ Partial Class 欢迎界面
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(欢迎界面))
         Me.AxShockwaveFlash1 = New AxShockwaveFlashObjects.AxShockwaveFlash
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.AxShockwaveFlash1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -36,6 +38,11 @@ Partial Class 欢迎界面
         Me.AxShockwaveFlash1.OcxState = CType(resources.GetObject("AxShockwaveFlash1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxShockwaveFlash1.Size = New System.Drawing.Size(545, 322)
         Me.AxShockwaveFlash1.TabIndex = 0
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 19000
         '
         '欢迎界面
         '
@@ -52,4 +59,5 @@ Partial Class 欢迎界面
 
     End Sub
     Friend WithEvents AxShockwaveFlash1 As AxShockwaveFlashObjects.AxShockwaveFlash
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class

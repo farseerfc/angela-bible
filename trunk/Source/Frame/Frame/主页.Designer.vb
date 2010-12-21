@@ -105,11 +105,11 @@ Partial Class 主页
         Me.Button5.Font = New System.Drawing.Font("幼圆", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.Gold
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(97, 291)
+        Me.Button5.Location = New System.Drawing.Point(97, 290)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(84, 92)
         Me.Button5.TabIndex = 4
-        Me.Button5.Text = "个人中心"
+        Me.Button5.Text = "圣经版本"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Button5.UseVisualStyleBackColor = False
         '
