@@ -5,6 +5,7 @@ go
 
 
 use angelabible;
+
 if exists (select 1
    from dbo.sysreferences r join dbo.sysobjects o on (o.id = r.constid and o.type = 'F')
    where r.fkeyid = object_id('"Key"') and o.name = 'FK_KEY_RELATIONS_BOOK')
@@ -52,6 +53,13 @@ if exists (select 1
    where r.fkeyid = object_id('Version') and o.name = 'FK_VERSION_RELATIONS_LANGUAGE')
 alter table Version
    drop constraint FK_VERSION_RELATIONS_LANGUAGE
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('BookGroup')
+            and   type = 'V')
+   drop view BookGroup
 go
 
 if exists (select 1
@@ -124,7 +132,7 @@ create table Book (
    book                 char(32)             not null,
    "index"              int                  not null,
    name                 char(256)            not null,
-   discribe             char(1024)           null,
+   describe             char(1024)           null,
    treatment            char(2)              not null,
    "group"              char(32)             not null,
    constraint PK_BOOK primary key nonclustered (book),
@@ -137,7 +145,7 @@ go
 /*==============================================================*/
 create table Carol (
    title                char(32)             not null,
-   discribe             char(1024)           null,
+   describe             char(1024)           null,
    lyric                char(1024)           null,
    filepath             char(1024)           null,
    constraint PK_CAROL primary key nonclustered (title)
@@ -210,7 +218,7 @@ create table Version (
    language             char(32)             not null,
    osisRef              char(32)             not null,
    title                char(256)            null,
-   discribe             char(1024)           null,
+   describe             char(1024)           null,
    constraint PK_VERSION primary key nonclustered (initial),
    constraint AK_UK_OSISREF_VERSION unique (osisRef)
 )
@@ -224,6 +232,14 @@ create table language (
    name                 char(256)            null,
    constraint PK_LANGUAGE primary key nonclustered (language)
 )
+go
+
+/*==============================================================*/
+/* View: BookGroup                                              */
+/*==============================================================*/
+create view BookGroup as
+select [group],MIN([index])as [mindex] ,MIN([treatment]) as [treatment]
+	from [book] group by [group] ;
 go
 
 alter table "Key"
