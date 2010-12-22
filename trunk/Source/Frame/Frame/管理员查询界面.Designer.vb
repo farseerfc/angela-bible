@@ -22,11 +22,27 @@ Partial Class 管理员查询界面
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(管理员查询界面))
         Me.Button2 = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
         Me.Button4 = New System.Windows.Forms.Button
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.AngelabibleDataSet = New WindowsApplication1.angelabibleDataSet
+        Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UserInfoTableAdapter = New WindowsApplication1.angelabibleDataSetTableAdapters.UserInfoTableAdapter
+        Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.GroupIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PasswordDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.txtname = New System.Windows.Forms.TextBox
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.Button5 = New System.Windows.Forms.Button
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
@@ -39,9 +55,10 @@ Partial Class 管理员查询界面
         Me.Button2.ForeColor = System.Drawing.Color.Yellow
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(469, 24)
+        Me.Button2.Location = New System.Drawing.Point(468, 138)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(150, 43)
+        Me.Button2.Size = New System.Drawing.Size(150, 42)
         Me.Button2.TabIndex = 12
         Me.Button2.Text = "删除用户"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -57,11 +74,12 @@ Partial Class 管理员查询界面
         Me.Button1.ForeColor = System.Drawing.Color.Yellow
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(469, 73)
+        Me.Button1.Location = New System.Drawing.Point(468, 192)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 43)
+        Me.Button1.Size = New System.Drawing.Size(150, 42)
         Me.Button1.TabIndex = 13
-        Me.Button1.Text = "添加用户"
+        Me.Button1.Text = "进入系统"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -75,9 +93,10 @@ Partial Class 管理员查询界面
         Me.Button3.ForeColor = System.Drawing.Color.Yellow
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(469, 122)
+        Me.Button3.Location = New System.Drawing.Point(468, 24)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(150, 43)
+        Me.Button3.Size = New System.Drawing.Size(150, 42)
         Me.Button3.TabIndex = 14
         Me.Button3.Text = "查看所有"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -93,31 +112,155 @@ Partial Class 管理员查询界面
         Me.Button4.ForeColor = System.Drawing.Color.DarkMagenta
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(469, 282)
+        Me.Button4.Location = New System.Drawing.Point(468, 366)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(150, 43)
+        Me.Button4.Size = New System.Drawing.Size(150, 42)
         Me.Button4.TabIndex = 15
-        Me.Button4.Text = "进入系统"
+        Me.Button4.Text = "退出程序"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gold
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UsernameDataGridViewTextBoxColumn, Me.GroupIdDataGridViewTextBoxColumn, Me.PasswordDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.UserInfoBindingSource
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption
+        Me.DataGridView1.Location = New System.Drawing.Point(30, 102)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 23
+        Me.DataGridView1.Size = New System.Drawing.Size(420, 294)
+        Me.DataGridView1.TabIndex = 16
+        '
+        'AngelabibleDataSet
+        '
+        Me.AngelabibleDataSet.DataSetName = "angelabibleDataSet"
+        Me.AngelabibleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UserInfoBindingSource
+        '
+        Me.UserInfoBindingSource.DataMember = "UserInfo"
+        Me.UserInfoBindingSource.DataSource = Me.AngelabibleDataSet
+        '
+        'UserInfoTableAdapter
+        '
+        Me.UserInfoTableAdapter.ClearBeforeFill = True
+        '
+        'UsernameDataGridViewTextBoxColumn
+        '
+        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "username"
+        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "username"
+        Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
+        Me.UsernameDataGridViewTextBoxColumn.Width = 90
+        '
+        'GroupIdDataGridViewTextBoxColumn
+        '
+        Me.GroupIdDataGridViewTextBoxColumn.DataPropertyName = "groupId"
+        Me.GroupIdDataGridViewTextBoxColumn.HeaderText = "groupId"
+        Me.GroupIdDataGridViewTextBoxColumn.Name = "GroupIdDataGridViewTextBoxColumn"
+        Me.GroupIdDataGridViewTextBoxColumn.Width = 60
+        '
+        'PasswordDataGridViewTextBoxColumn
+        '
+        Me.PasswordDataGridViewTextBoxColumn.DataPropertyName = "password"
+        Me.PasswordDataGridViewTextBoxColumn.HeaderText = "password"
+        Me.PasswordDataGridViewTextBoxColumn.Name = "PasswordDataGridViewTextBoxColumn"
+        '
+        'EmailDataGridViewTextBoxColumn
+        '
+        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
+        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        Me.EmailDataGridViewTextBoxColumn.Width = 120
+        '
+        'txtname
+        '
+        Me.txtname.BackColor = System.Drawing.Color.Gold
+        Me.txtname.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.txtname.Location = New System.Drawing.Point(160, 33)
+        Me.txtname.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtname.Name = "txtname"
+        Me.txtname.Size = New System.Drawing.Size(130, 26)
+        Me.txtname.TabIndex = 17
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("宋体", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Label1.Location = New System.Drawing.Point(38, 36)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(110, 16)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "输入用户名："
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Button5
+        '
+        Me.Button5.AllowDrop = True
+        Me.Button5.AutoEllipsis = True
+        Me.Button5.BackColor = System.Drawing.Color.Transparent
+        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
+        Me.Button5.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.Button5.ForeColor = System.Drawing.Color.Yellow
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(468, 78)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(6)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(150, 42)
+        Me.Button5.TabIndex = 19
+        Me.Button5.Text = "个体查询"
+        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button5.UseVisualStyleBackColor = False
         '
         '管理员查询界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(631, 421)
+        Me.ClientSize = New System.Drawing.Size(696, 420)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtname)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
+        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "管理员查询界面"
         Me.Text = "Form2"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents AngelabibleDataSet As WindowsApplication1.angelabibleDataSet
+    Friend WithEvents UserInfoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents UserInfoTableAdapter As WindowsApplication1.angelabibleDataSetTableAdapters.UserInfoTableAdapter
+    Friend WithEvents UsernameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents GroupIdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PasswordDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmailDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txtname As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents Button5 As System.Windows.Forms.Button
 End Class
