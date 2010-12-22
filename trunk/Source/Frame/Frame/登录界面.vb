@@ -27,7 +27,30 @@ Public Class 登录界面
     End Sub
 
     Private Sub log_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles log.Click
+        Dim username As String = SqlFilter(TextBox1.Text)
+        Dim password As String = SqlFilter(TextBox2.Text)
 
+        '打开数据库连接
+        Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+            sqlConnection.Open()
+            sqlConnection.CreateCommand()
+            Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+            sqlCommand.CommandText = "use angelabible; " + _
+                    "select [username] from [dbo].[UserInfo] where [username]='" + _
+                    username + "' and [password]='" + password + "';"
+
+            Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
+
+            If reader.HasRows Then
+                '登陆成功
+                MsgBox("登陆成功！", MsgBoxStyle.OkOnly)
+
+            Else
+                MsgBox("登陆失败！", MsgBoxStyle.OkOnly)
+
+            End If
+
+        End Using
     End Sub
 
     Private Sub browse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles browse.Click
@@ -48,4 +71,8 @@ Public Class 登录界面
         End If
     End Sub
 
+    Private Sub register_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles register.Click
+        fregister.Show()
+        Me.Close()
+    End Sub
 End Class

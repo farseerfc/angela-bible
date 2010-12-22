@@ -114,6 +114,7 @@ Partial Class 登录界面
         '
         'Cancel
         '
+        Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Cancel.Image = CType(resources.GetObject("Cancel.Image"), System.Drawing.Image)
         Me.Cancel.Location = New System.Drawing.Point(6, 74)
@@ -199,8 +200,10 @@ Partial Class 登录界面
         '
         '登录界面
         '
+        Me.AcceptButton = Me.log
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(479, 374)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
