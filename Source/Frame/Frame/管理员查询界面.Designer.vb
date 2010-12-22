@@ -228,7 +228,7 @@ Partial Class 管理员查询界面
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(780, 414)
+        Me.ClientSize = New System.Drawing.Size(791, 414)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtname)
@@ -239,7 +239,7 @@ Partial Class 管理员查询界面
         Me.Controls.Add(Me.Button2)
         Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "管理员查询界面"
-        Me.Text = "Form2"
+        Me.Text = "管理员查询界面"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).EndInit()

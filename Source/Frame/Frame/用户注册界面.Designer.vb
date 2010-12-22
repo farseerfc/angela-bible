@@ -196,7 +196,7 @@ Partial Class 用户注册界面
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Name = "用户注册界面"
-        Me.Text = "Form1"
+        Me.Text = "用户注册界面"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

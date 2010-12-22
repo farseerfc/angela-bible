@@ -173,7 +173,7 @@ Partial Class 经文精确搜索
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "经文精确搜索"
-        Me.Text = "Form1"
+        Me.Text = "经文精确搜索"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

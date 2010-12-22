@@ -208,7 +208,7 @@ Partial Class 登录界面
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "登录界面"
-        Me.Text = "Form1"
+        Me.Text = "登录界面"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -267,7 +267,7 @@ Partial Class 经文对比显示
         Me.Controls.Add(Me.B_ChapterUp)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Name = "经文对比显示"
-        Me.Text = "Form1"
+        Me.Text = "经文对比显示"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

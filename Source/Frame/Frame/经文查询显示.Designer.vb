@@ -199,7 +199,7 @@ Partial Class 经文查询显示
         Me.Controls.Add(Me.Combo1)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Name = "经文查询显示"
-        Me.Text = "Form2"
+        Me.Text = "经文查询显示"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

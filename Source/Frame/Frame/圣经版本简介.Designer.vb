@@ -22,19 +22,19 @@ Partial Class 圣经版本简介
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("和合本修订版")
-        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("中文", New System.Windows.Forms.TreeNode() {TreeNode14})
-        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("ESV")
-        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("KJV")
-        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("ISV")
-        Dim TreeNode19 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("BWE")
-        Dim TreeNode20 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("WEB")
-        Dim TreeNode21 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("JST")
-        Dim TreeNode22 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("英语", New System.Windows.Forms.TreeNode() {TreeNode16, TreeNode17, TreeNode18, TreeNode19, TreeNode20, TreeNode21})
-        Dim TreeNode23 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("路德圣经")
-        Dim TreeNode24 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("德语路德圣经", New System.Windows.Forms.TreeNode() {TreeNode23})
-        Dim TreeNode25 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("希伯来语原版")
-        Dim TreeNode26 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("古语", New System.Windows.Forms.TreeNode() {TreeNode25})
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("和合本修订版")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("中文", New System.Windows.Forms.TreeNode() {TreeNode1})
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("ESV")
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("KJV")
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("ISV")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("BWE")
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("WEB")
+        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("JST")
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("英语", New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode4, TreeNode5, TreeNode6, TreeNode7, TreeNode8})
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("路德圣经")
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("德语", New System.Windows.Forms.TreeNode() {TreeNode10})
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("希伯来语原版")
+        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("古语", New System.Windows.Forms.TreeNode() {TreeNode12})
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(圣经版本简介))
         Me.TreeView1 = New System.Windows.Forms.TreeView
         Me.Button4 = New System.Windows.Forms.Button
@@ -49,42 +49,42 @@ Partial Class 圣经版本简介
         Me.TreeView1.LineColor = System.Drawing.Color.White
         Me.TreeView1.Location = New System.Drawing.Point(12, 79)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode14.Name = "节点2"
-        TreeNode14.Tag = "Chi"
-        TreeNode14.Text = "和合本修订版"
-        TreeNode15.Name = "节点0"
-        TreeNode15.Text = "中文"
-        TreeNode16.Name = "节点7"
-        TreeNode16.Tag = "ESV"
-        TreeNode16.Text = "ESV"
-        TreeNode17.Name = "节点8"
-        TreeNode17.Tag = "KJV"
-        TreeNode17.Text = "KJV"
-        TreeNode18.Name = "节点9"
-        TreeNode18.Tag = "ISV"
-        TreeNode18.Text = "ISV"
-        TreeNode19.Name = "节点10"
-        TreeNode19.Tag = "BWE"
-        TreeNode19.Text = "BWE"
-        TreeNode20.Name = "节点11"
-        TreeNode20.Tag = "WEB"
-        TreeNode20.Text = "WEB"
-        TreeNode21.Name = "节点12"
-        TreeNode21.Tag = "JST"
-        TreeNode21.Text = "JST"
-        TreeNode22.Name = "节点4"
-        TreeNode22.Text = "英语"
-        TreeNode23.Name = "节点3"
-        TreeNode23.Tag = "German"
-        TreeNode23.Text = "路德圣经"
-        TreeNode24.Name = "节点1"
-        TreeNode24.Text = "德语路德圣经"
-        TreeNode25.Name = "节点15"
-        TreeNode25.Tag = "Herb"
-        TreeNode25.Text = "希伯来语原版"
-        TreeNode26.Name = "节点14"
-        TreeNode26.Text = "古语"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode15, TreeNode22, TreeNode24, TreeNode26})
+        TreeNode1.Name = "节点2"
+        TreeNode1.Tag = "Chi"
+        TreeNode1.Text = "和合本修订版"
+        TreeNode2.Name = "节点0"
+        TreeNode2.Text = "中文"
+        TreeNode3.Name = "节点7"
+        TreeNode3.Tag = "ESV"
+        TreeNode3.Text = "ESV"
+        TreeNode4.Name = "节点8"
+        TreeNode4.Tag = "KJV"
+        TreeNode4.Text = "KJV"
+        TreeNode5.Name = "节点9"
+        TreeNode5.Tag = "ISV"
+        TreeNode5.Text = "ISV"
+        TreeNode6.Name = "节点10"
+        TreeNode6.Tag = "BWE"
+        TreeNode6.Text = "BWE"
+        TreeNode7.Name = "节点11"
+        TreeNode7.Tag = "WEB"
+        TreeNode7.Text = "WEB"
+        TreeNode8.Name = "节点12"
+        TreeNode8.Tag = "JST"
+        TreeNode8.Text = "JST"
+        TreeNode9.Name = "节点4"
+        TreeNode9.Text = "英语"
+        TreeNode10.Name = "节点3"
+        TreeNode10.Tag = "German"
+        TreeNode10.Text = "路德圣经"
+        TreeNode11.Name = "节点1"
+        TreeNode11.Text = "德语"
+        TreeNode12.Name = "节点15"
+        TreeNode12.Tag = "Herb"
+        TreeNode12.Text = "希伯来语原版"
+        TreeNode13.Name = "节点14"
+        TreeNode13.Text = "古语"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode2, TreeNode9, TreeNode11, TreeNode13})
         Me.TreeView1.Size = New System.Drawing.Size(163, 274)
         Me.TreeView1.TabIndex = 0
         '
@@ -145,7 +145,7 @@ Partial Class 圣经版本简介
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TreeView1)
         Me.Name = "圣经版本简介"
-        Me.Text = "Form2"
+        Me.Text = "圣经版本简介"
         Me.ResumeLayout(False)
 
     End Sub

@@ -173,7 +173,7 @@ Partial Class 主页
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "主页"
-        Me.Text = "Form2"
+        Me.Text = "主页"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

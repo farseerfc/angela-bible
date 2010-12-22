@@ -35,7 +35,7 @@ Partial Class 赞美诗
         Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(-2, 401)
         Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
         Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(505, 47)
+        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(597, 47)
         Me.AxWindowsMediaPlayer1.TabIndex = 0
         '
         'Button2

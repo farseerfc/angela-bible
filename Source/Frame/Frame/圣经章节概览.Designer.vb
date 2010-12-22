@@ -733,7 +733,7 @@ Partial Class 圣经章节概览
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "圣经章节概览"
-        Me.Text = "Form1"
+        Me.Text = "圣经章节概览"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
