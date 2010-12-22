@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{48BB59A6-BE2E-41D0-8920-9356544A58F3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>WindowsApplication1.管理员查询界面</StartupObject>
+    <StartupObject>WindowsApplication1.圣经版本简介</StartupObject>
     <RootNamespace>WindowsApplication1</RootNamespace>
     <AssemblyName>WindowsApplication1</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -90,6 +90,24 @@
     <Compile Include="angelabibleDataSet.vb">
       <DependentUpon>angelabibleDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="意见反馈.Designer.vb">
+      <DependentUpon>意见反馈.vb</DependentUpon>
+    </Compile>
+    <Compile Include="意见反馈.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="帮助.Designer.vb">
+      <DependentUpon>帮助.vb</DependentUpon>
+    </Compile>
+    <Compile Include="帮助.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="圣经版本简介.Designer.vb">
+      <DependentUpon>圣经版本简介.vb</DependentUpon>
+    </Compile>
+    <Compile Include="圣经版本简介.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="管理员查询界面.Designer.vb">
       <DependentUpon>管理员查询界面.vb</DependentUpon>
     </Compile>
@@ -171,6 +189,12 @@
   <ItemGroup>
     <EmbeddedResource Include="主页.resx">
       <DependentUpon>主页.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="圣经版本简介.resx">
+      <DependentUpon>圣经版本简介.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="帮助.resx">
+      <DependentUpon>帮助.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="用户注册界面.resx">
       <DependentUpon>用户注册界面.vb</DependentUpon>
