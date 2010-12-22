@@ -56,25 +56,33 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim username As String = TextBox1.Text
-        Dim password1 As String = TextBox3.Text
-        Dim password2 As String = TextBox4.Text
-        Dim email As String = TextBox2.Text
+        Dim username As String = SqlFilter(TextBox1.Text)
+        Dim password1 As String = SqlFilter(TextBox3.Text)
+        Dim password2 As String = SqlFilter(TextBox4.Text)
+        Dim email As String = SqlFilter(TextBox2.Text)
         Dim groupID As Integer = ComboBox1.SelectedIndex + 1 ' 管理员 groupId 为0，普通用户从1开始算
 
+        '检查用户输入是否合法
+        If groupID = 0 Then
+            MsgBox("请选择您的信仰状况！", MsgBoxStyle.OkOnly)
+            Return
+        End If
 
         If Not password1.Equals(password2) Then
             MsgBox("两次输入的密码不一致，请重新输入！",MsgBoxStyle.OkOnly)
             Return
         End If
 
+        If username.Trim().Length < 6 Then
+            MsgBox("用户名太短，请重新输入！", MsgBoxStyle.OkOnly)
+            Return
+        End If
 
-        Dim sqlCommand As SqlClient.SqlCommand
-
+        '打开数据库连接
         Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
             sqlConnection.Open()
             sqlConnection.CreateCommand()
-            sqlCommand = sqlConnection.CreateCommand
+            Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
             sqlCommand.CommandText = "use angelabible; " + _
                     "insert into [UserInfo]([groupId],[username],[password],[email]) " + _
                     "select " & groupID & ",'" + username + "','" + password1 + "','" + email + "' " + _
@@ -94,7 +102,7 @@
                 fstart.Show()
 
             End If
-            
+
         End Using
     End Sub
 

@@ -15,12 +15,28 @@
 
     Public strConnect As String = "server=localhost;user id=angela;password=angela;initial catalog=angelabible;"
 
-
+    ''' <summary>
+    ''' 主程序入口点
+    ''' </summary>
+    ''' <remarks></remarks>
     Public Sub Main()
+        '开启WinXP之后就有的视觉特效
         Application.EnableVisualStyles()
-        'GetDataSet()
-        Application.Run(fregister)
+        '选择一个窗口作为主窗口
+        ' TODO: 修改这句代码，完善窗口生命期管理
+        Application.Run(fstart)
     End Sub
+
+
+    ''' <summary>
+    ''' 返回即将嵌入sql的字符串，转义掉“'”，简单地防止sql注入
+    ''' </summary>
+    ''' <param name="input"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function SqlFilter(ByVal input As String) As String
+        Return input.Replace("'", "''").Trim()
+    End Function
 
     '测试用
     '
