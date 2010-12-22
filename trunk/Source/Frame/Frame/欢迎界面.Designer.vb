@@ -53,6 +53,7 @@ Partial Class 欢迎界面
         Me.Controls.Add(Me.AxShockwaveFlash1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "欢迎界面"
+        Me.Opacity = 0.7
         Me.Text = "Form1"
         CType(Me.AxShockwaveFlash1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

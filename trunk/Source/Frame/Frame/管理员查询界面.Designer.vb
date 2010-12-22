@@ -29,20 +29,20 @@ Partial Class 管理员查询界面
         Me.Button3 = New System.Windows.Forms.Button
         Me.Button4 = New System.Windows.Forms.Button
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
-        Me.AngelabibleDataSet = New WindowsApplication1.angelabibleDataSet
-        Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.UserInfoTableAdapter = New WindowsApplication1.angelabibleDataSetTableAdapters.UserInfoTableAdapter
         Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.GroupIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.PasswordDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AngelabibleDataSet = New WindowsApplication1.angelabibleDataSet
+        Me.UserInfoTableAdapter = New WindowsApplication1.angelabibleDataSetTableAdapters.UserInfoTableAdapter
         Me.txtname = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.Button5 = New System.Windows.Forms.Button
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
@@ -56,7 +56,7 @@ Partial Class 管理员查询界面
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(468, 138)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(6)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(150, 42)
         Me.Button2.TabIndex = 12
@@ -75,7 +75,7 @@ Partial Class 管理员查询界面
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(468, 192)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(6)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(150, 42)
         Me.Button1.TabIndex = 13
@@ -94,7 +94,7 @@ Partial Class 管理员查询界面
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.Location = New System.Drawing.Point(468, 24)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(6)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(150, 42)
         Me.Button3.TabIndex = 14
@@ -112,8 +112,8 @@ Partial Class 管理员查询界面
         Me.Button4.ForeColor = System.Drawing.Color.DarkMagenta
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(468, 366)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Button4.Location = New System.Drawing.Point(468, 246)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(6)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(150, 42)
         Me.Button4.TabIndex = 15
@@ -130,25 +130,11 @@ Partial Class 管理员查询界面
         Me.DataGridView1.DataSource = Me.UserInfoBindingSource
         Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataGridView1.Location = New System.Drawing.Point(30, 102)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(6)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 23
         Me.DataGridView1.Size = New System.Drawing.Size(420, 294)
         Me.DataGridView1.TabIndex = 16
-        '
-        'AngelabibleDataSet
-        '
-        Me.AngelabibleDataSet.DataSetName = "angelabibleDataSet"
-        Me.AngelabibleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UserInfoBindingSource
-        '
-        Me.UserInfoBindingSource.DataMember = "UserInfo"
-        Me.UserInfoBindingSource.DataSource = Me.AngelabibleDataSet
-        '
-        'UserInfoTableAdapter
-        '
-        Me.UserInfoTableAdapter.ClearBeforeFill = True
         '
         'UsernameDataGridViewTextBoxColumn
         '
@@ -177,12 +163,26 @@ Partial Class 管理员查询界面
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
         Me.EmailDataGridViewTextBoxColumn.Width = 120
         '
+        'UserInfoBindingSource
+        '
+        Me.UserInfoBindingSource.DataMember = "UserInfo"
+        Me.UserInfoBindingSource.DataSource = Me.AngelabibleDataSet
+        '
+        'AngelabibleDataSet
+        '
+        Me.AngelabibleDataSet.DataSetName = "angelabibleDataSet"
+        Me.AngelabibleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UserInfoTableAdapter
+        '
+        Me.UserInfoTableAdapter.ClearBeforeFill = True
+        '
         'txtname
         '
         Me.txtname.BackColor = System.Drawing.Color.Gold
         Me.txtname.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtname.Location = New System.Drawing.Point(160, 33)
-        Me.txtname.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtname.Margin = New System.Windows.Forms.Padding(6)
         Me.txtname.Name = "txtname"
         Me.txtname.Size = New System.Drawing.Size(130, 26)
         Me.txtname.TabIndex = 17
@@ -228,7 +228,7 @@ Partial Class 管理员查询界面
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(696, 420)
+        Me.ClientSize = New System.Drawing.Size(780, 414)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtname)
@@ -237,12 +237,12 @@ Partial Class 管理员查询界面
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "管理员查询界面"
         Me.Text = "Form2"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

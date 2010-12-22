@@ -6,8 +6,7 @@ Public Class 管理员查询界面
     Dim groupID As Integer
     Dim password As String
     Dim email As String
-    Dim odb As New db.db
-
+  
 
 
     Private Sub 管理学查询界面_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -26,16 +25,15 @@ Public Class 管理员查询界面
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim sqlsel As String
-        Dim strdel As String
+        'Dim sqlsel As String
+        'Dim strdel As String
         If MsgBox("删除不能恢复，确认删除吗？", MsgBoxStyle.Question + MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
             Try
                 Dim username As String = "delete from UserInfo where Username = '" & Trim(txtname.Text) & "'"
-                Dim idel As Integer = odb.updatedatabase(strdel)
-                If idel = 1 Then
-                    DataGridView1.DataSource = odb.createdatatable(sqlsel)
-                    MsgBox("删除成功！", MsgBoxStyle.Information)
-                End If
+                'If idel = 1 Then
+                'DataGridView1.DataSource = odb.createdatatable(sqlsel)
+                'MsgBox("删除成功！", MsgBoxStyle.Information)
+                ' End If
             Catch ex As Exception
                 MsgBox(ex.Message)
                 Exit Sub

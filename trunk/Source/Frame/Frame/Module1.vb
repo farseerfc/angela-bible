@@ -9,6 +9,9 @@
     Public fhome As New 主页
     Public fwelcome As New 欢迎界面
     Public fadmin As New 管理员查询界面
+    Public fversion As New 圣经版本简介
+    Public fhelp As New 帮助
+    Public fmessage As New 意见反馈
 
     Public strConnect As String = "server=localhost;user id=angela;password=angela;initial catalog=angelabible;"
 
