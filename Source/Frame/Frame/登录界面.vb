@@ -44,6 +44,8 @@ Public Class 登录界面
             If reader.HasRows Then
                 '登陆成功
                 MsgBox("登陆成功！", MsgBoxStyle.OkOnly)
+                Me.Hide()
+                fhome.Show()
 
             Else
                 MsgBox("登陆失败！", MsgBoxStyle.OkOnly)

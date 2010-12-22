@@ -24,8 +24,17 @@
         Application.EnableVisualStyles()
         '选择一个窗口作为主窗口
         ' TODO: 修改这句代码，完善窗口生命期管理
-        Application.Run(fstart)
+        Application.Run(fbrowse)
     End Sub
+
+    Public Structure Book
+        Public book As String
+        Public name As String
+        Public index As Integer
+        Public treatment As String
+        Public group As String
+        Public describe As String
+    End Structure
 
 
     ''' <summary>
