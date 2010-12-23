@@ -49,6 +49,7 @@ Partial Class 经文查询显示
         'Combo1
         '
         Me.Combo1.BackColor = System.Drawing.Color.SkyBlue
+        Me.Combo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Combo1.Font = New System.Drawing.Font("华文行楷", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Combo1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Combo1.FormattingEnabled = True
@@ -57,7 +58,6 @@ Partial Class 经文查询显示
         Me.Combo1.Name = "Combo1"
         Me.Combo1.Size = New System.Drawing.Size(180, 29)
         Me.Combo1.TabIndex = 20
-        Me.Combo1.Text = "请选择书卷"
         '
         'Label2
         '
