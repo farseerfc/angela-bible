@@ -351,4 +351,8 @@ Public Class 经文精确搜索
         Me.Hide()
         fhome.Show()
     End Sub
+
+    Private Sub Combo2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo2.SelectedIndexChanged
+
+    End Sub
 End Class

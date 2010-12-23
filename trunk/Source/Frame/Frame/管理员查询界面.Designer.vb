@@ -55,7 +55,7 @@ Partial Class 管理员查询界面
         Me.Button2.ForeColor = System.Drawing.Color.Yellow
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(468, 138)
+        Me.Button2.Location = New System.Drawing.Point(468, 300)
         Me.Button2.Margin = New System.Windows.Forms.Padding(6)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(150, 42)
@@ -74,7 +74,7 @@ Partial Class 管理员查询界面
         Me.Button1.ForeColor = System.Drawing.Color.Yellow
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(468, 192)
+        Me.Button1.Location = New System.Drawing.Point(468, 354)
         Me.Button1.Margin = New System.Windows.Forms.Padding(6)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(150, 42)
@@ -93,7 +93,7 @@ Partial Class 管理员查询界面
         Me.Button3.ForeColor = System.Drawing.Color.Yellow
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(468, 24)
+        Me.Button3.Location = New System.Drawing.Point(468, 192)
         Me.Button3.Margin = New System.Windows.Forms.Padding(6)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(150, 42)
@@ -112,7 +112,7 @@ Partial Class 管理员查询界面
         Me.Button4.ForeColor = System.Drawing.Color.DarkMagenta
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(468, 246)
+        Me.Button4.Location = New System.Drawing.Point(639, 354)
         Me.Button4.Margin = New System.Windows.Forms.Padding(6)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(150, 42)
@@ -214,7 +214,7 @@ Partial Class 管理员查询界面
         Me.Button5.ForeColor = System.Drawing.Color.Yellow
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(468, 78)
+        Me.Button5.Location = New System.Drawing.Point(468, 246)
         Me.Button5.Margin = New System.Windows.Forms.Padding(6)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(150, 42)

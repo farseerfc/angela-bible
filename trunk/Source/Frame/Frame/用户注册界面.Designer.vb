@@ -88,7 +88,7 @@ Partial Class 用户注册界面
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(346, 353)
+        Me.Button1.Location = New System.Drawing.Point(346, 379)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(112, 59)
         Me.Button1.TabIndex = 10
@@ -121,7 +121,7 @@ Partial Class 用户注册界面
         Me.Button3.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(464, 353)
+        Me.Button3.Location = New System.Drawing.Point(464, 379)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(112, 59)
         Me.Button3.TabIndex = 17
