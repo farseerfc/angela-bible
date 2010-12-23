@@ -8,34 +8,7 @@ Public Class 圣经章节概览
     Dim myadapter As SqlClient.SqlDataAdapter = New SqlClient.SqlDataAdapter("select * from casepavilion", myconn)
     Dim mydataset As New Data.DataSet
 
-    Private Function getAllBooks() As List(Of Book)
-        Dim result As New List(Of Book)
-
-        Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
-            sqlConnection.Open()
-            sqlConnection.CreateCommand()
-            Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
-            sqlCommand.CommandText = "use angelabible; " + _
-                    "select [book],[name],[index],[treatment],[group],[describe] from [book] order by [index];"
-
-            Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
-            While reader.Read()
-                Dim b As New Book
-                b.book = reader.GetString(0).Trim()
-                b.name = reader.GetString(1).Trim()
-                b.index = reader.GetInt32(2)
-                b.treatment = reader.GetString(3).Trim()
-                b.group = reader.GetString(4).Trim()
-                b.describe = reader.GetString(5).Trim()
-
-                result.Add(b)
-
-            End While
-
-        End Using
-
-        Return result
-    End Function
+   
 
     ''' <summary>
     ''' 从BookGroup视图中按顺序选出book组
