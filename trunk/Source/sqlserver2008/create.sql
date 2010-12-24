@@ -6,6 +6,7 @@ go
 
 use angelabible;
 
+
 if exists (select 1
    from dbo.sysreferences r join dbo.sysobjects o on (o.id = r.constid and o.type = 'F')
    where r.fkeyid = object_id('"Key"') and o.name = 'FK_KEY_RELATIONS_BOOK')
@@ -60,6 +61,13 @@ if exists (select 1
            where  id = object_id('BookGroup')
             and   type = 'V')
    drop view BookGroup
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('BookVersion')
+            and   type = 'V')
+   drop view BookVersion
 go
 
 if exists (select 1
@@ -240,6 +248,16 @@ go
 create view BookGroup as
 select [group],MIN([index])as [mindex] ,MIN([treatment]) as [treatment]
 	from [book] group by [group] ;
+go
+
+/*==============================================================*/
+/* View: BookVersion                                            */
+/*==============================================================*/
+create view BookVersion as
+select [Key].[book]as book ,[Text].[initial] as initial from (
+	[Text] join [Version] on [Version].initial=[Text].initial)
+	 join [Key] on [Key].osisID=[Text].osisId 
+	 group by [Key].[book],[Text].[initial]
 go
 
 alter table "Key"

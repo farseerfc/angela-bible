@@ -69,6 +69,7 @@ Module Module1
 
             Return result
         End Function
+
     End Class
 
 
@@ -91,8 +92,72 @@ Module Module1
         Public Overrides Function ToString() As String
             Return Me.title
         End Function
+
+        Public Shared Function GetAllVersions() As List(Of Version)
+            Dim result As New List(Of Version)
+
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select [initial],[language],[osisRef],[title],[describe]  from [Version];"
+
+                Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
+                While reader.Read()
+                    Dim ver As New Version
+                    ver.initial = reader.GetString(0).Trim()
+                    ver.language = reader.GetString(1).Trim()
+                    ver.osisRef = reader.GetString(2).Trim()
+                    ver.title = reader.GetString(3).Trim()
+                    ver.describe = reader.GetString(4)
+                    result.Add(ver)
+                End While
+
+            End Using
+
+            Return result
+        End Function
     End Class
 
+
+    Public Class BookVersion
+        Public book As String
+        Public initial As String
+
+        Public Shared Function GetBooksByVersion(ByVal initial As String) As List(Of Book)
+            Dim result As New List(Of Book)
+
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select [Book].[book],[name],[index],[treatment],[group],[describe] " + _
+                        "    from Book join BookVersion on Book.book = bookVersion.book " + _
+                        "    where initial ='" + initial + "' order by [index];"
+
+                Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
+                While reader.Read()
+                    Dim b As New Book
+                    b.book = reader.GetString(0).Trim()
+                    b.name = reader.GetString(1).Trim()
+                    b.index = reader.GetInt32(2)
+                    b.treatment = reader.GetString(3).Trim()
+                    b.group = reader.GetString(4).Trim()
+                    b.describe = reader.GetString(5).Trim()
+
+                    result.Add(b)
+
+                End While
+
+            End Using
+
+            Return result
+
+        End Function
+
+    End Class
 
     ''' <summary>
     ''' 返回即将嵌入sql的字符串，转义掉“'”，简单地防止sql注入

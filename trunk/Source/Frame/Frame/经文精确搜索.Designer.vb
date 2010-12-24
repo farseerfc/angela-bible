@@ -24,6 +24,8 @@ Partial Class 经文精确搜索
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(经文精确搜索))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.Label3 = New System.Windows.Forms.Label
         Me.Combo2 = New System.Windows.Forms.ComboBox
         Me.Combo3 = New System.Windows.Forms.ComboBox
         Me.Button1 = New System.Windows.Forms.Button
@@ -33,8 +35,6 @@ Partial Class 经文精确搜索
         Me.Label1 = New System.Windows.Forms.Label
         Me.Button2 = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
-        Me.Label3 = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,6 +58,28 @@ Partial Class 经文精确搜索
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "经文精确定位查询"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.ComboBox1.Location = New System.Drawing.Point(219, 194)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(51, 24)
+        Me.ComboBox1.TabIndex = 11
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Black
+        Me.Label3.Font = New System.Drawing.Font("华文行楷", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Yellow
+        Me.Label3.Location = New System.Drawing.Point(95, 199)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(85, 19)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "所在节号"
         '
         'Combo2
         '
@@ -169,28 +191,6 @@ Partial Class 经文精确搜索
         Me.Button3.Text = "帮助"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("隶书", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.ComboBox1.Location = New System.Drawing.Point(219, 194)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(51, 24)
-        Me.ComboBox1.TabIndex = 11
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Black
-        Me.Label3.Font = New System.Drawing.Font("华文行楷", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Yellow
-        Me.Label3.Location = New System.Drawing.Point(95, 199)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 19)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "所在节号"
         '
         '经文精确搜索
         '

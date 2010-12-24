@@ -1156,8 +1156,8 @@ NAMA 0 Arial,8,N</a:FontList>
 <o:RelationshipSymbol Id="o25">
 <a:CreationDate>1293016427</a:CreationDate>
 <a:ModificationDate>1293035002</a:ModificationDate>
-<a:Rect>((-20995,11775), (-14995,26220))</a:Rect>
-<a:ListOfPoints>((-17986,26220),(-17982,17101),(-18008,17101),(-18008,11775))</a:ListOfPoints>
+<a:Rect>((-20997,11775), (-14997,26220))</a:Rect>
+<a:ListOfPoints>((-17986,26220),(-17986,17101),(-18008,17101),(-18008,11775))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>55</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
