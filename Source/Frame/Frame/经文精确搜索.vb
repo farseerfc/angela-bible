@@ -13,10 +13,11 @@ Public Class 经文精确搜索
 
         '把上面的静态列表清除掉
         Combo1.Items.Clear()
-
-        
         Combo1.Items.AddRange(Book.GetAllBooks().ToArray())
 
+
+        Combo3.Items.Clear()
+        Combo3.Items.AddRange(Version.GetAllVersions().ToArray())
 
     End Sub
 
@@ -353,6 +354,41 @@ Public Class 经文精确搜索
     End Sub
 
     Private Sub Combo2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo2.SelectedIndexChanged
+        Dim selectedBook As Book = DirectCast(Combo1.SelectedItem, Book)
+        Dim selectedChapter As String = Combo2.SelectedItem
 
+        If selectedBook Is Nothing Then
+            MsgBox("请选择一本书！")
+            Return
+        End If
+
+
+        ComboBox1.Items.Clear()
+
+        Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+            sqlConnection.Open()
+            sqlConnection.CreateCommand()
+            Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+            sqlCommand.CommandText = "use angelabible; " + _
+                    "select Max(verse) from [Key] where book='" + selectedBook.book + _
+                    "' and chapter=" + selectedChapter + " ;"
+
+            Dim result As Object = sqlCommand.ExecuteScalar
+
+            Dim count As Integer = CInt(result)
+
+            Dim i As Integer
+            For i = 1 To count
+                ComboBox1.Items.Add(i.ToString())
+            Next
+
+        End Using
+    End Sub
+
+    Private Sub Combo3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo3.SelectedIndexChanged
+        Dim version As Version = DirectCast(Combo3.SelectedItem, Version)
+
+        Combo1.Items.Clear()
+        Combo1.Items.AddRange(BookVersion.GetBooksByVersion(version.initial).ToArray)
     End Sub
 End Class
