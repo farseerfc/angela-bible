@@ -333,7 +333,15 @@ Public Class 经文精确搜索
         End If
 
 
-        Dim lastSelect As Integer = CInt(Combo2.SelectedItem)
+        
+        Dim lastSelect As Integer
+        If Combo2.SelectedItem Is Nothing Then
+            lastSelect = 0
+        Else
+            lastSelect = CInt(Combo2.SelectedItem)
+        End If
+
+
         Combo2.Items.Clear()
 
         Dim count As Integer = Key.GetChapterCount(selectedBook.book, selectedVersion.initial)
@@ -371,7 +379,13 @@ Public Class 经文精确搜索
 
 
 
-        Dim lastSelect As Integer = CInt(ComboBox1.SelectedItem)
+        Dim lastSelect As Integer
+        If ComboBox1.SelectedItem Is Nothing Then
+            lastSelect = 0
+        Else
+            lastSelect = CInt(ComboBox1.SelectedItem)
+        End If
+
         ComboBox1.Items.Clear()
 
         Dim count As Integer = Key.GetVerseCount(selectedBook.book, selectedChapter, selectedVersion.initial)
@@ -390,7 +404,12 @@ Public Class 经文精确搜索
     Private Sub Combo3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo3.SelectedIndexChanged
         Dim ver As Version = DirectCast(Combo3.SelectedItem, Version)
 
-        Dim lastSelect As String = DirectCast(Combo1.SelectedItem, Book).book
+        Dim lastSelect As String
+        If Combo1.SelectedItem Is Nothing Then
+            lastSelect = ""
+        Else
+            lastSelect = DirectCast(Combo1.SelectedItem, Book).book
+        End If
 
         Combo1.Items.Clear()
         Combo1.Items.AddRange(BookVersion.GetBooksByVersion(ver.initial).ToArray)
