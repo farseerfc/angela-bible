@@ -26,7 +26,7 @@ Module Module1
         Application.EnableVisualStyles()
         '选择一个窗口作为主窗口
         ' TODO: 修改这句代码，完善窗口生命期管理
-        Application.Run(fsearch)
+        Application.Run(freader)
     End Sub
 
     Public Class Book
@@ -79,6 +79,36 @@ Module Module1
         Public chapter As Integer
         Public verse As Integer
 
+        Public Shared Function GetVerseCount(ByVal book As String, ByVal chapter As Integer, ByVal initial As String) As Integer
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select Max(verse) from (" + _
+                            "[Text] join [Key] on [Text].osisID=[Key].osisID)" + _
+                                "join [Version] on [Version].initial=[Text].initial " + _
+                            "where book='" + book + _
+                        "' and chapter=" & chapter & _
+                        " and [Text].initial='" + initial + "';"
+                Return CInt(sqlCommand.ExecuteScalar())
+            End Using
+        End Function
+
+        Public Shared Function GetChapterCount(ByVal book As String, ByVal initial As String) As String
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select Max(chapter) from (" + _
+                            "[Text] join [Key] on [Text].osisID=[Key].osisID)" + _
+                                "join [Version] on [Version].initial=[Text].initial " + _
+                            "where book='" + book + _
+                        "' and [Text].initial='" + initial + "';"
+                Return CInt(sqlCommand.ExecuteScalar())
+            End Using
+        End Function
     End Class
 
 

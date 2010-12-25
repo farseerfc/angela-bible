@@ -321,31 +321,32 @@ Public Class 经文精确搜索
         '以下根据选择的福音书，从数据库加载对应的章节数量
 
         Dim selectedBook As Book = DirectCast(Combo1.SelectedItem, Book)
+        Dim selectedVersion As Version = DirectCast(Combo3.SelectedItem, Version)
         If selectedBook Is Nothing Then
             MsgBox("请选择一本书！")
             Return
         End If
 
+        If selectedVersion Is Nothing Then
+            MsgBox("请选择一个语言版本！")
+            Return
+        End If
 
+
+        Dim lastSelect As Integer = CInt(Combo2.SelectedItem)
         Combo2.Items.Clear()
 
-        Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
-            sqlConnection.Open()
-            sqlConnection.CreateCommand()
-            Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
-            sqlCommand.CommandText = "use angelabible; " + _
-                    "select Max(chapter) from [Key] where book='" + selectedBook.book + "' ;"
+        Dim count As Integer = Key.GetChapterCount(selectedBook.book, selectedVersion.initial)
 
-            Dim result As Object = sqlCommand.ExecuteScalar
+        Dim index As Integer
+        For index = 1 To count
+            Combo2.Items.Add(index.ToString())
+        Next
 
-            Dim count As Integer = CInt(result)
+        If lastSelect <= count Then
+            Combo2.SelectedIndex = lastSelect - 1
+        End If
 
-            Dim i As Integer
-            For i = 1 To count
-                Combo2.Items.Add(i.ToString())
-            Next
-
-        End Using
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -356,39 +357,52 @@ Public Class 经文精确搜索
     Private Sub Combo2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo2.SelectedIndexChanged
         Dim selectedBook As Book = DirectCast(Combo1.SelectedItem, Book)
         Dim selectedChapter As String = Combo2.SelectedItem
+        Dim selectedVersion As Version = DirectCast(Combo3.SelectedItem, Version)
 
         If selectedBook Is Nothing Then
             MsgBox("请选择一本书！")
             Return
         End If
 
+        If selectedVersion Is Nothing Then
+            MsgBox("请选择一个语言版本！")
+            Return
+        End If
 
+
+
+        Dim lastSelect As Integer = CInt(ComboBox1.SelectedItem)
         ComboBox1.Items.Clear()
 
-        Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
-            sqlConnection.Open()
-            sqlConnection.CreateCommand()
-            Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
-            sqlCommand.CommandText = "use angelabible; " + _
-                    "select Max(verse) from [Key] where book='" + selectedBook.book + _
-                    "' and chapter=" + selectedChapter + " ;"
+        Dim count As Integer = Key.GetVerseCount(selectedBook.book, selectedChapter, selectedVersion.initial)
 
-            Dim result As Object = sqlCommand.ExecuteScalar
+        Dim i As Integer
+        For i = 1 To count
+            ComboBox1.Items.Add(i.ToString())
+        Next
 
-            Dim count As Integer = CInt(result)
+        If lastSelect <= count Then
+            ComboBox1.SelectedIndex = lastSelect - 1
+        End If
 
-            Dim i As Integer
-            For i = 1 To count
-                ComboBox1.Items.Add(i.ToString())
-            Next
-
-        End Using
     End Sub
 
     Private Sub Combo3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo3.SelectedIndexChanged
-        Dim version As Version = DirectCast(Combo3.SelectedItem, Version)
+        Dim ver As Version = DirectCast(Combo3.SelectedItem, Version)
+
+        Dim lastSelect As String = DirectCast(Combo1.SelectedItem, Book).book
 
         Combo1.Items.Clear()
-        Combo1.Items.AddRange(BookVersion.GetBooksByVersion(version.initial).ToArray)
+        Combo1.Items.AddRange(BookVersion.GetBooksByVersion(ver.initial).ToArray)
+
+        For i As Integer = 0 To Combo1.Items.Count - 1
+            If DirectCast(Combo1.Items.Item(i), Book).book.Equals(lastSelect) Then
+                Combo1.SelectedIndex = i
+            End If
+        Next
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
     End Sub
 End Class
