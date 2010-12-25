@@ -6,7 +6,6 @@ go
 
 use angelabible;
 
-
 if exists (select 1
    from dbo.sysreferences r join dbo.sysobjects o on (o.id = r.constid and o.type = 'F')
    where r.fkeyid = object_id('"Key"') and o.name = 'FK_KEY_RELATIONS_BOOK')
@@ -26,6 +25,13 @@ if exists (select 1
    where r.fkeyid = object_id('Note') and o.name = 'FK_NOTE_RELATIONS_USERINFO')
 alter table Note
    drop constraint FK_NOTE_RELATIONS_USERINFO
+go
+
+if exists (select 1
+   from dbo.sysreferences r join dbo.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('Suggestion') and o.name = 'FK_SUGGESTI_RELATIONS_USERINFO')
+alter table Suggestion
+   drop constraint FK_SUGGESTI_RELATIONS_USERINFO
 go
 
 if exists (select 1
@@ -96,6 +102,22 @@ if exists (select 1
            where  id = object_id('Note')
             and   type = 'U')
    drop table Note
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('Suggestion')
+            and   name  = 'Relationship_8_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index Suggestion.Relationship_8_FK
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('Suggestion')
+            and   type = 'U')
+   drop table Suggestion
 go
 
 if exists (select 1
@@ -186,6 +208,25 @@ create table Note (
 go
 
 /*==============================================================*/
+/* Table: Suggestion                                            */
+/*==============================================================*/
+create table Suggestion (
+   username             char(32)             not null,
+   timestamp            datetime             not null,
+   content              char(1024)           null,
+   constraint PK_SUGGESTION primary key nonclustered (username, timestamp)
+)
+go
+
+/*==============================================================*/
+/* Index: Relationship_8_FK                                     */
+/*==============================================================*/
+create index Relationship_8_FK on Suggestion (
+username ASC
+)
+go
+
+/*==============================================================*/
 /* Table: Text                                                  */
 /*==============================================================*/
 create table Text (
@@ -272,6 +313,11 @@ go
 
 alter table Note
    add constraint FK_NOTE_RELATIONS_USERINFO foreign key (username)
+      references UserInfo (username)
+go
+
+alter table Suggestion
+   add constraint FK_SUGGESTI_RELATIONS_USERINFO foreign key (username)
       references UserInfo (username)
 go
 
