@@ -41,6 +41,10 @@
         Dim ver As Version = DirectCast(ComboBox1.SelectedItem, Version)
         Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
 
+        If ver Is Nothing Or book Is Nothing Then
+            Return
+        End If
+
         Dim nrChapter As Integer = CInt(Key.GetChapterCount(book.book, ver.initial))
         nudChapter.Maximum = nrChapter
         nudChapter.Minimum = 1
@@ -52,6 +56,10 @@
         Dim ver As Version = DirectCast(ComboBox1.SelectedItem, Version)
         Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
         Dim chapter As Integer = CInt(nudChapter.Value)
+
+        If ver Is Nothing Or book Is Nothing Or chapter = 0 Then
+            Return
+        End If
 
         Dim nrVerse As Integer = Key.GetVerseCount(book.book, chapter, ver.initial)
         nudVerse.Maximum = nrVerse

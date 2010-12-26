@@ -4,8 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 
 import org.crosswire.jsword.book.Book;
 import org.crosswire.jsword.book.BookData;
@@ -31,9 +33,10 @@ public class Exporter {
 	 * @throws NoSuchKeyException
 	 * @throws BookException
 	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static void main(String[] args) throws NoSuchKeyException,
-			BookException, FileNotFoundException {
+			BookException, FileNotFoundException, UnsupportedEncodingException {
 		List<Book> lbmds = Books.installed().getBooks(
 				BookFilters.getOnlyBibles());
 
@@ -47,21 +50,29 @@ public class Exporter {
 	}
 
 	private static void exportBook(Book book) throws BookException,
-			FileNotFoundException {
+			FileNotFoundException, UnsupportedEncodingException {
 
 		String title = book.getName();
 		String initial = book.getInitials();
 		String language = book.getLanguage().getName();
 		String osisRef = book.getOsisID();
+		
+		Locale locale= Locale.ENGLISH ;
+		if(language.equals("Hebrew"))
+			locale= new Locale("he");
+		else if (language.equals("Chinese"))
+			locale= Locale.CHINESE;
+			
 
 		PrintStream out = new PrintStream(new FileOutputStream("" + initial
-				+ ".sql"));
-		out.printf("/*insert book %s into Version table*/\n",initial);
-		out.printf("update [dbo].[Version] set osisRef='%s', title='%s', language='%s' where initial='%s';\n",osisRef,title,language,initial);
-		out.printf("if @@ROWCOUNT=0\n\t");
-		out.printf("insert into [dbo].[Version]"
-				+ "(osisRef,title,initial,language) "
-				+ "values('%s','%s','%s','%s');\n\n", osisRef, title, initial,
+				+ ".sql"),true,"UNICODE");
+		out.printf(locale,"use angelabible;\n");
+		out.printf(locale,"/*insert book %s into Version table*/\n",initial);
+		out.printf(locale,"update [dbo].[Version] set osisRef=N'%s', title=N'%s', language=N'%s' where initial=N'%s';\n",osisRef,title,language,initial);
+		out.printf(locale,"if @@ROWCOUNT=0\n\t");
+		out.printf(locale,"insert into [dbo].[Version]"
+				+ "(osisRef,title,initial,language,describe) "
+				+ "values(N'%s',N'%s',N'%s',N'%s',N'');\n\n", osisRef, title, initial,
 				language);
 
 		Key allKeys = book.getGlobalKeyList();
@@ -70,7 +81,7 @@ public class Exporter {
 		int percent=0,report=100;
 		for (int i = 0; i < cardinality; ++i) {
 			Key current = allKeys.get(i);
-			printKey(out,book,current);
+			printKey(out,locale,book,current);
 			
 			if(i*report/cardinality > percent){
 				percent =i*report/cardinality;
@@ -78,34 +89,35 @@ public class Exporter {
 			}
 		}
 
+		out.close();
 		// printKey(out, book, allKeys.get(0));
 		// printKey(out, book, allKeys.get(1));
 	}
 
-	private static void printKey(PrintStream out, Book book, Key key)
+	private static void printKey(PrintStream out,Locale locale, Book book, Key key)
 			throws BookException {
 		String osisId = key.getOsisID();
-		printOsisId(out, osisId);
+		printOsisId(out,locale, osisId);
 		String initial = book.getInitials();
 		String text = getText(new BookData(book, key));
-		out.printf("/*insert %s:%s:'%s' into Text table*/\n",initial,osisId,text);
-		out.printf("update [dbo].[Text] set text='%s' where initial='%s' and osisId='%s';\n",text,initial,osisId);
-		out.printf("if @@ROWCOUNT=0\n\tinsert into [dbo].[Text]" + "(initial,osisId,text) "
-				+ "values('%s','%s','%s');\ngo\n\n", initial, osisId, text);
+		out.printf(locale,"/*insert %s:%s:N'%s' into Text table*/\n",initial,osisId,text);
+		out.printf(locale,"update [dbo].[Text] set text=N'%s' where initial=N'%s' and osisId=N'%s';\n",text,initial,osisId);
+		out.printf(locale,"if @@ROWCOUNT=0\n\tinsert into [dbo].[Text]" + "(initial,osisId,text) "
+				+ "values(N'%s',N'%s',N'%s');\ngo\n\n", initial, osisId, text);
 	}
 
-	private static void printOsisId(PrintStream out, String osisId) {
+	private static void printOsisId(PrintStream out,Locale locale, String osisId) {
 		String[] lst = osisId.split("\\.");
 		String book = lst[0];
 		int chapter = Integer.parseInt(lst[1]);
 		int verse = Integer.parseInt(lst[2]);
-		out.printf("/*insert %s into Key table*/\n",osisId);
-		out.printf("update [dbo].[key] "
-				+ "set [book]='%s',[chapter]='%s',[verse]='%s' "
-				+ "where [osisId]='%s';\n", book, chapter, verse, osisId);
-		out.printf("if @@ROWCOUNT=0 \n\tinsert into"
+		out.printf(locale,"/*insert %s into Key table*/\n",osisId);
+		out.printf(locale,"update [dbo].[key] "
+				+ "set [book]=N'%s',[chapter]=N'%s',[verse]=N'%s' "
+				+ "where [osisId]=N'%s';\n", book, chapter, verse, osisId);
+		out.printf(locale,"if @@ROWCOUNT=0 \n\tinsert into"
 				+ " [dbo].[key](osisId,book,chapter,verse)"
-				+ " values ('%s','%s','%s','%s');\ngo\n\n", osisId, book, chapter,
+				+ " values (N'%s',N'%s',N'%s',N'%s');\ngo\n\n", osisId, book, chapter,
 				verse);
 	}
 
@@ -154,20 +166,21 @@ public class Exporter {
 	 * *****************************************************************
 	 */
 
-	private static void printOsis(PrintStream out, Element osis) {
+	private static void printOsis(PrintStream out,Locale locale, Element osis) {
 		Element osisText = osis.getChild("osisText");
 		Element div = osisText.getChild("div");
-		printDiv(out, div);
+		printDiv(out,locale, div);
 	}
 
-	private static void printDiv(PrintStream out, Element div) {
-		printElement(out, div);
+	private static void printDiv(PrintStream out,Locale locale, Element div) {
+		printElement(out,locale, div);
 
 		out.println();
 	}
 
-	private static void printElement(PrintStream out, Element element) {
-		out.print("<" + element.getName() + " ");
+	private static void printElement(PrintStream out,Locale locale, Element element) {
+		
+		out.printf(locale,"%s","<" + element.getName() + " ");
 		for (Object att : element.getAttributes()) {
 			Attribute attri = (Attribute) att;
 			out.print(attri.getName() + "=" + attri.getValue());
@@ -178,13 +191,13 @@ public class Exporter {
 				continue;
 			Element child = (Element) obj;
 			if (child.getChildren().size() > 0) {
-				printElement(out, child);
+				printElement(out,locale, child);
 			} else {
 				out.print("<" + child.getName() + ">" + child.getText() + "<\\"
 						+ child.getName() + ">");
 			}
 		}
-		out.print("<\\" + element.getName() + ">");
+		out.printf(locale,"%s","<\\" + element.getName() + ">");
 	}
 
 }
