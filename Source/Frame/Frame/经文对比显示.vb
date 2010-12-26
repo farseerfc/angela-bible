@@ -39,6 +39,10 @@
 
     End Sub
     Private Sub 经文对比显示_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ComboBox1.Items.Clear()
+        ComboBox1.Items.AddRange(Version.GetAllVersions().ToArray())
+        ComboBox2.Items.Clear()
+        ComboBox2.Items.AddRange(Version.GetAllVersions().ToArray())
 
     End Sub
 End Class

@@ -173,6 +173,7 @@ Partial Class 经文对比显示
         'ComboBox1
         '
         Me.ComboBox1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("华文楷体", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ComboBox1.ForeColor = System.Drawing.Color.White
         Me.ComboBox1.FormattingEnabled = True
@@ -181,7 +182,6 @@ Partial Class 经文对比显示
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(172, 29)
         Me.ComboBox1.TabIndex = 17
-        Me.ComboBox1.Text = "请选择圣经版本"
         '
         'Combo1
         '
@@ -209,6 +209,7 @@ Partial Class 经文对比显示
         'ComboBox2
         '
         Me.ComboBox2.BackColor = System.Drawing.Color.Indigo
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.Font = New System.Drawing.Font("华文楷体", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ComboBox2.ForeColor = System.Drawing.Color.White
         Me.ComboBox2.FormattingEnabled = True
@@ -217,7 +218,6 @@ Partial Class 经文对比显示
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(172, 29)
         Me.ComboBox2.TabIndex = 21
-        Me.ComboBox2.Text = "请选择圣经版本"
         '
         'Label2
         '
