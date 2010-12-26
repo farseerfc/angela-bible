@@ -124,6 +124,31 @@ Module Module1
                 Return CInt(sqlCommand.ExecuteScalar())
             End Using
         End Function
+
+        Public Shared Function GetVerseCount(ByVal book As String, ByVal chapter As Integer) As Integer
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select Max(verse) from [Key]" + _
+                            "where book='" + book + _
+                        "' and chapter=" & chapter & ";"
+                Return CInt(sqlCommand.ExecuteScalar())
+            End Using
+        End Function
+
+        Public Shared Function GetChapterCount(ByVal book As String) As Integer
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select Max(chapter) from [Key] " + _
+                            "where book='" + book + "';"
+                Return CInt(sqlCommand.ExecuteScalar())
+            End Using
+        End Function
     End Class
 
 
@@ -220,7 +245,11 @@ Module Module1
                             "[Text] " + _
                             "where [initial]='" + initial + _
                         "' and osisId='" + osisId + "';"
-                Return CStr(sqlCommand.ExecuteScalar()).Trim()
+                Dim obj = sqlCommand.ExecuteScalar()
+                If obj Is Nothing Then
+                    Return Nothing
+                End If
+                Return CStr(obj).Trim()
             End Using
         End Function
     End Class
