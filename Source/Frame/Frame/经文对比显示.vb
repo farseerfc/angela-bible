@@ -37,7 +37,13 @@
     End Sub
     Private Sub Combo1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo1.SelectedIndexChanged
         Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
+
+        If book Is Nothing Then
+            Return
+        End If
+
         Dim nrChapter As Integer = Key.GetChapterCount(book.book)
+
         nudChapter.Maximum = nrChapter
         nudChapter.Minimum = 1
 
@@ -60,6 +66,11 @@
     Private Sub nudChapter_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nudChapter.ValueChanged
         Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
         Dim chapter As Integer = nudChapter.Value
+
+        If book Is Nothing Or chapter = 0 Then
+            Return
+        End If
+
         Dim nrVerse As Integer = Key.GetVerseCount(book.book, chapter)
         nudVerse.Maximum = nrVerse
         nudVerse.Minimum = 1
@@ -96,6 +107,11 @@
                 .SelectionFont = New System.Drawing.Font("幼圆", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
                 .SelectionColor = Color.Black
             End With
+
+            If ver.language.Equals("Hebrew") Then
+                rtf.SelectionFont = New System.Drawing.Font("Hebrew", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+
+            End If
         End If
     End Sub
 

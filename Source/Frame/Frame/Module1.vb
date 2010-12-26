@@ -254,6 +254,83 @@ Module Module1
         End Function
     End Class
 
+    Public Class UserInfo
+        Public m_username As String
+        Public m_password As String
+        Public m_email As String
+        Public m_groupname As String
+
+        Public Property Username() As String
+            Get
+                Return m_username
+
+            End Get
+            Set(ByVal value As String)
+                m_username = value
+            End Set
+        End Property
+
+
+        Public Property Password() As String
+            Get
+                Return m_password
+
+            End Get
+            Set(ByVal value As String)
+                m_password = value
+            End Set
+        End Property
+
+        Public Property Email() As String
+            Get
+                Return m_email
+
+            End Get
+            Set(ByVal value As String)
+                m_email = value
+            End Set
+        End Property
+
+        Public Property GroupName() As String
+            Get
+                Return m_groupname
+            End Get
+            Set(ByVal value As String)
+                m_groupname = value
+            End Set
+        End Property
+
+
+        Public Shared Function GetAllUser() As List(Of UserInfo)
+            Dim result As New List(Of UserInfo)
+
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select [username],[password],[email],[groupname] " + _
+                        "    from [UserInfo] join [UserGroup] on [UserInfo].groupid=[usergroup].groupid ;"
+
+                Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
+                While reader.Read()
+                    Dim user As New UserInfo
+                    With user
+                        .Username = reader.GetString(0).Trim
+                        .Password = reader.GetString(1).Trim
+                        .Email = reader.GetString(2).Trim
+                        .GroupName = reader.GetString(3).Trim
+                    End With
+                    result.Add(user)
+
+                End While
+
+            End Using
+
+            Return result
+        End Function
+    End Class
+
     ''' <summary>
     ''' 返回即将嵌入sql的字符串，转义掉“'”，简单地防止sql注入
     ''' </summary>

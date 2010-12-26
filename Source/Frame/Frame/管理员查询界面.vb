@@ -57,8 +57,13 @@ Public Class 管理员查询界面
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
-        End If
+
+        DataGridView1.DataBindings.Clear()
+
+
+        DataGridView1.DataSource = UserInfo.GetAllUser()
+        DataGridView1.Update()
+        DataGridView1.Refresh()
     End Sub
 
     Private Sub OpenFileDialog1_FileOk(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
