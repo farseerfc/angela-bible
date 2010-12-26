@@ -79,6 +79,21 @@ Module Module1
         Public chapter As Integer
         Public verse As Integer
 
+        Public Shared Function GetOsisId(ByVal book As String, ByVal chapter As Integer, ByVal verse As Integer) As String
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select osisId from " + _
+                            "[Key] " + _
+                            "where book='" + book + _
+                        "' and chapter=" & chapter & _
+                        " and verse=" & verse & ";"
+                Return CStr(sqlCommand.ExecuteScalar()).Trim()
+            End Using
+        End Function
+
         Public Shared Function GetVerseCount(ByVal book As String, ByVal chapter As Integer, ByVal initial As String) As Integer
             Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
                 sqlConnection.Open()
@@ -95,7 +110,7 @@ Module Module1
             End Using
         End Function
 
-        Public Shared Function GetChapterCount(ByVal book As String, ByVal initial As String) As String
+        Public Shared Function GetChapterCount(ByVal book As String, ByVal initial As String) As Integer
             Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
                 sqlConnection.Open()
                 sqlConnection.CreateCommand()
@@ -189,6 +204,27 @@ Module Module1
 
     End Class
 
+
+    Public Class Text
+        Public initial As String
+        Public osisId As String
+        Public text As String
+
+        Public Shared Function GetText(ByVal initial As String, ByVal osisId As String) As String
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select [text] from " + _
+                            "[Text] " + _
+                            "where [initial]='" + initial + _
+                        "' and osisId='" + osisId + "';"
+                Return CStr(sqlCommand.ExecuteScalar()).Trim()
+            End Using
+        End Function
+    End Class
+
     ''' <summary>
     ''' 返回即将嵌入sql的字符串，转义掉“'”，简单地防止sql注入
     ''' </summary>
@@ -202,8 +238,6 @@ Module Module1
     '测试用
     '
     Public Function GetDataSet() As SqlClient.SqlDataReader
-
-        Dim strConnect As String = "server=localhost;user id=angela;password=angela;initial catalog=angelabible;"
         Dim sqlCommand As SqlClient.SqlCommand
 
         Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
