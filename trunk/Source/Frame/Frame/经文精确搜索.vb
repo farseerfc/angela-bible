@@ -6,8 +6,8 @@ Public Class 经文精确搜索
 
         '下面是静态创建的列表，后面会清除掉……
         Dim bible() As String = {"创世纪 (Genesis) ", "出埃及记 (Exodus) ", "利未记 (Leviticus) ", "民数记 (Numbers) ", "申命记 (Deuteronomy) ", "约书亚记 (Joshua) ", "士师记 (Judges) ", "路得记 (Ruth) ", "撒母耳记上(1 Samuel) ", "撒母耳记下(2 Samuel) ", "列王纪上(1 Kings) ", "列王纪下(2 Kings) ", "历代志上(1 Chronicles) ", "历代志下(2 Chronicles) ", "以斯拉记(Ezra) ", "尼希米记(Nehemiah) ", "以斯帖记 (Esther) ", "约伯记 (Job) ", "诗篇 (Psalms) ", "箴言 (Proverbs) ", "传道书 (Ecclesiastes) ", "雅歌 (Song of Songs) ", "以赛亚书 (Isaiah) ", "耶利米书 (Jeremiahr) ", "耶利米哀歌(Lamentations) ", "以西结书 (Ezekielk) ", "何西阿书 (Hosea) ", "约珥书 (Joel) ", "阿摩司书 (Amoss) ", "俄巴底亚书 (Obadiah) ", "约拿书 (Jonah) ", "弥迦书 (Micah) ", "那鸿书 (Nahum) ", "哈巴谷书 (Habakkuk) ", "西番雅书 (Zephaniah) ", "哈该书 (Haggai) ", "撒迦利亚书 (Zechariah) ", "玛拉基书 (Malachi) ", "马太福音 (Matthew) ", "马可福音 (Mark)", "路加福音 (Luke)", "约翰福音 (John)", "使徒行传 (Acts)", "罗马书 (Romans, Rom)", "哥林多前书 (1 Corinthians)", "哥林多后书 (2 Corinthians)", "加拉太书 (Galatians)", "以弗所书 (Ephesus)", "腓立比书 (Philippians) ", "歌罗西书 (Colossians) ", "帖撒罗尼迦前书 (1 Thessalonians) ", "帖撒罗尼迦后书 (2 Thessalonians) ", "提摩太前书 (1 Timothy) ", "提摩太后书 (2 Timothy) ", "提多书 (Titus) ", "腓利门书 (Philemon) ", "希伯来书 (Hebrews) ", "雅各书 (James) ", "彼得前书(1 Peter) ", "彼得后书(2 Peter) ", "约翰一书(1 John) ", "约翰二书(2 John) ", "约翰三书(3 John) ", "犹大书 (Jude) ", "启示录 (Revelation)"}
-        Dim i As Integer
-        For i = 0 To bible.GetLength(0) - 1
+
+        For i As Integer = 0 To bible.GetLength(0) - 1
             Combo1.Items.Add(bible(i))
         Next
 
@@ -15,9 +15,44 @@ Public Class 经文精确搜索
         Combo1.Items.Clear()
         Combo1.Items.AddRange(Book.GetAllBooks().ToArray())
 
+      
+
 
         Combo3.Items.Clear()
         Combo3.Items.AddRange(Version.GetAllVersions().ToArray())
+
+        If Not choosedVersion1 Is Nothing Then
+            For i As Integer = 0 To Combo3.Items.Count - 1
+                If DirectCast(Combo3.Items(i), Version).initial.Equals(choosedVersion1.initial) Then
+                    Combo3.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If Not choosedBook Is Nothing Then
+            For i As Integer = 0 To Combo1.Items.Count - 1
+                If DirectCast(Combo1.Items(i), Book).book.Equals(choosedBook.book) Then
+                    Combo1.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If choosedChapter <> 0 Then
+            For i As Integer = 0 To Combo2.Items.Count - 1
+                If CInt(Combo2.Items(i)) = choosedChapter Then
+                    Combo2.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If choosedVerse <> 0 Then
+            For i As Integer = 0 To ComboBox1.Items.Count - 1
+                If CInt(ComboBox1.Items(i)) = choosedVerse Then
+                    ComboBox1.SelectedIndex = i
+                End If
+            Next
+        End If
+
 
     End Sub
 
@@ -332,6 +367,8 @@ Public Class 经文精确搜索
             Return
         End If
 
+        choosedVersion1 = selectedVersion
+        choosedBook = selectedBook
 
         
         Dim lastSelect As Integer
@@ -378,6 +415,9 @@ Public Class 经文精确搜索
             Return
         End If
 
+        choosedVersion1 = selectedVersion
+        choosedBook = selectedBook
+        choosedChapter = CInt(selectedChapter)
 
 
         Dim lastSelect As Integer
@@ -423,6 +463,30 @@ Public Class 经文精确搜索
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        freader = New 经文查询显示
+        freader.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Dim selectedBook As Book = DirectCast(Combo1.SelectedItem, Book)
+        Dim selectedChapter As String = Combo2.SelectedItem
+        Dim selectedVerse As String = ComboBox1.SelectedItem
+        Dim selectedVersion As Version = DirectCast(Combo3.SelectedItem, Version)
+
+        If selectedBook Is Nothing Then
+            MsgBox("请选择一本书！")
+            Return
+        End If
+
+        If selectedVersion Is Nothing Then
+            MsgBox("请选择一个语言版本！")
+            Return
+        End If
+
+        choosedVersion1 = selectedVersion
+        choosedBook = selectedBook
+        choosedChapter = CInt(selectedChapter)
+        choosedVerse = CInt(selectedVerse)
     End Sub
 End Class

@@ -4,11 +4,33 @@
         ComboBox1.Items.Clear()
         ComboBox1.Items.AddRange(Version.GetAllVersions().ToArray())
 
-
-        Dim books As List(Of Book) = Book.GetAllBooks()
-
         Combo1.Items.Clear()
-        Combo1.Items.AddRange(books.ToArray())
+        Combo1.Items.AddRange(Book.GetAllBooks().ToArray())
+
+        If Not choosedVersion1 Is Nothing Then
+            For i As Integer = 0 To ComboBox1.Items.Count - 1
+                If choosedVersion1.initial.Equals(DirectCast(ComboBox1.Items.Item(i), Version).initial) Then
+                    ComboBox1.SelectedIndex = i
+                End If
+            Next
+        End If
+
+
+        If Not choosedBook Is Nothing Then
+            For i As Integer = 0 To Combo1.Items.Count - 1
+                If choosedBook.book.Equals(DirectCast(Combo1.Items.Item(i), Book).book) Then
+                    Combo1.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If choosedChapter <= nudChapter.Maximum And choosedChapter >= nudChapter.Minimum Then
+            nudChapter.Value = choosedChapter
+        End If
+
+        If choosedVerse <= nudVerse.Maximum And choosedVerse >= nudVerse.Minimum Then
+            nudVerse.Value = choosedVerse
+        End If
 
         reloadText()
     End Sub
@@ -16,6 +38,7 @@
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim ver As Version = DirectCast(ComboBox1.SelectedItem, Version)
+        choosedVersion1 = ver
 
         Dim lastSelect As String
         If Combo1.SelectedItem Is Nothing Then
@@ -45,9 +68,17 @@
             Return
         End If
 
+        choosedBook = book
+
+        Dim bckChoosedChapter As Integer = choosedChapter
         Dim nrChapter As Integer = CInt(Key.GetChapterCount(book.book, ver.initial))
         nudChapter.Maximum = nrChapter
         nudChapter.Minimum = 1
+
+        choosedChapter = bckChoosedChapter
+        If choosedChapter <= nrChapter And choosedChapter >= 1 Then
+            nudChapter.Value = choosedChapter
+        End If
 
         reloadText()
     End Sub
@@ -61,17 +92,24 @@
             Return
         End If
 
+        choosedChapter = chapter
+
+        Dim bckChoosedVerse As Integer = choosedVerse
         Dim nrVerse As Integer = Key.GetVerseCount(book.book, chapter, ver.initial)
         nudVerse.Maximum = nrVerse
         nudVerse.Minimum = 1
+        choosedVerse = bckChoosedVerse
 
+        If choosedVerse <= nrVerse And choosedVerse >= 1 Then
+            nudVerse.Value = choosedVerse
+        End If
 
         reloadText()
     End Sub
 
     Private Sub nudVerse_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nudVerse.ValueChanged
         reloadText()
-
+        choosedVerse = CInt(nudVerse.Value)
     End Sub
 
     Private Sub reloadText()
@@ -83,6 +121,8 @@
         If ver Is Nothing Or book Is Nothing Or chapter = 0 Or verse = 0 Then
             Return
         End If
+
+
 
         Dim osisId As String = Key.GetOsisId(book.book, chapter, verse)
         Dim textContent As String = Module1.Text.GetText(ver.initial, osisId)
