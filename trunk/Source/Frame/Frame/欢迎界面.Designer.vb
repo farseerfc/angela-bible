@@ -41,7 +41,6 @@ Partial Class 欢迎界面
         '
         'Timer1
         '
-        Me.Timer1.Enabled = True
         Me.Timer1.Interval = 19000
         '
         '欢迎界面

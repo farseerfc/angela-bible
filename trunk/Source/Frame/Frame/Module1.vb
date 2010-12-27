@@ -1,21 +1,26 @@
 ﻿Imports System.Data.SqlClient
 
 Module Module1
-    Public fstart As New 登录界面
-    Public fregister As New 用户注册界面
-    Public fbrowse As New 圣经章节概览
-    Public fsearch As New 经文精确搜索
-    Public fcompare As New 经文对比显示
-    Public freader As New 经文查询显示
-    Public fcarols As New 赞美诗
-    Public fhome As New 主页
-    Public fwelcome As New 欢迎界面
-    Public fadmin As New 管理员查询界面
-    Public fversion As New 圣经版本简介
-    Public fhelp As New 帮助
-    Public fmessage As New 意见反馈
+    Public fstart As 登录界面
+    Public fregister As 用户注册界面
+    Public fbrowse As 圣经章节概览
+    Public fsearch As 经文精确搜索
+    Public fcompare As 经文对比显示
+    Public freader As 经文查询显示
+    Public fcarols As 赞美诗
+    Public fhome As 主页
+    Public fwelcome As 欢迎界面
+    Public fadmin As 管理员查询界面
+    Public fversion As 圣经版本简介
+    Public fhelp As 帮助
+    Public fmessage As 意见反馈
 
     Public strConnect As String = "server=localhost;user id=angela;password=angela;initial catalog=angelabible;"
+    Public loginedUser As UserInfo = Nothing
+    Public choosedBook As Book = Nothing
+    Public choosedVersion1 As Version = Nothing
+    Public choosedVersion2 As Version = Nothing
+
 
     ''' <summary>
     ''' 主程序入口点
@@ -255,15 +260,14 @@ Module Module1
     End Class
 
     Public Class UserInfo
-        Public m_username As String
-        Public m_password As String
-        Public m_email As String
-        Public m_groupname As String
+        Private m_username As String
+        Private m_password As String
+        Private m_email As String
+        Private m_groupname As String
 
         Public Property Username() As String
             Get
                 Return m_username
-
             End Get
             Set(ByVal value As String)
                 m_username = value

@@ -7,7 +7,7 @@ insert into [UserGroup](groupId,groupName) values(3,'·Ç»ù¶½Í½');
 
 insert into [UserInfo]([groupId],[username],[password],[email]) select 0,'farseer','angela','farseerfc@gmail.com' where not exists(select * from [dbo].[UserInfo] where userName = 'farseer');
 insert into [UserInfo]([groupId],[username],[password],[email]) select 0,'angela','farseer','angela.toughitout@gmail.com' where not exists(select * from [dbo].[UserInfo] where userName = 'angela');
-
+insert into [UserInfo]([groupId],[username],[password],[email]) select 3,'guest','','' where not exists(select * from [dbo].[UserInfo] where userName = 'guest');
 
 insert into [language]([language],[name]) values('English','Ó¢Óï');
 insert into [language]([language],[name]) values('Chinese','ººÓï');

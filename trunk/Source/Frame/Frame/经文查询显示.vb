@@ -88,4 +88,16 @@
         Dim textContent As String = Module1.Text.GetText(ver.initial, osisId)
         RichTextBox1.Text = textContent
     End Sub
+
+    Private Sub bhome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
+        fhome = New 主页
+        fhome.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub B_Backbrowse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_Backbrowse.Click
+        fsearch = New 经文精确搜索
+        fsearch.Show()
+        Me.Close()
+    End Sub
 End Class

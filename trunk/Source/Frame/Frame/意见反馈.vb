@@ -3,6 +3,8 @@
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim suggestion As Char = SqlFilter(TextBox1.Text)
         Dim timestamp As Date = SqlFilter(DateTimePicker1.Value)
+        Dim username As String = loginedUser.Username
+
 
         Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
             sqlConnection.Open()
@@ -10,9 +12,9 @@
             Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
             sqlCommand.CommandText = "use angelabible; " + _
                     "insert into [Suggestion]([username],[timestamp],[suggestion]) " + _
-                     "select " & groupID & ",'" + username + "','" + timestamp + "','" + suggestion + "' "  + _
+                     "select '" + username + "','" + timestamp + "','" + suggestion + "' " + _
                     "where not exists(" + _
-                        "select * from [dbo].[Suggestion] where suggestion = '" + suggestion + "');"
+                        "select * from [dbo].[Suggestion] where [username] = '" + username + "' and [timestamp]='" + timestamp + "');"
         End Using
     End Sub
 

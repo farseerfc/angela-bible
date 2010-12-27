@@ -9,8 +9,9 @@
     End Sub
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
-        Me.Hide()
+        fhome = New 主页
         fhome.Show()
+        Me.Close()
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
@@ -59,8 +60,34 @@
         Combo1.Items.Clear()
         Combo1.Items.AddRange(Book.GetAllBooks().ToArray())
 
+
+        If Not choosedVersion1 Is Nothing Then
+            For i As Integer = 0 To ComboBox1.Items.Count - 1
+                If choosedVersion1.initial.Equals(DirectCast(ComboBox1.Items.Item(i), Version).initial) Then
+                    ComboBox1.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If Not choosedVersion2 Is Nothing Then
+            For i As Integer = 0 To ComboBox2.Items.Count - 1
+                If choosedVersion2.initial.Equals(DirectCast(ComboBox2.Items.Item(i), Version).initial) Then
+                    ComboBox2.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If Not choosedBook Is Nothing Then
+            For i As Integer = 0 To Combo1.Items.Count - 1
+                If choosedBook.book.Equals(DirectCast(Combo1.Items.Item(i), Book).book) Then
+                    Combo1.SelectedIndex = i
+                End If
+            Next
+        End If
+
         reload(ComboBox1, RichTextBox1)
         reload(ComboBox2, RichTextBox2)
+
         Timer1.Enabled = True
         Timer1.Interval = 1
     End Sub
@@ -132,7 +159,8 @@
     End Sub
 
     Private Sub B_Backbrowse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_Backbrowse.Click
-        Me.Hide()
+        fbrowse = New 圣经章节概览
         fbrowse.Show()
+        Me.Close()
     End Sub
 End Class

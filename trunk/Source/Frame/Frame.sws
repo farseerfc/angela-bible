@@ -5,7 +5,6 @@
 <Workspace>
 	<Local Expanded="Yes" Name="Frame">
 		<Model Expanded="Yes" ID="{CE9BFCA5-5154-4895-B59D-A6660A88ADB3}" Loaded="No" Name="angela-bible_logical" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="../../Documents/PD_model/angela-bible_logical.ldm"/>
-		<Model Expanded="Yes" ID="{D4E92F71-FF36-473E-BE5C-EC45D2FD8598}" Loaded="No" Name="angela-bible_logical_2000" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="../../Documents/PD_model/angela-bible_logical_2000.pdm"/>
 		<Model Expanded="Yes" ID="{3458D57E-6197-47EF-9F48-367D41D4B195}" Loaded="No" Name="angela-bible_physical" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="../../Documents/PD_model/angela-bible_physical.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>

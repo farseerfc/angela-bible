@@ -47,8 +47,9 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Me.Hide()
+        fstart = New 登录界面
         fstart.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
@@ -98,9 +99,10 @@
             Else
                 '用户不存在，插入成功
                 MsgBox("用户成功注册", MsgBoxStyle.OkOnly)
-                Me.Hide()
-                fstart.Show()
 
+                fstart = New 登录界面
+                fstart.Show()
+                Me.Close()
             End If
 
         End Using

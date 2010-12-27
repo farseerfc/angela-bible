@@ -20,8 +20,9 @@ Public Class 管理员查询界面
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Me.Hide()
+        fstart = New 登录界面
         fstart.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
