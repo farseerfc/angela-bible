@@ -30,7 +30,7 @@ Partial Class 登录界面
         Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.browse = New System.Windows.Forms.Button
-        Me.Cancel = New System.Windows.Forms.Button
+        Me.bexit = New System.Windows.Forms.Button
         Me.log = New System.Windows.Forms.Button
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
@@ -61,7 +61,7 @@ Partial Class 登录界面
         Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.browse)
-        Me.GroupBox1.Controls.Add(Me.Cancel)
+        Me.GroupBox1.Controls.Add(Me.bexit)
         Me.GroupBox1.Controls.Add(Me.log)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -112,18 +112,18 @@ Partial Class 登录界面
         Me.browse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.browse.UseVisualStyleBackColor = True
         '
-        'Cancel
+        'bexit
         '
-        Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Cancel.Image = CType(resources.GetObject("Cancel.Image"), System.Drawing.Image)
-        Me.Cancel.Location = New System.Drawing.Point(6, 74)
-        Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(77, 30)
-        Me.Cancel.TabIndex = 3
-        Me.Cancel.Text = "离开"
-        Me.Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Cancel.UseVisualStyleBackColor = True
+        Me.bexit.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.bexit.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.bexit.Image = CType(resources.GetObject("bexit.Image"), System.Drawing.Image)
+        Me.bexit.Location = New System.Drawing.Point(6, 74)
+        Me.bexit.Name = "bexit"
+        Me.bexit.Size = New System.Drawing.Size(77, 30)
+        Me.bexit.TabIndex = 3
+        Me.bexit.Text = "离开"
+        Me.bexit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bexit.UseVisualStyleBackColor = True
         '
         'log
         '
@@ -203,7 +203,7 @@ Partial Class 登录界面
         Me.AcceptButton = Me.log
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.Cancel
+        Me.CancelButton = Me.bexit
         Me.ClientSize = New System.Drawing.Size(479, 374)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
@@ -224,7 +224,7 @@ Partial Class 登录界面
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents browse As System.Windows.Forms.Button
-    Friend WithEvents Cancel As System.Windows.Forms.Button
+    Friend WithEvents bexit As System.Windows.Forms.Button
     Friend WithEvents log As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label

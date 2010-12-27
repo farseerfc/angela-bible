@@ -32,7 +32,7 @@ Partial Class 主页
         Me.Button6 = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Cancel = New System.Windows.Forms.Button
+        Me.bexit = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'Button1
@@ -144,19 +144,19 @@ Partial Class 主页
         'Timer1
         '
         '
-        'Cancel
+        'bexit
         '
-        Me.Cancel.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Cancel.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Cancel.ForeColor = System.Drawing.Color.LightSkyBlue
-        Me.Cancel.Image = CType(resources.GetObject("Cancel.Image"), System.Drawing.Image)
-        Me.Cancel.Location = New System.Drawing.Point(413, 1)
-        Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(109, 40)
-        Me.Cancel.TabIndex = 14
-        Me.Cancel.Text = "退出系统"
-        Me.Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Cancel.UseVisualStyleBackColor = False
+        Me.bexit.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.bexit.Font = New System.Drawing.Font("幼圆", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.bexit.ForeColor = System.Drawing.Color.LightSkyBlue
+        Me.bexit.Image = CType(resources.GetObject("bexit.Image"), System.Drawing.Image)
+        Me.bexit.Location = New System.Drawing.Point(413, 1)
+        Me.bexit.Name = "bexit"
+        Me.bexit.Size = New System.Drawing.Size(109, 40)
+        Me.bexit.TabIndex = 14
+        Me.bexit.Text = "退出系统"
+        Me.bexit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bexit.UseVisualStyleBackColor = False
         '
         '主页
         '
@@ -164,7 +164,7 @@ Partial Class 主页
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(524, 477)
-        Me.Controls.Add(Me.Cancel)
+        Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
@@ -186,5 +186,5 @@ Partial Class 主页
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents Cancel As System.Windows.Forms.Button
+    Friend WithEvents bexit As System.Windows.Forms.Button
 End Class

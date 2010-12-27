@@ -357,7 +357,7 @@ Public Class 经文精确搜索
 
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
         Me.Hide()
         fhome.Show()
     End Sub

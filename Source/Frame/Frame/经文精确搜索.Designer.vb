@@ -33,7 +33,7 @@ Partial Class 经文精确搜索
         Me.Combo1 = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.Button2 = New System.Windows.Forms.Button
+        Me.bhome = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -164,19 +164,19 @@ Partial Class 经文精确搜索
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "您想查阅的书卷"
         '
-        'Button2
+        'bhome
         '
-        Me.Button2.BackColor = System.Drawing.Color.DarkOrange
-        Me.Button2.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.OldLace
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(224, 319)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(140, 41)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "返回主页"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.bhome.BackColor = System.Drawing.Color.DarkOrange
+        Me.bhome.Font = New System.Drawing.Font("隶书", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.bhome.ForeColor = System.Drawing.Color.OldLace
+        Me.bhome.Image = CType(resources.GetObject("bhome.Image"), System.Drawing.Image)
+        Me.bhome.Location = New System.Drawing.Point(224, 319)
+        Me.bhome.Name = "bhome"
+        Me.bhome.Size = New System.Drawing.Size(140, 41)
+        Me.bhome.TabIndex = 10
+        Me.bhome.Text = "返回主页"
+        Me.bhome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bhome.UseVisualStyleBackColor = False
         '
         'Button3
         '
@@ -199,7 +199,7 @@ Partial Class 经文精确搜索
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(462, 364)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.bhome)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "经文精确搜索"
         Me.Text = "经文精确搜索"
@@ -216,7 +216,7 @@ Partial Class 经文精确搜索
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents bhome As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
