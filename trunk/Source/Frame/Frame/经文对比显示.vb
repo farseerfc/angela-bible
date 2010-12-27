@@ -4,16 +4,16 @@
 
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_VerseDown.Click
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
         Me.Hide()
         fhome.Show()
     End Sub
 
-    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
         Application.Exit()
     End Sub
 
@@ -23,16 +23,16 @@
     End Sub
 
    
-    Private Sub B_ChapterDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_ChapterDown.Click
+    Private Sub B_ChapterDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
-    Private Sub B_ChapterUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_ChapterUp.Click
+    Private Sub B_ChapterUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
-    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
+    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
-    Private Sub B_VerseUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_VerseUp.Click
+    Private Sub B_VerseUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
     Private Sub Combo1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo1.SelectedIndexChanged
@@ -61,6 +61,8 @@
 
         reload(ComboBox1, RichTextBox1)
         reload(ComboBox2, RichTextBox2)
+        Timer1.Enabled = True
+        Timer1.Interval = 1
     End Sub
 
     Private Sub nudChapter_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nudChapter.ValueChanged
@@ -127,5 +129,10 @@
     Private Sub nudVerse_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nudVerse.ValueChanged
         reload(ComboBox1, RichTextBox1)
         reload(ComboBox2, RichTextBox2)
+    End Sub
+
+    Private Sub B_Backbrowse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_Backbrowse.Click
+        Me.Hide()
+        fbrowse.Show()
     End Sub
 End Class

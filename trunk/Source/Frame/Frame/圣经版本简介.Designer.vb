@@ -37,8 +37,8 @@ Partial Class 圣经版本简介
         Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("古语", New System.Windows.Forms.TreeNode() {TreeNode12})
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(圣经版本简介))
         Me.TreeView1 = New System.Windows.Forms.TreeView
-        Me.Button4 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
+        Me.bexit = New System.Windows.Forms.Button
+        Me.bhome = New System.Windows.Forms.Button
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox
         Me.SuspendLayout()
         '
@@ -88,38 +88,38 @@ Partial Class 圣经版本简介
         Me.TreeView1.Size = New System.Drawing.Size(163, 274)
         Me.TreeView1.TabIndex = 0
         '
-        'Button4
+        'bexit
         '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.Button4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(97, 405)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(95, 57)
-        Me.Button4.TabIndex = 25
-        Me.Button4.Text = "退出"
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.bexit.BackColor = System.Drawing.Color.Transparent
+        Me.bexit.BackgroundImage = CType(resources.GetObject("bexit.BackgroundImage"), System.Drawing.Image)
+        Me.bexit.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.bexit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.bexit.Image = CType(resources.GetObject("bexit.Image"), System.Drawing.Image)
+        Me.bexit.Location = New System.Drawing.Point(679, 428)
+        Me.bexit.Name = "bexit"
+        Me.bexit.Size = New System.Drawing.Size(95, 32)
+        Me.bexit.TabIndex = 25
+        Me.bexit.Text = "退出"
+        Me.bexit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bexit.UseVisualStyleBackColor = False
         '
-        'Button2
+        'bhome
         '
-        Me.Button2.AllowDrop = True
-        Me.Button2.AutoEllipsis = True
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(3, 405)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(88, 57)
-        Me.Button2.TabIndex = 24
-        Me.Button2.Text = "主页"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.bhome.AllowDrop = True
+        Me.bhome.AutoEllipsis = True
+        Me.bhome.BackColor = System.Drawing.Color.Transparent
+        Me.bhome.BackgroundImage = CType(resources.GetObject("bhome.BackgroundImage"), System.Drawing.Image)
+        Me.bhome.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.bhome.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.bhome.Image = CType(resources.GetObject("bhome.Image"), System.Drawing.Image)
+        Me.bhome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bhome.Location = New System.Drawing.Point(679, 390)
+        Me.bhome.Name = "bhome"
+        Me.bhome.Size = New System.Drawing.Size(95, 32)
+        Me.bhome.TabIndex = 24
+        Me.bhome.Text = "主页"
+        Me.bhome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bhome.UseVisualStyleBackColor = False
         '
         'RichTextBox1
         '
@@ -142,8 +142,8 @@ Partial Class 圣经版本简介
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(786, 463)
         Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.bexit)
+        Me.Controls.Add(Me.bhome)
         Me.Controls.Add(Me.TreeView1)
         Me.Name = "圣经版本简介"
         Me.Text = "圣经版本简介"
@@ -151,7 +151,7 @@ Partial Class 圣经版本简介
 
     End Sub
     Friend WithEvents TreeView1 As System.Windows.Forms.TreeView
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents bexit As System.Windows.Forms.Button
+    Friend WithEvents bhome As System.Windows.Forms.Button
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
 End Class

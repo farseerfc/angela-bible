@@ -18,7 +18,7 @@ Public Class 登录界面
 
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
         Application.Exit()
     End Sub
 

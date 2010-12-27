@@ -27,7 +27,7 @@ Partial Class 管理员查询界面
         Me.Button2 = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
-        Me.Button4 = New System.Windows.Forms.Button
+        Me.bexit = New System.Windows.Forms.Button
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.GroupIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -102,24 +102,24 @@ Partial Class 管理员查询界面
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'Button4
+        'bexit
         '
-        Me.Button4.AllowDrop = True
-        Me.Button4.AutoEllipsis = True
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.Button4.ForeColor = System.Drawing.Color.DarkMagenta
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(639, 354)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(6)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(150, 42)
-        Me.Button4.TabIndex = 15
-        Me.Button4.Text = "退出程序"
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.bexit.AllowDrop = True
+        Me.bexit.AutoEllipsis = True
+        Me.bexit.BackColor = System.Drawing.Color.Transparent
+        Me.bexit.BackgroundImage = CType(resources.GetObject("bexit.BackgroundImage"), System.Drawing.Image)
+        Me.bexit.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.bexit.ForeColor = System.Drawing.Color.DarkMagenta
+        Me.bexit.Image = CType(resources.GetObject("bexit.Image"), System.Drawing.Image)
+        Me.bexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bexit.Location = New System.Drawing.Point(639, 354)
+        Me.bexit.Margin = New System.Windows.Forms.Padding(6)
+        Me.bexit.Name = "bexit"
+        Me.bexit.Size = New System.Drawing.Size(150, 42)
+        Me.bexit.TabIndex = 15
+        Me.bexit.Text = "退出程序"
+        Me.bexit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bexit.UseVisualStyleBackColor = False
         '
         'DataGridView1
         '
@@ -233,7 +233,7 @@ Partial Class 管理员查询界面
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtname)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
@@ -250,7 +250,7 @@ Partial Class 管理员查询界面
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents bexit As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents AngelabibleDataSet As WindowsApplication1.angelabibleDataSet
     Friend WithEvents UserInfoBindingSource As System.Windows.Forms.BindingSource

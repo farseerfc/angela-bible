@@ -34,7 +34,7 @@ Partial Class 用户注册界面
         Me.Label8 = New System.Windows.Forms.Label
         Me.Label9 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
-        Me.Button4 = New System.Windows.Forms.Button
+        Me.bexit = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'TextBox1
@@ -162,20 +162,20 @@ Partial Class 用户注册界面
         Me.Label10.Size = New System.Drawing.Size(0, 17)
         Me.Label10.TabIndex = 22
         '
-        'Button4
+        'bexit
         '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.Button4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(464, 440)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(112, 59)
-        Me.Button4.TabIndex = 23
-        Me.Button4.Text = "退出系统"
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.bexit.BackColor = System.Drawing.Color.Transparent
+        Me.bexit.BackgroundImage = CType(resources.GetObject("bexit.BackgroundImage"), System.Drawing.Image)
+        Me.bexit.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.bexit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.bexit.Image = CType(resources.GetObject("bexit.Image"), System.Drawing.Image)
+        Me.bexit.Location = New System.Drawing.Point(464, 440)
+        Me.bexit.Name = "bexit"
+        Me.bexit.Size = New System.Drawing.Size(112, 59)
+        Me.bexit.TabIndex = 23
+        Me.bexit.Text = "退出系统"
+        Me.bexit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bexit.UseVisualStyleBackColor = False
         '
         '用户注册界面
         '
@@ -183,7 +183,7 @@ Partial Class 用户注册界面
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(633, 538)
-        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -212,5 +212,5 @@ Partial Class 用户注册界面
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents bexit As System.Windows.Forms.Button
 End Class
