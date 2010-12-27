@@ -36,18 +36,26 @@ Public Class 登录界面
             sqlConnection.CreateCommand()
             Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
             sqlCommand.CommandText = "use angelabible; " + _
-                    "select [username] from [dbo].[UserInfo] where [username]='" + _
-                    username + "' and [password]='" + password + "';"
+                    "select [username],[password],[email],[groupname] from " + _
+                    "[dbo].[UserInfo] join [UserGroup] on [UserInfo].[groupId]=[UserGroup].[groupId] " + _
+                    "where [username]='" + username + "' and [password]='" + password + "';"
 
             Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
 
             If reader.HasRows Then
+                While reader.Read()
+                    loginedUser = New UserInfo
+                    loginedUser.Username = reader.GetString(0).Trim
+                    loginedUser.Password = reader.GetString(1).Trim
+                    loginedUser.Email = reader.GetString(2).Trim
+                    loginedUser.GroupName = reader.GetString(3).Trim
+                End While
+
                 '登陆成功
                 'MsgBox("登陆成功！", MsgBoxStyle.OkOnly)
+                fhome = New 主页
                 fhome.Show()
                 Me.Close()
-
-
             Else
                 MsgBox("登陆失败！", MsgBoxStyle.OkOnly)
 
@@ -57,8 +65,15 @@ Public Class 登录界面
     End Sub
 
     Private Sub browse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles browse.Click
-        Me.Close()
+        loginedUser = New UserInfo
+        loginedUser.Username = "guest"
+        loginedUser.Password = ""
+        loginedUser.Email = ""
+        loginedUser.GroupName = ""
+
+        fhome = New 主页
         fhome.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -66,8 +81,9 @@ Public Class 登录界面
         psd = InputBox("请输入管理员查询口令", "管理员登录审核")
         If psd = "13482777307" Then
             MsgBox("果然是最聪明的主人哦!欢迎回来哇！")
-            Me.Close()
+            fadmin = New 管理员查询界面
             fadmin.Show()
+            Me.Close()
             End
         Else
             MsgBox("口令错误,切勿私自闯入！", MsgBoxStyle.OkOnly, "严重警告你啊！！")
@@ -75,6 +91,7 @@ Public Class 登录界面
     End Sub
 
     Private Sub register_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles register.Click
+        fregister = New 用户注册界面
         fregister.Show()
         Me.Close()
     End Sub

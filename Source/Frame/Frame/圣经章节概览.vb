@@ -8,7 +8,9 @@ Public Class 圣经章节概览
     Dim myadapter As SqlClient.SqlDataAdapter = New SqlClient.SqlDataAdapter("select * from casepavilion", myconn)
     Dim mydataset As New Data.DataSet
 
-   
+
+    Dim listviews As New Dictionary(Of ListView, TabPage)
+
 
     ''' <summary>
     ''' 从BookGroup视图中按顺序选出book组
@@ -103,11 +105,13 @@ Public Class 圣经章节概览
 
             listview.Dock = DockStyle.Fill
 
+            AddHandler listview.ItemSelectionChanged, AddressOf Book_Selected
+
 
             For Each b As Book In getBooksOfGroup(group)
                 Dim item As New ListViewItem
                 item.Text = b.name
-                item.Tag = b.book
+                item.Tag = b
                 item.ToolTipText = b.name
                 item.StateImageIndex = (imageIndex Mod 8) + imageIndexOffset
 
@@ -120,32 +124,24 @@ Public Class 圣经章节概览
 
             tab.TabPages.Add(page)
 
+            listviews(listview) = page
             '            listview.Size = page.Size
         Next
     End Sub
 
-    Private Sub getVersions(combo As ComboBox)
-        Dim result As New List(Of String)
+    Private Sub Book_Selected(ByVal sender As Object, ByVal e As ListViewItemSelectionChangedEventArgs)
+        Dim obj As Object = e.Item.Tag
+        If (obj Is Nothing) Then
+            Return
+        End If
+
+        choosedBook = DirectCast(obj, Book)
+        
+    End Sub
+
+    Private Sub getVersions(ByVal combo As ComboBox)
         combo.Items.Clear()
-
-        Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
-            sqlConnection.Open()
-            sqlConnection.CreateCommand()
-            Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
-            sqlCommand.CommandText = "use angelabible; " + _
-                        "select title from [Version]; "
-
-            Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
-            While reader.Read()
-                result.Add(reader.GetString(0).Trim())
-
-
-            End While
-
-        End Using
-
-
-        combo.Items.AddRange(result.ToArray())
+        combo.Items.AddRange(Version.GetAllVersions().ToArray())
     End Sub
 
     Private Sub 圣经概览_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -155,6 +151,40 @@ Public Class 圣经章节概览
         getVersions(ComboBox1)
         getVersions(ComboBox2)
 
+        If Not (choosedVersion2 Is Nothing) Then
+            For i As Integer = 0 To ComboBox1.Items.Count - 1
+                If choosedVersion2.initial.Equals(DirectCast(ComboBox1.Items.Item(i), Version).initial) Then
+                    ComboBox1.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If Not (choosedVersion1 Is Nothing) Then
+            For i As Integer = 0 To ComboBox2.Items.Count - 1
+                If choosedVersion1.initial.Equals(DirectCast(ComboBox2.Items.Item(i), Version).initial) Then
+                    ComboBox2.SelectedIndex = i
+                End If
+            Next
+        End If
+
+        If Not (choosedBook Is Nothing) Then
+            For Each pair As KeyValuePair(Of ListView, TabPage) In listviews
+                For i As Integer = 0 To pair.Key.Items.Count - 1
+                    If (DirectCast(pair.Key.Items(i).Tag, Book).book.Equals(choosedBook.book)) Then
+                        pair.Key.SelectedIndices.Clear()
+                        pair.Key.SelectedIndices.Add(i)
+
+                        If TabControl1.TabPages.Contains(pair.Value) Then
+                            TabControl1.SelectedTab = pair.Value
+                        End If
+
+                        If TabControl2.TabPages.Contains(pair.Value) Then
+                            TabControl2.SelectedTab = pair.Value
+                        End If
+                    End If
+                Next
+            Next
+        End If
     End Sub
 
     Private Sub ListView1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListView1.SelectedIndexChanged
@@ -182,8 +212,9 @@ Public Class 圣经章节概览
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
-        Me.Hide()
+        fhome = New 主页
         fhome.Show()
+        Me.Close()
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
@@ -191,10 +222,26 @@ Public Class 圣经章节概览
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-
+        fcompare = New 经文对比显示
+        fcompare.Show()
+        Me.Close()
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
+        Dim obj As Version = DirectCast(ComboBox2.SelectedItem, Version)
+        If obj Is Nothing Then
+            Return
+        End If
 
+        choosedVersion1 = obj
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Dim obj As Version = DirectCast(ComboBox1.SelectedItem, Version)
+        If obj Is Nothing Then
+            Return
+        End If
+
+        choosedVersion2 = obj
     End Sub
 End Class

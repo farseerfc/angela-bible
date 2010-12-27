@@ -5,8 +5,9 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Me.Hide()
+        fhome = New 主页
         fhome.Show()
+        Me.Close()
 
     End Sub
 

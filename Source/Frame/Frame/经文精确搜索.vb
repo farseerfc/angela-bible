@@ -358,8 +358,9 @@ Public Class 经文精确搜索
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
-        Me.Hide()
+        fhome = New 主页
         fhome.Show()
+        Me.Close()
     End Sub
 
     Private Sub Combo2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo2.SelectedIndexChanged

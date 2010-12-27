@@ -1,18 +1,21 @@
 ﻿Public Class 主页
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Me.Hide()
+        fbrowse = New 圣经章节概览
         fbrowse.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Me.Hide()
+        fsearch = New 经文精确搜索
         fsearch.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-        Me.Hide()
+        fversion = New 圣经版本简介
         fversion.Show()
+        Me.Close()
     End Sub
 
     Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
@@ -25,8 +28,9 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Me.Hide()
+        fcarols = New 赞美诗
         fcarols.Show()
+        Me.Close()
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
@@ -39,7 +43,8 @@
     End Sub
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
-        Me.Hide()
+        fmessage = New 意见反馈
         fmessage.Show()
+        Me.Close()
     End Sub
 End Class
