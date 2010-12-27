@@ -15,6 +15,7 @@ import org.crosswire.jsword.book.BookException;
 import org.crosswire.jsword.book.BookFilters;
 import org.crosswire.jsword.book.BookMetaData;
 import org.crosswire.jsword.book.Books;
+import org.crosswire.jsword.book.OSISUtil;
 import org.crosswire.jsword.passage.Key;
 import org.crosswire.jsword.passage.NoSuchKeyException;
 import org.jdom.Attribute;
@@ -68,7 +69,7 @@ public class Exporter {
 				+ ".sql"),true,"UNICODE");
 		out.printf(locale,"use angelabible;\n");
 		out.printf(locale,"/*insert book %s into Version table*/\n",initial);
-		out.printf(locale,"update [dbo].[Version] set osisRef=N'%s', title=N'%s', language=N'%s' where initial=N'%s';\n",osisRef,title,language,initial);
+		out.printf(locale,"update [dbo].[Version] set osisRef=N'%s', title=N'%s', language=N'%s',describe=N'' where initial=N'%s';\n",osisRef,title,language,initial);
 		out.printf(locale,"if @@ROWCOUNT=0\n\t");
 		out.printf(locale,"insert into [dbo].[Version]"
 				+ "(osisRef,title,initial,language,describe) "
@@ -78,14 +79,21 @@ public class Exporter {
 		Key allKeys = book.getGlobalKeyList();
 
 		int cardinality = allKeys.getCardinality();
-		int percent=0,report=100;
+		int percent=0,report=100,lastChar=0;
 		for (int i = 0; i < cardinality; ++i) {
 			Key current = allKeys.get(i);
 			printKey(out,locale,book,current);
 			
 			if(i*report/cardinality > percent){
 				percent =i*report/cardinality;
-				System.out.println(initial+":\t"+percent);
+				String output=initial+":\t"+percent+"\r\n";
+				StringBuilder sb = new StringBuilder();
+				for(int j =0; j<lastChar;++j){
+					sb.append('\b');
+				}
+				sb.append(output);
+				lastChar = output.length();
+				System.out.print(sb.toString());
 			}
 		}
 
@@ -97,28 +105,30 @@ public class Exporter {
 	private static void printKey(PrintStream out,Locale locale, Book book, Key key)
 			throws BookException {
 		String osisId = key.getOsisID();
-		printOsisId(out,locale, osisId);
-		String initial = book.getInitials();
-		String text = getText(new BookData(book, key));
-		out.printf(locale,"/*insert %s:%s:N'%s' into Text table*/\n",initial,osisId,text);
-		out.printf(locale,"update [dbo].[Text] set text=N'%s' where initial=N'%s' and osisId=N'%s';\n",text,initial,osisId);
-		out.printf(locale,"if @@ROWCOUNT=0\n\tinsert into [dbo].[Text]" + "(initial,osisId,text) "
-				+ "values(N'%s',N'%s',N'%s');\ngo\n\n", initial, osisId, text);
-	}
-
-	private static void printOsisId(PrintStream out,Locale locale, String osisId) {
 		String[] lst = osisId.split("\\.");
-		String book = lst[0];
+		String book1 = lst[0];
 		int chapter = Integer.parseInt(lst[1]);
 		int verse = Integer.parseInt(lst[2]);
-		out.printf(locale,"/*insert %s into Key table*/\n",osisId);
-		out.printf(locale,"update [dbo].[key] "
-				+ "set [book]=N'%s',[chapter]=N'%s',[verse]=N'%s' "
-				+ "where [osisId]=N'%s';\n", book, chapter, verse, osisId);
-		out.printf(locale,"if @@ROWCOUNT=0 \n\tinsert into"
-				+ " [dbo].[key](osisId,book,chapter,verse)"
-				+ " values (N'%s',N'%s',N'%s',N'%s');\ngo\n\n", osisId, book, chapter,
-				verse);
+		String initial = book.getInitials();
+		String text = getText(new BookData(book, key));
+		
+		out.printf(locale,"EXEC InsertText %d,%d,'%s','%s','%s','%s' ;\ngo\n",
+				chapter,verse,book1,osisId,initial,text);
+		
+		
+//		out.printf(locale,"/*insert %s into Key table*/\n",osisId);
+//		out.printf(locale,"update [dbo].[key] "
+//				+ "set [book]=N'%s',[chapter]=N'%s',[verse]=N'%s' "
+//				+ "where [osisId]=N'%s';\n", book1, chapter, verse, osisId);
+//		out.printf(locale,"if @@ROWCOUNT=0 \n\tinsert into"
+//				+ " [dbo].[key](osisId,book,chapter,verse)"
+//				+ " values (N'%s',N'%s',N'%s',N'%s');\ngo\n\n", osisId, book1, chapter,
+//				verse);
+//		out.printf(locale,"/*insert %s:%s:N'%s' into Text table*/\n",initial,osisId,text);
+//		out.printf(locale,"update [dbo].[Text] set text=N'%s' where initial=N'%s' and osisId=N'%s';\n",text,initial,osisId);
+//		out.printf(locale,"if @@ROWCOUNT=0\n\tinsert into [dbo].[Text]" + "(initial,osisId,text) "
+//				+ "values(N'%s',N'%s',N'%s');\ngo\n\n", initial, osisId, text);
+//		
 	}
 
 	private static String getText(BookData bookData) throws BookException {
@@ -146,12 +156,16 @@ public class Exporter {
 
 		// printElement(System.out,verse);
 		String result=sb.toString();
-		*/
+		
+		 
 		String result = verse.getValue();
 		
 		result = result.replaceAll("'", "''");
+		
+		*/
 		//if (!result.equals(sb.toString())) System.out.println(result);
-		return result;
+		
+		return OSISUtil.getCanonicalText(osis);
 
 	}
 	
