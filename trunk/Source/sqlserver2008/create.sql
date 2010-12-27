@@ -212,8 +212,8 @@ go
 /*==============================================================*/
 create table Suggestion (
    username             char(32)             not null,
+   suggestion           char(1024)           null,
    timestamp            datetime             not null,
-   content              char(1024)           null,
    constraint PK_SUGGESTION primary key nonclustered (username, timestamp)
 )
 go
