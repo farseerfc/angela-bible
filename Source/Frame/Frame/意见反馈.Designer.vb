@@ -57,6 +57,7 @@ Partial Class 意见反馈
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.CustomFormat = "MMMM dd, yyyy - dddd"
         Me.DateTimePicker1.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Location = New System.Drawing.Point(221, 147)
         Me.DateTimePicker1.Name = "DateTimePicker1"

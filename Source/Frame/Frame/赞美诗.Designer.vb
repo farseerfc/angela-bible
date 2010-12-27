@@ -25,7 +25,7 @@ Partial Class 赞美诗
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(赞美诗))
         Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer
         Me.Button2 = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
+        Me.bexit = New System.Windows.Forms.Button
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,18 +51,18 @@ Partial Class 赞美诗
         Me.Button2.Text = "返回"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Button1
+        'bexit
         '
-        Me.Button1.BackColor = System.Drawing.Color.DarkOrange
-        Me.Button1.Font = New System.Drawing.Font("隶书", 18.0!)
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(526, 47)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(69, 41)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "退出"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.bexit.BackColor = System.Drawing.Color.DarkOrange
+        Me.bexit.Font = New System.Drawing.Font("隶书", 18.0!)
+        Me.bexit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.bexit.Image = CType(resources.GetObject("bexit.Image"), System.Drawing.Image)
+        Me.bexit.Location = New System.Drawing.Point(526, 47)
+        Me.bexit.Name = "bexit"
+        Me.bexit.Size = New System.Drawing.Size(69, 41)
+        Me.bexit.TabIndex = 12
+        Me.bexit.Text = "退出"
+        Me.bexit.UseVisualStyleBackColor = False
         '
         '赞美诗
         '
@@ -70,7 +70,7 @@ Partial Class 赞美诗
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(597, 449)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.AxWindowsMediaPlayer1)
         Me.Name = "赞美诗"
@@ -81,5 +81,5 @@ Partial Class 赞美诗
     End Sub
     Friend WithEvents AxWindowsMediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents bexit As System.Windows.Forms.Button
 End Class
