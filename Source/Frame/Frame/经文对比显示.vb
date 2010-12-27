@@ -43,13 +43,16 @@
             Return
         End If
 
-        Dim nrChapter As Integer = Key.GetChapterCount(book.book)
+        choosedBook = book
 
+        Dim nrChapter As Integer = Key.GetChapterCount(book.book)
+        Dim bckChoosedChapter As Integer = choosedChapter
         nudChapter.Maximum = nrChapter
         nudChapter.Minimum = 1
+        choosedChapter = bckChoosedChapter
 
-        reload(ComboBox1, RichTextBox1)
-        reload(ComboBox2, RichTextBox2)
+        reload(ComboBox1, RichTextBox1, choosedVersion1)
+        reload(ComboBox2, RichTextBox2, choosedVersion2)
     End Sub
     Private Sub 经文对比显示_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ComboBox1.Items.Clear()
@@ -85,8 +88,18 @@
             Next
         End If
 
-        reload(ComboBox1, RichTextBox1)
-        reload(ComboBox2, RichTextBox2)
+
+
+        If choosedChapter <= nudChapter.Maximum And choosedChapter >= nudChapter.Minimum Then
+            nudChapter.Value = choosedChapter
+        End If
+
+        If choosedVerse <= nudVerse.Maximum And choosedVerse >= nudVerse.Minimum Then
+            nudVerse.Value = choosedVerse
+        End If
+
+        reload(ComboBox1, RichTextBox1, choosedVersion1)
+        reload(ComboBox2, RichTextBox2, choosedVersion2)
 
         Timer1.Enabled = True
         Timer1.Interval = 1
@@ -100,15 +113,19 @@
             Return
         End If
 
+        choosedChapter = chapter
+
         Dim nrVerse As Integer = Key.GetVerseCount(book.book, chapter)
+        Dim bckChoosedVerse As Integer = choosedVerse
         nudVerse.Maximum = nrVerse
         nudVerse.Minimum = 1
+        choosedVerse = bckChoosedVerse
 
-        reload(ComboBox1, RichTextBox1)
-        reload(ComboBox2, RichTextBox2)
+        reload(ComboBox1, RichTextBox1, choosedVersion1)
+        reload(ComboBox2, RichTextBox2, choosedVersion2)
     End Sub
 
-    Private Sub reload(ByVal comboVersion As ComboBox, ByVal rtf As RichTextBox)
+    Private Sub reload(ByVal comboVersion As ComboBox, ByVal rtf As RichTextBox, ByRef choosedVersion As Version)
         Dim ver As Version = DirectCast(comboVersion.SelectedItem, Version)
         Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
         Dim chapter As Integer = nudChapter.Value
@@ -117,6 +134,8 @@
         If ver Is Nothing Or book Is Nothing Or chapter = 0 Or verse = 0 Then
             Return
         End If
+
+        choosedVersion = ver
 
         Dim osisId As String = Key.GetOsisId(book.book, chapter, verse)
 
@@ -145,17 +164,19 @@
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
-        reload(ComboBox1, RichTextBox1)
+        reload(ComboBox1, RichTextBox1,choosedVersion1)
 
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
-        reload(ComboBox2, RichTextBox2)
+        reload(ComboBox2, RichTextBox2, choosedVersion2)
     End Sub
 
     Private Sub nudVerse_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nudVerse.ValueChanged
-        reload(ComboBox1, RichTextBox1)
-        reload(ComboBox2, RichTextBox2)
+        reload(ComboBox1, RichTextBox1, choosedVersion1)
+        reload(ComboBox2, RichTextBox2, choosedVersion2)
+
+        choosedVerse = CInt(nudVerse.Value)
     End Sub
 
     Private Sub B_Backbrowse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_Backbrowse.Click

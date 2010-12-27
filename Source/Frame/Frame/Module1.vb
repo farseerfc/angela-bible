@@ -20,6 +20,8 @@ Module Module1
     Public choosedBook As Book = Nothing
     Public choosedVersion1 As Version = Nothing
     Public choosedVersion2 As Version = Nothing
+    Public choosedChapter As Integer = 0
+    Public choosedVerse As Integer = 0
 
 
     ''' <summary>
