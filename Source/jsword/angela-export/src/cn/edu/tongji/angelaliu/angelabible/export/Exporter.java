@@ -165,7 +165,7 @@ public class Exporter {
 		*/
 		//if (!result.equals(sb.toString())) System.out.println(result);
 		
-		return OSISUtil.getCanonicalText(osis);
+		return OSISUtil.getCanonicalText(osis).replaceAll("'", "''");
 
 	}
 	

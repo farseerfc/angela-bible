@@ -58,6 +58,7 @@ Partial Class 用户注册界面
         Me.TextBox3.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.TextBox3.Location = New System.Drawing.Point(102, 233)
         Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox3.Size = New System.Drawing.Size(202, 26)
         Me.TextBox3.TabIndex = 7
         '
@@ -66,6 +67,7 @@ Partial Class 用户注册界面
         Me.TextBox4.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.TextBox4.Location = New System.Drawing.Point(102, 320)
         Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox4.Size = New System.Drawing.Size(202, 26)
         Me.TextBox4.TabIndex = 8
         '
