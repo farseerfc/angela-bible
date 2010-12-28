@@ -15,10 +15,10 @@ Public Class 圣经章节概览
     ''' <summary>
     ''' 从BookGroup视图中按顺序选出book组
     ''' </summary>
-    ''' <param name="treatment">"OT" or "NT"</param>
+    ''' <param name="testament">"OT" or "NT"</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Private Function getBookGroups(ByVal treatment As String) As List(Of String)
+    Private Function getBookGroups(ByVal testament As String) As List(Of String)
         Dim result As New List(Of String)
 
         Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
@@ -26,7 +26,7 @@ Public Class 圣经章节概览
             sqlConnection.CreateCommand()
             Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
             sqlCommand.CommandText = "use angelabible; " + _
-                        " select [group]  from [BookGroup] where [treatment] = '" + treatment + "' " + _
+                        " select [group]  from [BookGroup] where [testament] = '" + testament + "' " + _
                         "         order by mindex ; "
 
             Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
@@ -48,7 +48,7 @@ Public Class 圣经章节概览
             sqlConnection.CreateCommand()
             Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
             sqlCommand.CommandText = "use angelabible; " + _
-                    "select [book],[name],[index],[treatment],[group],[describe] from [book] " + _
+                    "select [book],[name],[index],[testament],[group],[describe] from [book] " + _
                     "where [group]='" + group + "' order by [index];"
 
             Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
@@ -57,7 +57,7 @@ Public Class 圣经章节概览
                 b.book = reader.GetString(0).Trim()
                 b.name = reader.GetString(1).Trim()
                 b.index = reader.GetInt32(2)
-                b.treatment = reader.GetString(3).Trim()
+                b.testament = reader.GetString(3).Trim()
                 b.group = reader.GetString(4).Trim()
                 b.describe = reader.GetString(5).Trim()
 
@@ -70,7 +70,7 @@ Public Class 圣经章节概览
         Return result
     End Function
 
-    Private Sub createBooksInTab(ByVal tab As TabControl, ByVal treatment As String, ByVal imageIndexOffset As Integer)
+    Private Sub createBooksInTab(ByVal tab As TabControl, ByVal testament As String, ByVal imageIndexOffset As Integer)
 
 
         tab.TabPages.Clear()
@@ -79,7 +79,7 @@ Public Class 圣经章节概览
 
         imageIndex = 0
 
-        For Each group As String In getBookGroups(treatment)
+        For Each group As String In getBookGroups(testament)
             Dim page As New TabPage
             page.Text = group
             page.ToolTipText = group

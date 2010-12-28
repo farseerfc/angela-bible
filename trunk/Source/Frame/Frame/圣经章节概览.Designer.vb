@@ -508,10 +508,10 @@ Partial Class 圣经章节概览
         'TabPage10
         '
         Me.TabPage10.Controls.Add(Me.ListView6)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 30)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(385, 192)
+        Me.TabPage10.Size = New System.Drawing.Size(385, 186)
         Me.TabPage10.TabIndex = 1
         Me.TabPage10.Text = "教会历史"
         Me.TabPage10.UseVisualStyleBackColor = True
@@ -541,9 +541,9 @@ Partial Class 圣经章节概览
         'TabPage11
         '
         Me.TabPage11.Controls.Add(Me.ListView7)
-        Me.TabPage11.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage11.Location = New System.Drawing.Point(4, 30)
         Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Size = New System.Drawing.Size(385, 192)
+        Me.TabPage11.Size = New System.Drawing.Size(385, 186)
         Me.TabPage11.TabIndex = 2
         Me.TabPage11.Text = "书信"
         Me.TabPage11.UseVisualStyleBackColor = True
@@ -619,9 +619,9 @@ Partial Class 圣经章节概览
         '
         Me.TabPage12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.TabPage12.Controls.Add(Me.ListView8)
-        Me.TabPage12.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage12.Location = New System.Drawing.Point(4, 30)
         Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Size = New System.Drawing.Size(385, 192)
+        Me.TabPage12.Size = New System.Drawing.Size(385, 186)
         Me.TabPage12.TabIndex = 3
         Me.TabPage12.Text = "约翰的启示"
         Me.TabPage12.ToolTipText = "777"
@@ -680,6 +680,7 @@ Partial Class 圣经章节概览
         'Combo_Ver2
         '
         Me.Combo_Ver2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Combo_Ver2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Combo_Ver2.Font = New System.Drawing.Font("华文楷体", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Combo_Ver2.ForeColor = System.Drawing.Color.White
         Me.Combo_Ver2.FormattingEnabled = True
@@ -688,11 +689,11 @@ Partial Class 圣经章节概览
         Me.Combo_Ver2.Name = "Combo_Ver2"
         Me.Combo_Ver2.Size = New System.Drawing.Size(360, 31)
         Me.Combo_Ver2.TabIndex = 18
-        Me.Combo_Ver2.Text = "请选择需要比照的圣经版本2"
         '
         'Combo_Ver1
         '
         Me.Combo_Ver1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Combo_Ver1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Combo_Ver1.Font = New System.Drawing.Font("华文楷体", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Combo_Ver1.ForeColor = System.Drawing.Color.White
         Me.Combo_Ver1.FormattingEnabled = True
@@ -701,7 +702,6 @@ Partial Class 圣经章节概览
         Me.Combo_Ver1.Name = "Combo_Ver1"
         Me.Combo_Ver1.Size = New System.Drawing.Size(360, 31)
         Me.Combo_Ver1.TabIndex = 19
-        Me.Combo_Ver1.Text = "请选择需要比照的圣经版本1"
         '
         'b_search
         '

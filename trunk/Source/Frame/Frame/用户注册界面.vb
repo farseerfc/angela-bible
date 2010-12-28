@@ -1,4 +1,6 @@
-﻿Public Class 用户注册界面
+﻿Imports System.Text.RegularExpressions
+
+Public Class 用户注册界面
 
     'Private Function Load_UserGroup() As List(Of String)
 
@@ -56,6 +58,12 @@
         Application.Exit()
     End Sub
 
+    Private Function EmailCheck(ByVal email As String) As Boolean
+        Dim pattern As String = "^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"
+        Dim emailAddressMatch As Match = Regex.Match(email, pattern)
+        Return emailAddressMatch.Success
+    End Function
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim username As String = SqlFilter(TextBox1.Text)
         Dim password1 As String = SqlFilter(TextBox3.Text)
@@ -70,12 +78,17 @@
         End If
 
         If Not password1.Equals(password2) Then
-            MsgBox("两次输入的密码不一致，请重新输入！",MsgBoxStyle.OkOnly)
+            MsgBox("两次输入的密码不一致，请重新输入！", MsgBoxStyle.OkOnly)
             Return
         End If
 
         If username.Trim().Length < 6 Then
             MsgBox("用户名太短，请重新输入！", MsgBoxStyle.OkOnly)
+            Return
+        End If
+
+        If Not EmailCheck(email.Trim()) Then
+            MsgBox("邮箱格式不符合规范，请重新输入！", MsgBoxStyle.OkOnly)
             Return
         End If
 
@@ -92,7 +105,7 @@
 
             Dim rowcount As Integer = sqlCommand.ExecuteNonQuery()
 
-            If rowcount <> 1 Then
+            If rowcount = 0 Then
                 '用户已存在
                 MsgBox("用户已存在！", MsgBoxStyle.OkOnly)
                 Return

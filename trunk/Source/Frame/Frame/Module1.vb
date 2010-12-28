@@ -40,7 +40,7 @@ Module Module1
         Public book As String
         Public name As String
         Public index As Integer
-        Public treatment As String
+        Public testament As String
         Public group As String
         Public describe As String
 
@@ -56,7 +56,7 @@ Module Module1
                 sqlConnection.CreateCommand()
                 Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
                 sqlCommand.CommandText = "use angelabible; " + _
-                        "select [book],[name],[index],[treatment],[group],[describe] from [book] order by [index];"
+                        "select [book],[name],[index],[testament],[group],[describe] from [book] order by [index];"
 
                 Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
                 While reader.Read()
@@ -64,7 +64,7 @@ Module Module1
                     b.book = reader.GetString(0).Trim()
                     b.name = reader.GetString(1).Trim()
                     b.index = reader.GetInt32(2)
-                    b.treatment = reader.GetString(3).Trim()
+                    b.testament = reader.GetString(3).Trim()
                     b.group = reader.GetString(4).Trim()
                     b.describe = reader.GetString(5).Trim()
 
@@ -107,12 +107,9 @@ Module Module1
                 sqlConnection.CreateCommand()
                 Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
                 sqlCommand.CommandText = "use angelabible; " + _
-                        "select Max(verse) from (" + _
-                            "[Text] join [Key] on [Text].osisID=[Key].osisID)" + _
-                                "join [Version] on [Version].initial=[Text].initial " + _
-                            "where book='" + book + _
-                        "' and chapter=" & chapter & _
-                        " and [Text].initial='" + initial + "';"
+                        "EXEC VerseCountOfVersion '" + book + _
+                        "', " & chapter & _
+                        ", '" + initial + "';"
                 Return CInt(sqlCommand.ExecuteScalar())
             End Using
         End Function
@@ -123,11 +120,8 @@ Module Module1
                 sqlConnection.CreateCommand()
                 Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
                 sqlCommand.CommandText = "use angelabible; " + _
-                        "select Max(chapter) from (" + _
-                            "[Text] join [Key] on [Text].osisID=[Key].osisID)" + _
-                                "join [Version] on [Version].initial=[Text].initial " + _
-                            "where book='" + book + _
-                        "' and [Text].initial='" + initial + "';"
+                        "EXEC ChapterCountOfVersion '" + book + _
+                        "','" + initial + "';"
                 Return CInt(sqlCommand.ExecuteScalar())
             End Using
         End Function
@@ -210,7 +204,7 @@ Module Module1
                 sqlConnection.CreateCommand()
                 Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
                 sqlCommand.CommandText = "use angelabible; " + _
-                        "select [Book].[book],[name],[index],[treatment],[group],[describe] " + _
+                        "select [Book].[book],[name],[index],[testament],[group],[describe] " + _
                         "    from Book join BookVersion on Book.book = bookVersion.book " + _
                         "    where initial ='" + initial + "' order by [index];"
 
@@ -220,7 +214,7 @@ Module Module1
                     b.book = reader.GetString(0).Trim()
                     b.name = reader.GetString(1).Trim()
                     b.index = reader.GetInt32(2)
-                    b.treatment = reader.GetString(3).Trim()
+                    b.testament = reader.GetString(3).Trim()
                     b.group = reader.GetString(4).Trim()
                     b.describe = reader.GetString(5).Trim()
 
