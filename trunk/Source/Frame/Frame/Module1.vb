@@ -331,6 +331,60 @@ Module Module1
         End Function
     End Class
 
+    Public Class Note
+        Public osisId As String
+        Public username As String
+        Public content As String
+        Public timestamp As Date
+
+        Public Shared Function GetNote(ByVal user As String, ByVal osisid As String) As Note
+            Dim result As New Note
+
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select [osisId],[username],[content],[timestamp] " + _
+                        "    from [Note] where [username]='" + user + "' and osisId='" + osisid + "';"
+
+                Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
+                While reader.Read()
+                    With result
+                        .osisId = reader.GetString(0).Trim
+                        .username = reader.GetString(1).Trim
+                        .content = reader.GetString(2).Trim
+                        .timestamp = reader.GetDateTime(3)
+                    End With
+                    Return result
+                End While
+
+                Return Nothing
+
+            End Using
+
+            Return result
+        End Function
+
+
+        Public Sub Put()
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "update [Note] set content='" + content + "',[timestamp]='" + timestamp.ToString() + _
+                        "' where [username]='" + username + "' and osisId='" + osisId + "';" + vbCrLf + _
+                        "if @@ROWCOUNT=0 " + vbCrLf + _
+                        "insert into [Note]([osisId],[username],[content],[timestamp]) values('" + _
+                        osisId + "','" + username + "','" + SqlFilter(content) + "','" + timestamp + "');"
+
+                Dim reader As Integer = sqlCommand.ExecuteNonQuery()
+
+            End Using
+        End Sub
+    End Class
+
     ''' <summary>
     ''' 返回即将嵌入sql的字符串，转义掉“'”，简单地防止sql注入
     ''' </summary>

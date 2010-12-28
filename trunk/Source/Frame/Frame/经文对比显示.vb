@@ -139,9 +139,9 @@
 
         Dim osisId As String = Key.GetOsisId(book.book, chapter, verse)
 
-        Dim textContext As String = Module1.Text.GetText(ver.initial, osisId)
+        Dim textContent As String = Module1.Text.GetText(ver.initial, osisId)
 
-        If textContext Is Nothing Then
+        If textContent Is Nothing Then
             With rtf
                 .Text = "所选择的版本中没有这个章节！"
                 .SelectAll()
@@ -150,7 +150,7 @@
             End With
         Else
             With rtf
-                .Text = textContext
+                .Text = textContent
                 .SelectAll()
                 .SelectionFont = New System.Drawing.Font("幼圆", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
                 .SelectionColor = Color.Black
@@ -161,6 +161,14 @@
 
             End If
         End If
+
+        Dim note As Note = note.GetNote(loginedUser.Username, osisId)
+        If note Is Nothing Then Return
+
+        rtf.Text += vbCrLf + "您在" + note.timestamp + "留的笔记:" + vbCrLf + note.content
+        rtf.Select(Len(textContent), Len(RichTextBox1.Text) - Len(textContent))
+        rtf.SelectionColor = Color.Blue
+
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -183,5 +191,49 @@
         fbrowse = New 圣经章节概览
         fbrowse.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        freader = New 经文查询显示
+        freader.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub B_Mark_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_Mark.Click
+
+        Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
+        Dim chapter As Integer = CInt(nudChapter.Value)
+        Dim verse As Integer = CInt(nudVerse.Value)
+
+        If book Is Nothing Or chapter = 0 Or verse = 0 Then
+            Return
+        End If
+
+        Dim osisId As String = Key.GetOsisId(book.book, chapter, verse)
+
+        Dim note As Note = note.GetNote(loginedUser.Username, osisId)
+
+        Dim content As String
+        If note Is Nothing Then
+            content = ""
+        Else
+            content = note.content
+        End If
+
+        content = InputBox("输入您对这一章节的笔记：", "圣经笔记", content)
+
+        If content Is Nothing Then Return
+
+        note = New Note
+        note.username = loginedUser.Username
+        note.osisId = osisId
+        note.content = content
+        note.timestamp = Date.Now
+
+        note.Put()
+
+        reload(ComboBox1, RichTextBox1, choosedVersion1)
+        reload(ComboBox2, RichTextBox2, choosedVersion2)
     End Sub
 End Class

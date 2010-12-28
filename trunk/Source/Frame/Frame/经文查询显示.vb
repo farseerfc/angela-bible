@@ -127,6 +127,15 @@
         Dim osisId As String = Key.GetOsisId(book.book, chapter, verse)
         Dim textContent As String = Module1.Text.GetText(ver.initial, osisId)
         RichTextBox1.Text = textContent
+
+        Dim note As Note = note.GetNote(loginedUser.Username, osisId)
+        If note Is Nothing Then Return
+
+        RichTextBox1.Text += vbCrLf + "您在" + note.timestamp+"留的笔记:" + vbCrLf + note.content
+        RichTextBox1.Select(Len(textContent), Len(RichTextBox1.Text) - Len(textContent))
+        RichTextBox1.SelectionColor = Color.Blue
+
+
     End Sub
 
     Private Sub bhome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
@@ -136,6 +145,48 @@
     End Sub
 
     Private Sub B_Backbrowse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_Backbrowse.Click
+        fcompare = New 经文对比显示
+        fcompare.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub B_Mark_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles B_Mark.Click
+
+        Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
+        Dim chapter As Integer = CInt(nudChapter.Value)
+        Dim verse As Integer = CInt(nudVerse.Value)
+
+        If book Is Nothing Or chapter = 0 Or verse = 0 Then
+            Return
+        End If
+
+        Dim osisId As String = Key.GetOsisId(book.book, chapter, verse)
+
+        Dim note As Note = note.GetNote(loginedUser.Username, osisId)
+
+        Dim content As String
+        If note Is Nothing Then
+            content = ""
+        Else
+            content = note.content
+        End If
+
+        content = InputBox("输入您对这一章节的笔记：", "圣经笔记", content)
+
+        If content Is Nothing Then Return
+
+        note = New Note
+        note.username = loginedUser.Username
+        note.osisId = osisId
+        note.content = content
+        note.timestamp = Date.Now
+
+        note.put()
+
+        reloadText()
+    End Sub
+
+    Private Sub bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
         fsearch = New 经文精确搜索
         fsearch.Show()
         Me.Close()
