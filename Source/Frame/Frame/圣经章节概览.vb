@@ -145,24 +145,24 @@ Public Class 圣经章节概览
     End Sub
 
     Private Sub 圣经概览_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        createBooksInTab(TabControl1, "OT", 0)
-        createBooksInTab(TabControl2, "NT", 7)
+        createBooksInTab(Tab_NT, "OT", 0)
+        createBooksInTab(Tab_OT, "NT", 7)
 
-        getVersions(ComboBox1)
-        getVersions(ComboBox2)
+        getVersions(Combo_Ver2)
+        getVersions(Combo_Ver1)
 
         If Not (choosedVersion2 Is Nothing) Then
-            For i As Integer = 0 To ComboBox1.Items.Count - 1
-                If choosedVersion2.initial.Equals(DirectCast(ComboBox1.Items.Item(i), Version).initial) Then
-                    ComboBox1.SelectedIndex = i
+            For i As Integer = 0 To Combo_Ver2.Items.Count - 1
+                If choosedVersion2.initial.Equals(DirectCast(Combo_Ver2.Items.Item(i), Version).initial) Then
+                    Combo_Ver2.SelectedIndex = i
                 End If
             Next
         End If
 
         If Not (choosedVersion1 Is Nothing) Then
-            For i As Integer = 0 To ComboBox2.Items.Count - 1
-                If choosedVersion1.initial.Equals(DirectCast(ComboBox2.Items.Item(i), Version).initial) Then
-                    ComboBox2.SelectedIndex = i
+            For i As Integer = 0 To Combo_Ver1.Items.Count - 1
+                If choosedVersion1.initial.Equals(DirectCast(Combo_Ver1.Items.Item(i), Version).initial) Then
+                    Combo_Ver1.SelectedIndex = i
                 End If
             Next
         End If
@@ -174,12 +174,12 @@ Public Class 圣经章节概览
                         pair.Key.SelectedIndices.Clear()
                         pair.Key.SelectedIndices.Add(i)
 
-                        If TabControl1.TabPages.Contains(pair.Value) Then
-                            TabControl1.SelectedTab = pair.Value
+                        If Tab_NT.TabPages.Contains(pair.Value) Then
+                            Tab_NT.SelectedTab = pair.Value
                         End If
 
-                        If TabControl2.TabPages.Contains(pair.Value) Then
-                            TabControl2.SelectedTab = pair.Value
+                        If Tab_OT.TabPages.Contains(pair.Value) Then
+                            Tab_OT.SelectedTab = pair.Value
                         End If
                     End If
                 Next
@@ -199,7 +199,7 @@ Public Class 圣经章节概览
 
     End Sub
 
-    Private Sub TabControl2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabControl2.SelectedIndexChanged
+    Private Sub TabControl2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tab_OT.SelectedIndexChanged
 
     End Sub
 
@@ -221,14 +221,14 @@ Public Class 圣经章节概览
         Application.Exit()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles b_search.Click
         fcompare = New 经文对比显示
         fcompare.Show()
         Me.Close()
     End Sub
 
-    Private Sub ComboBox2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
-        Dim obj As Version = DirectCast(ComboBox2.SelectedItem, Version)
+    Private Sub ComboBox2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo_Ver1.SelectedIndexChanged
+        Dim obj As Version = DirectCast(Combo_Ver1.SelectedItem, Version)
         If obj Is Nothing Then
             Return
         End If
@@ -236,8 +236,8 @@ Public Class 圣经章节概览
         choosedVersion1 = obj
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
-        Dim obj As Version = DirectCast(ComboBox1.SelectedItem, Version)
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo_Ver2.SelectedIndexChanged
+        Dim obj As Version = DirectCast(Combo_Ver2.SelectedItem, Version)
         If obj Is Nothing Then
             Return
         End If
