@@ -33,6 +33,7 @@ Partial Class 主页
         Me.Label1 = New System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.bexit = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'b_browse
@@ -158,12 +159,25 @@ Partial Class 主页
         Me.bexit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.bexit.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Yellow
+        Me.Label5.Location = New System.Drawing.Point(104, 1)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(258, 23)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '主页
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(524, 477)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.b_suggestion)
@@ -187,4 +201,5 @@ Partial Class 主页
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents bexit As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

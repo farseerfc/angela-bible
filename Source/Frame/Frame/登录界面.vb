@@ -14,16 +14,8 @@ Public Class 登录界面
         Timer1.Interval = 1
     End Sub
 
-    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
-
-    End Sub
-
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
         Application.Exit()
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
     End Sub
 
     Private Sub log_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles log.Click
@@ -58,9 +50,7 @@ Public Class 登录界面
                 Me.Close()
             Else
                 MsgBox("登陆失败！", MsgBoxStyle.OkOnly)
-
             End If
-
         End Using
     End Sub
 

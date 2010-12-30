@@ -100,8 +100,4 @@
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bexit.Click
         Application.Exit()
     End Sub
-
-    Private Sub 圣经版本简介_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

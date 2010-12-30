@@ -37,6 +37,7 @@ Partial Class 经文查询显示
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label5 = New System.Windows.Forms.Label
+        Me.Label6 = New System.Windows.Forms.Label
         CType(Me.nudChapter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudVerse, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -196,12 +197,25 @@ Partial Class 经文查询显示
         Me.Label5.TabIndex = 40
         Me.Label5.Text = "章"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Gold
+        Me.Label6.Location = New System.Drawing.Point(432, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(258, 23)
+        Me.Label6.TabIndex = 41
+        Me.Label6.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '经文查询显示
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(702, 474)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -239,4 +253,5 @@ Partial Class 经文查询显示
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

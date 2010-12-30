@@ -38,6 +38,7 @@ Partial Class 登录界面
         Me.Label1 = New System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -199,6 +200,18 @@ Partial Class 登录界面
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Yellow
+        Me.Label5.Location = New System.Drawing.Point(-7, 351)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(258, 23)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '登录界面
         '
         Me.AcceptButton = Me.log
@@ -206,6 +219,7 @@ Partial Class 登录界面
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.bexit
         Me.ClientSize = New System.Drawing.Size(479, 374)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -234,5 +248,6 @@ Partial Class 登录界面
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents register As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 
 End Class

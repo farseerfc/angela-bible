@@ -31,6 +31,7 @@ Partial Class 意见反馈
         Me.Button1 = New System.Windows.Forms.Button
         Me.bhome = New System.Windows.Forms.Button
         Me.bexit = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'TextBox1
@@ -124,12 +125,25 @@ Partial Class 意见反馈
         Me.bexit.Text = "退出"
         Me.bexit.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Goldenrod
+        Me.Label5.Location = New System.Drawing.Point(363, -2)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(258, 23)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '意见反馈
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(621, 417)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.bhome)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -152,4 +166,5 @@ Partial Class 意见反馈
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents bhome As System.Windows.Forms.Button
     Friend WithEvents bexit As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class
