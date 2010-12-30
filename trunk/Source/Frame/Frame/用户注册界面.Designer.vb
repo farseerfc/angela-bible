@@ -35,6 +35,7 @@ Partial Class 用户注册界面
         Me.Label9 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
         Me.bexit = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'TextBox1
@@ -179,12 +180,25 @@ Partial Class 用户注册界面
         Me.bexit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.bexit.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(342, 502)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(258, 23)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '用户注册界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(633, 538)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -215,4 +229,5 @@ Partial Class 用户注册界面
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents bexit As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

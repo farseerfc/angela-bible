@@ -35,6 +35,7 @@ Partial Class 经文精确搜索
         Me.Label1 = New System.Windows.Forms.Label
         Me.bhome = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -192,12 +193,25 @@ Partial Class 经文精确搜索
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Yellow
+        Me.Label5.Location = New System.Drawing.Point(210, -1)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(258, 23)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '经文精确搜索
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(462, 364)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.bhome)
         Me.Controls.Add(Me.GroupBox1)
@@ -206,6 +220,7 @@ Partial Class 经文精确搜索
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -220,4 +235,5 @@ Partial Class 经文精确搜索
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

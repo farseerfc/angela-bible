@@ -15,9 +15,6 @@ Public Class 经文精确搜索
         Combo1.Items.Clear()
         Combo1.Items.AddRange(Book.GetAllBooks().ToArray())
 
-      
-
-
         Combo3.Items.Clear()
         Combo3.Items.AddRange(Version.GetAllVersions().ToArray())
 

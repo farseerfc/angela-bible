@@ -26,6 +26,7 @@ Partial Class 欢迎界面
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(欢迎界面))
         Me.AxShockwaveFlash1 = New AxShockwaveFlashObjects.AxShockwaveFlash
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label
         CType(Me.AxShockwaveFlash1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,12 +44,24 @@ Partial Class 欢迎界面
         '
         Me.Timer1.Interval = 19000
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(287, 299)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(258, 23)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '欢迎界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(545, 322)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.AxShockwaveFlash1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "欢迎界面"
@@ -56,8 +69,10 @@ Partial Class 欢迎界面
         Me.Text = "欢迎界面"
         CType(Me.AxShockwaveFlash1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents AxShockwaveFlash1 As AxShockwaveFlashObjects.AxShockwaveFlash
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

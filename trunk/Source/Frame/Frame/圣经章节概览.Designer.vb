@@ -120,6 +120,7 @@ Partial Class 圣经章节概览
         Me.Combo_Ver2 = New System.Windows.Forms.ComboBox
         Me.Combo_Ver1 = New System.Windows.Forms.ComboBox
         Me.b_search = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
         Me.Tab_NT.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -717,12 +718,25 @@ Partial Class 圣经章节概览
         Me.b_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.b_search.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Yellow
+        Me.Label5.Location = New System.Drawing.Point(433, -4)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(258, 23)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '圣经章节概览
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(694, 513)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.b_search)
         Me.Controls.Add(Me.Combo_Ver1)
         Me.Controls.Add(Me.Combo_Ver2)
@@ -747,6 +761,7 @@ Partial Class 圣经章节概览
         Me.TabPage11.ResumeLayout(False)
         Me.TabPage12.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
@@ -779,4 +794,5 @@ Partial Class 圣经章节概览
     Friend WithEvents Combo_Ver2 As System.Windows.Forms.ComboBox
     Friend WithEvents Combo_Ver1 As System.Windows.Forms.ComboBox
     Friend WithEvents b_search As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

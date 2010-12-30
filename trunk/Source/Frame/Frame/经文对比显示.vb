@@ -1,13 +1,5 @@
 ﻿Public Class 经文对比显示
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bhome.Click
         fhome = New 主页
         fhome.Show()
@@ -23,19 +15,6 @@
         If Label1.Left > Me.Width Then Label1.Left = -Label1.Width
     End Sub
 
-   
-    Private Sub B_ChapterDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-    Private Sub B_ChapterUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-    Private Sub B_VerseUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
     Private Sub Combo1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo1.SelectedIndexChanged
         Dim book As Book = DirectCast(Combo1.SelectedItem, Book)
 
@@ -161,7 +140,8 @@
 
             End If
         End If
-
+        '限制未登录用户
+        If loginedUser Is Nothing Or loginedUser.Username.Equals("guest") Then Return
         Dim note As Note = note.GetNote(loginedUser.Username, osisId)
         If note Is Nothing Then Return
 

@@ -40,6 +40,7 @@ Partial Class 管理员查询界面
         Me.Label1 = New System.Windows.Forms.Label
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.Button5 = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -223,12 +224,25 @@ Partial Class 管理员查询界面
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button5.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Freestyle Script", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(192, 367)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(258, 23)
+        Me.Label5.TabIndex = 20
+        Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
+        '
         '管理员查询界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(930, 414)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtname)
@@ -263,4 +277,5 @@ Partial Class 管理员查询界面
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class
