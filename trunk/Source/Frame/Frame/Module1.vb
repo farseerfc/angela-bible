@@ -329,6 +329,51 @@ Module Module1
 
             Return result
         End Function
+
+        Public Shared Function GetUserByName(ByVal name As String) As List(Of UserInfo)
+            Dim result As New List(Of UserInfo)
+
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select [username],[password],[email],[groupname] " + _
+                        "    from [UserInfo] join [UserGroup] on [UserInfo].groupid=[usergroup].groupid " + _
+                        "    where [username] like '%" + name + "%';"
+
+                Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
+                While reader.Read()
+                    Dim user As New UserInfo
+                    With user
+                        .Username = reader.GetString(0).Trim
+                        .Password = reader.GetString(1).Trim
+                        .Email = reader.GetString(2).Trim
+                        .GroupName = reader.GetString(3).Trim
+                    End With
+                    result.Add(user)
+
+                End While
+
+            End Using
+
+            Return result
+        End Function
+
+        Public Shared Function DeleteUserByName(ByVal name As String) As Boolean
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "delete from [UserInfo] " + _
+                        "    where [username] = '" + name + "';"
+
+                Dim count As Integer = sqlCommand.ExecuteNonQuery()
+
+                Return count > 0
+            End Using
+        End Function
     End Class
 
     Public Class Note
@@ -383,6 +428,55 @@ Module Module1
 
             End Using
         End Sub
+    End Class
+
+    Public Class Suggestion
+        Public username As String
+        Public timestamp As Date
+        Public suggestion As String
+
+        Public Shared Function GetAll() As List(Of Suggestion)
+            Dim result As New List(Of Suggestion)
+
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "select [username],[timestamp],[suggestion] " + _
+                        "    from [Suggestion] ;"
+
+                Dim reader As SqlDataReader = sqlCommand.ExecuteReader()
+                While reader.Read()
+                    Dim sug As New Suggestion
+                    With sug
+                        .username = reader.GetString(0).Trim
+                        .timestamp = reader.GetDateTime(1)
+                        .suggestion = reader.GetString(2).Trim
+                    End With
+                    result.Add(sug)
+
+                End While
+
+            End Using
+
+            Return result
+        End Function
+
+        Public Function Delete() As Boolean
+            Using sqlConnection As SqlClient.SqlConnection = New SqlClient.SqlConnection(strConnect)
+                sqlConnection.Open()
+                sqlConnection.CreateCommand()
+                Dim sqlCommand As SqlClient.SqlCommand = sqlConnection.CreateCommand
+                sqlCommand.CommandText = "use angelabible; " + _
+                        "delete from [Suggestion] " + _
+                        "    where [username] = '" + username + "' and [timestamp] = '" + timestamp + "';"
+
+                Dim count As Integer = sqlCommand.ExecuteNonQuery()
+
+                Return count > 0
+            End Using
+        End Function
     End Class
 
     ''' <summary>
