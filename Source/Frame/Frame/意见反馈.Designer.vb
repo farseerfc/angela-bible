@@ -38,10 +38,10 @@ Partial Class 意见反馈
         '
         Me.TextBox1.BackColor = System.Drawing.Color.Gainsboro
         Me.TextBox1.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(221, 179)
+        Me.TextBox1.Location = New System.Drawing.Point(221, 143)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(270, 189)
+        Me.TextBox1.Size = New System.Drawing.Size(270, 225)
         Me.TextBox1.TabIndex = 0
         '
         'Label1
@@ -60,7 +60,7 @@ Partial Class 意见反馈
         '
         Me.DateTimePicker1.CustomFormat = "MMMM dd, yyyy - dddd"
         Me.DateTimePicker1.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(221, 147)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(163, 429)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(270, 26)
         Me.DateTimePicker1.TabIndex = 2
@@ -71,7 +71,7 @@ Partial Class 意见反馈
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("幼圆", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.DeepPink
-        Me.Label2.Location = New System.Drawing.Point(119, 149)
+        Me.Label2.Location = New System.Drawing.Point(61, 431)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(114, 19)
         Me.Label2.TabIndex = 3
@@ -83,7 +83,7 @@ Partial Class 意见反馈
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("幼圆", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DeepPink
-        Me.Label3.Location = New System.Drawing.Point(118, 189)
+        Me.Label3.Location = New System.Drawing.Point(101, 144)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(114, 19)
         Me.Label3.TabIndex = 4
@@ -142,7 +142,7 @@ Partial Class 意见反馈
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(621, 417)
+        Me.ClientSize = New System.Drawing.Size(621, 418)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.bhome)

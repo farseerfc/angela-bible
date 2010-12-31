@@ -74,7 +74,6 @@ Public Class 登录界面
             fadmin = New 管理员查询界面
             fadmin.Show()
             Me.Close()
-            End
         Else
             MsgBox("口令错误,切勿私自闯入！", MsgBoxStyle.OkOnly, "严重警告你啊！！")
         End If

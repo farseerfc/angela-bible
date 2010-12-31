@@ -41,9 +41,17 @@ Partial Class 管理员查询界面
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.Button5 = New System.Windows.Forms.Button
         Me.Label5 = New System.Windows.Forms.Label
+        Me.dgvSuggestion = New System.Windows.Forms.DataGridView
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.btnAllSuggestion = New System.Windows.Forms.Button
+        Me.btnDeleteSuggestion = New System.Windows.Forms.Button
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvSuggestion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
@@ -134,6 +142,7 @@ Partial Class 管理员查询界面
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(6)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 23
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(420, 294)
         Me.DataGridView1.TabIndex = 16
         '
@@ -236,12 +245,96 @@ Partial Class 管理员查询界面
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Designed by Farseer Yang and Angela Liu"
         '
+        'dgvSuggestion
+        '
+        Me.dgvSuggestion.AutoGenerateColumns = False
+        Me.dgvSuggestion.BackgroundColor = System.Drawing.Color.Gold
+        Me.dgvSuggestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSuggestion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.dgvSuggestion.DataSource = Me.UserInfoBindingSource
+        Me.dgvSuggestion.GridColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dgvSuggestion.Location = New System.Drawing.Point(630, 102)
+        Me.dgvSuggestion.Margin = New System.Windows.Forms.Padding(6)
+        Me.dgvSuggestion.Name = "dgvSuggestion"
+        Me.dgvSuggestion.RowTemplate.Height = 23
+        Me.dgvSuggestion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvSuggestion.Size = New System.Drawing.Size(420, 294)
+        Me.dgvSuggestion.TabIndex = 20
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "username"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "username"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 90
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "groupId"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "groupId"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 60
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "password"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "password"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "email"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "email"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Width = 120
+        '
+        'btnAllSuggestion
+        '
+        Me.btnAllSuggestion.AllowDrop = True
+        Me.btnAllSuggestion.AutoEllipsis = True
+        Me.btnAllSuggestion.BackColor = System.Drawing.Color.Transparent
+        Me.btnAllSuggestion.BackgroundImage = CType(resources.GetObject("btnAllSuggestion.BackgroundImage"), System.Drawing.Image)
+        Me.btnAllSuggestion.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.btnAllSuggestion.ForeColor = System.Drawing.Color.Yellow
+        Me.btnAllSuggestion.Image = CType(resources.GetObject("btnAllSuggestion.Image"), System.Drawing.Image)
+        Me.btnAllSuggestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAllSuggestion.Location = New System.Drawing.Point(1074, 186)
+        Me.btnAllSuggestion.Margin = New System.Windows.Forms.Padding(6)
+        Me.btnAllSuggestion.Name = "btnAllSuggestion"
+        Me.btnAllSuggestion.Size = New System.Drawing.Size(150, 42)
+        Me.btnAllSuggestion.TabIndex = 21
+        Me.btnAllSuggestion.Text = "查看留言"
+        Me.btnAllSuggestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAllSuggestion.UseVisualStyleBackColor = False
+        '
+        'btnDeleteSuggestion
+        '
+        Me.btnDeleteSuggestion.AllowDrop = True
+        Me.btnDeleteSuggestion.AutoEllipsis = True
+        Me.btnDeleteSuggestion.BackColor = System.Drawing.Color.Transparent
+        Me.btnDeleteSuggestion.BackgroundImage = CType(resources.GetObject("btnDeleteSuggestion.BackgroundImage"), System.Drawing.Image)
+        Me.btnDeleteSuggestion.Font = New System.Drawing.Font("华文隶书", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.btnDeleteSuggestion.ForeColor = System.Drawing.Color.Yellow
+        Me.btnDeleteSuggestion.Image = CType(resources.GetObject("btnDeleteSuggestion.Image"), System.Drawing.Image)
+        Me.btnDeleteSuggestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDeleteSuggestion.Location = New System.Drawing.Point(1074, 274)
+        Me.btnDeleteSuggestion.Margin = New System.Windows.Forms.Padding(6)
+        Me.btnDeleteSuggestion.Name = "btnDeleteSuggestion"
+        Me.btnDeleteSuggestion.Size = New System.Drawing.Size(150, 42)
+        Me.btnDeleteSuggestion.TabIndex = 22
+        Me.btnDeleteSuggestion.Text = "删除留言"
+        Me.btnDeleteSuggestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDeleteSuggestion.UseVisualStyleBackColor = False
+        '
         '管理员查询界面
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(930, 414)
+        Me.ClientSize = New System.Drawing.Size(1227, 414)
+        Me.Controls.Add(Me.btnDeleteSuggestion)
+        Me.Controls.Add(Me.btnAllSuggestion)
+        Me.Controls.Add(Me.dgvSuggestion)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label1)
@@ -257,6 +350,7 @@ Partial Class 管理员查询界面
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AngelabibleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvSuggestion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -278,4 +372,11 @@ Partial Class 管理员查询界面
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents dgvSuggestion As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnAllSuggestion As System.Windows.Forms.Button
+    Friend WithEvents btnDeleteSuggestion As System.Windows.Forms.Button
 End Class
