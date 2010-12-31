@@ -25,7 +25,6 @@ Partial Class 意见反馈
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(意见反馈))
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Button1 = New System.Windows.Forms.Button
@@ -55,15 +54,6 @@ Partial Class 意见反馈
         Me.Label1.Size = New System.Drawing.Size(287, 56)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "亲爱的用户，您好！" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "欢迎提出您宝贵建议和意见，" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "您留下的每个字都将被用来改善我们的程序，" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "以让您更好的使用！"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CustomFormat = "MMMM dd, yyyy - dddd"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(163, 429)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(270, 26)
-        Me.DateTimePicker1.TabIndex = 2
         '
         'Label2
         '
@@ -146,7 +136,6 @@ Partial Class 意见反馈
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.bexit)
         Me.Controls.Add(Me.bhome)
-        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
@@ -160,7 +149,6 @@ Partial Class 意见反馈
     End Sub
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
