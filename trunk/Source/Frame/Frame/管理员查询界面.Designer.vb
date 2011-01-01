@@ -121,7 +121,7 @@ Partial Class 管理员查询界面
         Me.bexit.ForeColor = System.Drawing.Color.DarkMagenta
         Me.bexit.Image = CType(resources.GetObject("bexit.Image"), System.Drawing.Image)
         Me.bexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bexit.Location = New System.Drawing.Point(468, 367)
+        Me.bexit.Location = New System.Drawing.Point(1074, 315)
         Me.bexit.Margin = New System.Windows.Forms.Padding(6)
         Me.bexit.Name = "bexit"
         Me.bexit.Size = New System.Drawing.Size(150, 42)
@@ -298,7 +298,7 @@ Partial Class 管理员查询界面
         Me.btnAllSuggestion.ForeColor = System.Drawing.Color.Yellow
         Me.btnAllSuggestion.Image = CType(resources.GetObject("btnAllSuggestion.Image"), System.Drawing.Image)
         Me.btnAllSuggestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAllSuggestion.Location = New System.Drawing.Point(1074, 186)
+        Me.btnAllSuggestion.Location = New System.Drawing.Point(1074, 207)
         Me.btnAllSuggestion.Margin = New System.Windows.Forms.Padding(6)
         Me.btnAllSuggestion.Name = "btnAllSuggestion"
         Me.btnAllSuggestion.Size = New System.Drawing.Size(150, 42)
@@ -317,7 +317,7 @@ Partial Class 管理员查询界面
         Me.btnDeleteSuggestion.ForeColor = System.Drawing.Color.Yellow
         Me.btnDeleteSuggestion.Image = CType(resources.GetObject("btnDeleteSuggestion.Image"), System.Drawing.Image)
         Me.btnDeleteSuggestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDeleteSuggestion.Location = New System.Drawing.Point(1074, 274)
+        Me.btnDeleteSuggestion.Location = New System.Drawing.Point(1074, 261)
         Me.btnDeleteSuggestion.Margin = New System.Windows.Forms.Padding(6)
         Me.btnDeleteSuggestion.Name = "btnDeleteSuggestion"
         Me.btnDeleteSuggestion.Size = New System.Drawing.Size(150, 42)
